@@ -371,6 +371,29 @@ fi
 
 AM_CONDITIONAL(USE_OBEXFTP, [test "$msg_obexftp" = "yes"])
 
+dnl *****************************************************
+dnl *** Check if we should build with Rackspace backend ***
+dnl *****************************************************
+AC_ARG_ENABLE(rack, AS_HELP_STRING([--disable-rack],[build without Rackspace Cloud Files backend]))
+msg_rack=no
+RACK_LIBS=
+RACK_CFLAGS=
+
+if test "x$enable_rack" != "xno"; then
+  PKG_CHECK_EXISTS(json-glib-1.0 libsoup-gnome-2.4 >= 2.26.0, msg_rack=yes)
+
+  if test "x$msg_rack" = "xyes"; then
+    PKG_CHECK_MODULES(RACK, libsoup-gnome-2.4 json-glib-1.0)
+    AC_SUBST(RACK_LIBS)
+    AC_SUBST(RACK_CFLAGS)
+
+    msg_rack=yes
+    AC_DEFINE(HAVE_RACK, 1, [Define to 1 if Rackspace Cloud Files is going to be built])
+  fi
+fi
+
+AM_CONDITIONAL(USE_RACK, [test "$msg_rack" = "yes"])
+
 dnl *************************
 dnl *** Check for gphoto2 ***
 dnl *************************
@@ -720,6 +743,7 @@ echo "
         FTP/HTTP/WebDAV support       $msg_http
         ObexFTP support               $msg_obexftp
 	Samba support:	              $msg_samba
+	Rackspace support:            $msg_rack
 	FUSE support:                 $msg_fuse
         CDDA support:                 $msg_cdda
         Gphoto2 support:              $msg_gphoto2

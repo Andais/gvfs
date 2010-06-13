@@ -1,0 +1,4 @@
+[Mount]
+Type=rack
+Exec=@libexecdir@/gvfsd-rack
+AutoMount=false

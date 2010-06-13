@@ -89,6 +89,12 @@ obexftp-marshal.c: obexftp-marshal.list
 
 endif
 
+mount_in_files += rack.mount.in
+if USE_RACK
+mount_DATA += rack.mount
+libexec_PROGRAMS += gvfsd-rack
+endif
+
 mount_in_files += dns-sd.mount.in
 if HAVE_AVAHI
 mount_DATA += dns-sd.mount
@@ -242,6 +248,29 @@ endif
 gvfsd_obexftp_LDADD = $(OBEXFTP_LIBS) $(EXPAT_LIBS) $(libraries)
 if USE_HAL
 gvfsd_obexftp_LDADD += $(HAL_LIBS)
+endif
+
+gvfsd_rack_SOURCES = \
+	gvfsbackendrack.c gvfsbackendrack.h \
+	gvfsbackendhttp.c gvfsbackendhttp.h \
+	soup-input-stream.c soup-input-stream.h \
+	soup-output-stream.c soup-output-stream.h \
+	daemon-main.c daemon-main.h \
+	daemon-main-generic.c
+
+gvfsd_rack_CPPFLAGS = \
+	-DBACKEND_HEADER=gvfsbackendrack.h \
+	-DDEFAULT_BACKEND_TYPE=rack \
+	-DMAX_JOB_THREADS=1 \
+	$(RACK_CFLAGS) \
+	-DBACKEND_TYPES='"rack", G_VFS_TYPE_BACKEND_RACK,'
+if USE_HAL
+gvfsd_rack_CPPFLAGS += $(HAL_CFLAGS)
+endif
+
+gvfsd_rack_LDADD = $(RACK_LIBS) $(libraries)
+if USE_HAL
+gvfsd_rack_LDADD += $(HAL_LIBS)
 endif
 
 gvfsd_ftp_SOURCES = \
