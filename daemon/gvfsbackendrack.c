@@ -470,8 +470,26 @@ try_unmount (GVfsBackend    *backend,
   _exit (0);
 }
 
+static GHashTable* 
+query_new() 
+{
+  return g_hash_table_new_full(g_str_hash, g_str_equal, g_free, g_free);
+}
+
+static void 
+query_set_json(GHashTable *params) 
+{
+  g_hash_table_insert(params, g_strdup("format"), g_strdup("json"));
+}
+
+static void 
+query_set_path(GHashTable *params, const char* path) 
+{
+  g_hash_table_insert(params, g_strdup("path"), g_strdup(path));
+}
+
 static SoupMessage*
-new_cloud_message(GVfsBackendRack *rack, const gchar *http_method, const gchar *custom_path, const gchar *query)
+new_cloud_message(GVfsBackendRack *rack, const gchar *http_method, const gchar *custom_path, GHashTable *query)
 {
 
   // The storage uri is the base content server
@@ -486,7 +504,7 @@ new_cloud_message(GVfsBackendRack *rack, const gchar *http_method, const gchar *
 
   if (query)
     {
-      gchar *encoded_query = soup_uri_encode(query, NULL);
+      char *encoded_query = soup_form_encode_hash(query);
       soup_uri_set_query(uri, encoded_query);
       g_free(encoded_query);
     }
@@ -527,7 +545,10 @@ new_folder_put_message(GVfsBackendRack *rack, RackPath *path)
 static SoupMessage*
 new_root_list_message(GVfsBackendRack *rack)
 {
-  SoupMessage *msg = new_cloud_message(rack, SOUP_METHOD_GET, NULL, "format=json");
+  GHashTable *query = query_new();
+  query_set_json(query);
+  SoupMessage *msg = new_cloud_message(rack, SOUP_METHOD_GET, NULL, query);
+  g_hash_table_unref(query);
   g_print("container list uri: %s\n", soup_uri_to_string(soup_message_get_uri(msg), FALSE));
 
   return msg;
@@ -575,7 +596,10 @@ new_head_container_message(GVfsBackendRack *rack, RackPath *path)
 static SoupMessage*
 new_container_list_message(GVfsBackendRack *rack, RackPath *path)
 {
-  SoupMessage *msg = new_cloud_message(rack, SOUP_METHOD_GET, path->container, "format=json");
+  GHashTable *query = query_new();
+  query_set_json(query);
+  SoupMessage *msg = new_cloud_message(rack, SOUP_METHOD_GET, path->container, query);
+  g_hash_table_unref(query);
   g_print("object list uri: %s\n", soup_uri_to_string(soup_message_get_uri(msg), FALSE));
   return msg;
 }
@@ -585,21 +609,17 @@ new_folder_list_message(GVfsBackendRack *rack, RackPath *path, gboolean json)
 {
 
   char *folder = rack_path_as_folder(path);
-  gchar *query;
+  GHashTable *query = query_new();
   if (json)
     {
-      query = g_strconcat("format=json&path=", folder, NULL);
+      query_set_json(query);
     }
-  else
-    {
-      query = g_strconcat("path=", folder, NULL);
-    }
+
+  query_set_path(query, folder);
   g_free(folder);
 
   SoupMessage *msg = new_cloud_message(rack, SOUP_METHOD_GET, path->container, query);
-
-  g_free(query);
-
+  g_hash_table_unref(query);
   return msg;
 }
 
