@@ -945,23 +945,23 @@ query_container(GVfsBackend *backend,
 
   msg = new_head_container_message(G_VFS_BACKEND_RACK(backend), path);
   ret = http_backend_send_message(G_VFS_BACKEND(backend), msg);
-  if (ret == SOUP_STATUS_NOT_FOUND)
+
+  switch(ret) 
     {
-      g_vfs_job_failed (G_VFS_JOB (job), G_IO_ERROR, G_IO_ERROR_NOT_FOUND,_("Container not found"));
-    }
-  else if (ret != SOUP_STATUS_NO_CONTENT)
-    {
-      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_FAILED, _("HTTP Error: %s"), msg->reason_phrase);
-    }
-  else
-    {
+    case SOUP_STATUS_NO_CONTENT:
       g_file_info_set_file_type(info, G_FILE_TYPE_DIRECTORY);
       g_file_info_set_display_name(info, path->container);
       content_type_to_file_info("application/directory", path->container, info);
+      g_vfs_job_succeeded(G_VFS_JOB(job));
+      break;
+    case SOUP_STATUS_NOT_FOUND:
+      g_vfs_job_failed (G_VFS_JOB (job), G_IO_ERROR, G_IO_ERROR_NOT_FOUND,_("Container not found"));
+      break;
+    default:
+      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_FAILED, _("HTTP Error: %s"), msg->reason_phrase);
     }
 
   g_object_unref(msg);
-  g_vfs_job_succeeded(G_VFS_JOB(job));
 }
 
 static void
