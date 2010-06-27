@@ -920,7 +920,7 @@ do_enumerate (GVfsBackend           *backend,
 static void date_header_to_file_info(SoupMessage *msg, GFileInfo *info)
 {
 
-  const char *date_header = soup_message_headers_get_one(msg->response_headers, "Date");
+  const char *date_header = soup_message_headers_get_one(msg->response_headers, "Last-Modified");
   if (date_header)
     {
       SoupDate *date = soup_date_new_from_string(date_header);
@@ -957,7 +957,6 @@ query_container(GVfsBackend *backend,
     {
       g_file_info_set_file_type(info, G_FILE_TYPE_DIRECTORY);
       g_file_info_set_display_name(info, path->container);
-      date_header_to_file_info(msg, info);
       content_type_to_file_info("application/directory", path->container, info);
     }
 
