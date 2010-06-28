@@ -525,7 +525,14 @@ new_object_message(GVfsBackendRack *rack, RackPath *path, const char *method)
 
   g_print("object %s uri: %s\n", method, soup_uri_to_string(soup_message_get_uri(msg), FALSE));
   return msg;
+}
 
+static SoupMessage*
+new_object_message_from_uri(GVfsBackendRack *rack, SoupURI *uri, const char *method)
+{
+  SoupMessage *msg = new_cloud_message(rack, method, NULL, NULL);
+  soup_message_set_uri(msg, uri);
+  return msg;
 }
 
 static SoupMessage*
@@ -1520,13 +1527,37 @@ try_replace (GVfsBackend *backend,
 }
 
 static void
+try_created_object (SoupSession *session, SoupMessage *create_msg, 
+		    gpointer user_data)
+{
+  GVfsJob *job = G_VFS_JOB (user_data);
+  GVfsBackendHttp *op_backend = job->backend_data;
+  GOutputStream   *stream;
+  SoupMessage	  *write_msg;
+
+  guint ret = create_msg->status_code;
+
+  if(ret != SOUP_STATUS_CREATED) {
+    g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_FAILED, _("HTTP Error: %s"), create_msg->reason_phrase);
+    return;
+  } 
+
+  write_msg = new_object_message_from_uri(G_VFS_BACKEND_RACK(op_backend), soup_message_get_uri(create_msg), SOUP_METHOD_PUT);
+
+  stream = soup_output_stream_new (op_backend->session, write_msg, -1);
+  g_object_unref (write_msg);
+
+  g_vfs_job_open_for_write_set_handle (G_VFS_JOB_OPEN_FOR_WRITE (job), stream);
+  g_vfs_job_succeeded (job);
+}
+
+static void
 try_create_tested_existence (SoupSession *session, SoupMessage *msg,
                              gpointer user_data)
 {
   GVfsJob *job = G_VFS_JOB (user_data);
   GVfsBackendHttp *op_backend = job->backend_data;
-  GOutputStream   *stream;
-  SoupMessage     *put_msg;
+  SoupMessage     *create_msg;
 
   if (SOUP_STATUS_NOT_FOUND != msg->status_code)
     {
@@ -1536,24 +1567,13 @@ try_create_tested_existence (SoupSession *session, SoupMessage *msg,
                         _("Target file already exists"));
       return;
     }
-  /* TODO: other errors */
 
-  // TODO this is stupid
-  soup_message_get_uri(msg);
-  RackPath *path = rack_path_new("/container/folder/object");
-  put_msg = new_object_message(G_VFS_BACKEND_RACK(op_backend), path, SOUP_METHOD_PUT);
-  rack_path_free(path);
-  soup_message_set_uri(put_msg, soup_message_get_uri(msg));
+  create_msg = new_object_message_from_uri(G_VFS_BACKEND_RACK(op_backend), soup_message_get_uri(msg), SOUP_METHOD_PUT);
 
-  /*
-   * Doesn't work with apache > 2.2.9
-   * soup_message_headers_append (put_msg->request_headers, "If-None-Match", "*");
-   */
-  stream = soup_output_stream_new (op_backend->session, put_msg, -1);
-  g_object_unref (put_msg);
-
-  g_vfs_job_open_for_write_set_handle (G_VFS_JOB_OPEN_FOR_WRITE (job), stream);
-  g_vfs_job_succeeded (job);
+  // Create a zero-length file before signalling success
+  soup_message_headers_append(create_msg->request_headers, "Content-Length", "0");
+  soup_message_headers_append(create_msg->request_headers, "Content-Type", "application/octet-stream");
+  http_backend_queue_message (G_VFS_BACKEND(op_backend), create_msg, try_created_object, job);
 }
 
 
