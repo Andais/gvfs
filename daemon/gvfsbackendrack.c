@@ -75,6 +75,13 @@
 #include "soup-input-stream.h"
 #include "soup-output-stream.h"
 
+#define RACK_ATTRIBUTE_CDN_ENABLED        "cdn::enabled"
+#define RACK_ATTRIBUTE_CDN_URI            "cdn::uri"
+#define RACK_ATTRIBUTE_CDN_TTL            "cdn::ttl"
+#define RACK_ATTRIBUTE_CDN_LOG_RETENTION  "cdn::log-retention"
+#define RACK_ATTRIBUTE_CDN_USER_AGENT_ACL "cdn::user-agent-acl"
+#define RACK_ATTRIBUTE_CDN_REFERRER_ACL   "cdn::referrer-acl"
+
 static GQuark id_q;
 
 struct _GVfsBackendRack
@@ -82,6 +89,7 @@ struct _GVfsBackendRack
   GVfsBackendHttp parent_instance;
 
   SoupURI *storage_uri;
+  SoupURI *cdn_uri;
   gchar *user;
   gchar *api_key;
   const gchar *auth_token;
@@ -441,8 +449,13 @@ do_mount (GVfsBackend  *backend,
       storage_uri = soup_uri_new(storage_uri_value);
       rack->storage_uri = storage_uri;
 
+      const gchar *cdn_uri_value = soup_message_headers_get_one(auth_msg->response_headers, "X-CDN-Management-Url");
+      SoupURI *cdn_uri = soup_uri_new(cdn_uri_value);
+      rack->cdn_uri = cdn_uri;
+
       const gchar *auth_token = soup_message_headers_get_one(auth_msg->response_headers, "X-Auth-Token");
       rack->auth_token = auth_token;
+      g_print("AUTH TOKEN: %s\n",auth_token);
 
       save_auth(rack, host, port);
 
@@ -512,6 +525,25 @@ new_cloud_message(GVfsBackendRack *rack, const gchar *http_method, const gchar *
   // Authenticate the message
   SoupMessage *msg = soup_message_new_from_uri(http_method, uri);
   soup_message_headers_append(msg->request_headers, "X-Auth-Token", rack->auth_token);
+
+  return msg;
+}
+
+static SoupMessage*
+new_container_cdn_message(GVfsBackendRack *rack, RackPath *path, const gchar* method) 
+{
+  SoupURI *uri = soup_uri_copy(rack->cdn_uri);
+
+  gchar *base_path = uri->path;
+  gchar *full_path = g_strconcat(base_path, "/", path->container, NULL);
+
+  soup_uri_set_path(uri, full_path);
+  g_free(full_path);
+
+  SoupMessage *msg = soup_message_new_from_uri(method, uri);
+  soup_message_headers_append(msg->request_headers, "X-Auth-Token", rack->auth_token);
+  
+  g_print("container cdn uri: %s\n", soup_uri_to_string(soup_message_get_uri(msg), FALSE));
 
   return msg;
 }
@@ -942,13 +974,90 @@ static void date_header_to_file_info(SoupMessage *msg, GFileInfo *info)
 }
 
 static void
-query_container(GVfsBackend *backend,
+query_container_cdn(GVfsBackend *backend,
                 GVfsJobQueryInfo *job,
                 GFileInfo *info,
-                RackPath *path)
+                RackPath *path,
+		GFileAttributeMatcher *matcher)
 {
   SoupMessage *msg;
   guint ret;
+  const char *cdn_enabled_header;
+  const char *cdn_uri_header;
+  const char *ttl_header;
+  const char *log_header;
+  const char *user_agent;
+  const char *referrer;
+
+  msg = new_container_cdn_message(G_VFS_BACKEND_RACK(backend), path, SOUP_METHOD_HEAD);
+  ret = http_backend_send_message(G_VFS_BACKEND(backend), msg);
+
+  switch(ret) 
+    {
+    case SOUP_STATUS_NO_CONTENT:
+
+      cdn_enabled_header = soup_message_headers_get_one(msg->response_headers, "X-CDN-Enabled");
+      if(cdn_enabled_header) 
+      {
+	gboolean cdn_enabled = !g_strcmp0(cdn_enabled_header, "True");
+	g_file_info_set_attribute_boolean(info, RACK_ATTRIBUTE_CDN_ENABLED, cdn_enabled);
+      }
+
+      cdn_uri_header = soup_message_headers_get_one(msg->response_headers, "X-CDN-URI");
+      if(cdn_uri_header)
+      {
+	g_file_info_set_attribute_string(info, RACK_ATTRIBUTE_CDN_URI, cdn_uri_header);
+      }
+
+      ttl_header = soup_message_headers_get_one(msg->response_headers, "X-TTL");
+      if(ttl_header)
+      {
+	guint32 val = (guint32) g_ascii_strtoll(ttl_header, NULL, 10);
+	g_file_info_set_attribute_uint32(info, RACK_ATTRIBUTE_CDN_TTL, val);
+      }
+
+      log_header = soup_message_headers_get_one(msg->response_headers, "X-Log-Retention");
+      if(log_header)
+      {
+	gboolean retention = !g_strcmp0(log_header, "True");
+	g_file_info_set_attribute_boolean(info, RACK_ATTRIBUTE_CDN_LOG_RETENTION, retention);
+      }
+
+      user_agent = soup_message_headers_get_one(msg->response_headers, "X-User-Agent-ACL");
+      if(user_agent)
+      {
+	g_file_info_set_attribute_string(info, RACK_ATTRIBUTE_CDN_USER_AGENT_ACL, user_agent);
+      }
+
+      referrer = soup_message_headers_get_one(msg->response_headers, "X-Referrer-ACL");
+      if(referrer)
+      {
+	g_file_info_set_attribute_string(info, RACK_ATTRIBUTE_CDN_REFERRER_ACL, referrer);
+      }
+
+      g_vfs_job_succeeded(G_VFS_JOB(job));
+      break;
+    case SOUP_STATUS_NOT_FOUND:
+      g_file_info_set_attribute_boolean(info, RACK_ATTRIBUTE_CDN_ENABLED, FALSE);
+      g_vfs_job_succeeded(G_VFS_JOB(job));
+      break;
+    default:
+      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_FAILED, _("HTTP Error: %s"), msg->reason_phrase);
+    }
+
+    g_object_unref(msg);
+}
+
+static void
+query_container(GVfsBackend *backend,
+                GVfsJobQueryInfo *job,
+                GFileInfo *info,
+                RackPath *path,
+		GFileAttributeMatcher *matcher)
+{
+  SoupMessage *msg;
+  guint ret;
+
 
   msg = new_head_container_message(G_VFS_BACKEND_RACK(backend), path);
   ret = http_backend_send_message(G_VFS_BACKEND(backend), msg);
@@ -959,7 +1068,16 @@ query_container(GVfsBackend *backend,
       g_file_info_set_file_type(info, G_FILE_TYPE_DIRECTORY);
       g_file_info_set_display_name(info, path->container);
       content_type_to_file_info("application/directory", path->container, info);
-      g_vfs_job_succeeded(G_VFS_JOB(job));
+      
+      if(g_file_attribute_matcher_matches(matcher, "cdn::*"))
+      {
+	query_container_cdn(backend, job, info, path, matcher);
+      }
+      else
+      {
+	g_vfs_job_succeeded(G_VFS_JOB(job));
+      }
+
       break;
     case SOUP_STATUS_NOT_FOUND:
       g_vfs_job_failed (G_VFS_JOB (job), G_IO_ERROR, G_IO_ERROR_NOT_FOUND,_("Container not found"));
@@ -1039,7 +1157,7 @@ do_query_info (GVfsBackend           *backend,
 
       break;
     case FILE_TYPE_CONTAINER:
-      query_container(backend, job, info, path);
+      query_container(backend, job, info, path, matcher);
       break;
     case FILE_TYPE_OBJECT:
       query_object(backend, job, info, path);
@@ -1651,6 +1769,178 @@ try_close_write (GVfsBackend *backend,
   return TRUE;
 }
 
+static gboolean
+try_query_settable_attributes (GVfsBackend *backend,
+                               GVfsJobQueryAttributes *job,
+                               const char *filename)
+{
+  GFileAttributeInfoList *list;
+  RackPath *path;
+  FileType type;
+
+  path = rack_path_new(filename);
+  type = rack_path_get_type(path);
+  list = g_file_attribute_info_list_new();
+
+  if(type == FILE_TYPE_CONTAINER)
+  {
+    g_file_attribute_info_list_add(list,
+      RACK_ATTRIBUTE_CDN_ENABLED,
+      G_FILE_ATTRIBUTE_TYPE_BOOLEAN,
+      G_FILE_ATTRIBUTE_INFO_NONE);
+
+    g_file_attribute_info_list_add(list,
+     RACK_ATTRIBUTE_CDN_TTL,
+     G_FILE_ATTRIBUTE_TYPE_UINT32,
+     G_FILE_ATTRIBUTE_INFO_NONE);
+
+    g_file_attribute_info_list_add(list,
+     RACK_ATTRIBUTE_CDN_USER_AGENT_ACL,
+     G_FILE_ATTRIBUTE_TYPE_STRING,
+     G_FILE_ATTRIBUTE_INFO_NONE);
+
+    g_file_attribute_info_list_add(list,
+     RACK_ATTRIBUTE_CDN_REFERRER_ACL,
+     G_FILE_ATTRIBUTE_TYPE_STRING,
+     G_FILE_ATTRIBUTE_INFO_NONE);
+  }
+
+  g_vfs_job_query_attributes_set_list(job, list);
+  g_vfs_job_succeeded(G_VFS_JOB(job));
+
+  g_file_attribute_info_list_unref(list);
+  rack_path_free(path);
+  return TRUE;
+}
+
+static void
+container_enable_cdn_initial(GVfsBackendRack *rack,
+                             GVfsJobSetAttribute *job,
+			     RackPath *path)
+{
+  SoupMessage *msg;
+  guint ret;
+
+  msg = new_container_cdn_message(rack, path, SOUP_METHOD_PUT);
+  ret = http_backend_send_message(G_VFS_BACKEND(rack), msg); 
+
+  switch(ret) 
+    {
+    case SOUP_STATUS_CREATED:
+    case SOUP_STATUS_ACCEPTED:
+      g_vfs_job_succeeded(G_VFS_JOB(job));
+      break;
+    case SOUP_STATUS_NOT_FOUND:	
+      g_vfs_job_failed (G_VFS_JOB (job), G_IO_ERROR, G_IO_ERROR_NOT_FOUND,_("Container not found"));
+      break;
+    default:
+      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_FAILED, _("HTTP Error: %s"), msg->reason_phrase);
+    }
+
+  g_object_unref(msg);
+}
+
+// is there something that will do this for me??
+static gboolean
+parse_boolean(const char *str)
+{
+  if(!str) return FALSE;
+  if(!g_strcmp0("TRUE", str)) return TRUE;
+  if(!g_strcmp0("True", str)) return TRUE;
+  if(!g_strcmp0("true", str)) return TRUE;
+  return FALSE;
+}
+
+static void
+do_set_attribute (GVfsBackend *backend,
+                  GVfsJobSetAttribute *job,
+                  const char *filename,
+                  const char *attribute,
+                  GFileAttributeType type,
+                  gpointer value_p,
+                  GFileQueryInfoFlags flags)
+{
+  RackPath *path; 
+  FileType file_type;
+  SoupMessage *msg;
+  gboolean matched;
+  gboolean cdn_enabled;
+
+  path = rack_path_new(filename);
+  file_type = rack_path_get_type(path);
+  matched = TRUE;
+  cdn_enabled = FALSE;
+
+  if(file_type != FILE_TYPE_CONTAINER)
+  {
+    g_vfs_job_failed (G_VFS_JOB (job), G_IO_ERROR, G_IO_ERROR_NOT_SUPPORTED,_("Operation not supported by backend"));
+    rack_path_free(path);
+    return;
+  }
+
+  msg = new_container_cdn_message(G_VFS_BACKEND_RACK(backend), path, SOUP_METHOD_POST);
+
+  if(!g_strcmp0(attribute, RACK_ATTRIBUTE_CDN_ENABLED)) 
+  {
+    cdn_enabled = parse_boolean((char*)value_p);
+    soup_message_headers_append(msg->request_headers, "X-CDN-Enabled", (cdn_enabled? "True" : "False"));
+  }
+  else if(!g_strcmp0(attribute, RACK_ATTRIBUTE_CDN_TTL))
+  {
+    soup_message_headers_append(msg->request_headers, "X-TTL", (char*)value_p);
+  }
+  else if(!g_strcmp0(attribute, RACK_ATTRIBUTE_CDN_LOG_RETENTION))
+  {
+    gboolean retention = parse_boolean((char*)value_p);
+    soup_message_headers_append(msg->request_headers , "X-Log-Retention", (retention? "True" : "False"));
+  }
+  else if(!g_strcmp0(attribute, RACK_ATTRIBUTE_CDN_USER_AGENT_ACL))
+  {
+    soup_message_headers_append(msg->request_headers, "X-User-Agent-ACL", (char*) value_p); 
+  }
+  else if(!g_strcmp0(attribute, RACK_ATTRIBUTE_CDN_REFERRER_ACL))
+  {
+    soup_message_headers_append(msg->request_headers, "X-Referrer-ACL", (char*) value_p);
+  }
+  else
+  {
+    matched = FALSE;
+  }
+
+  if(matched) 
+  {
+    guint ret = http_backend_send_message(backend, msg); 
+    switch(ret) 
+      {
+      case SOUP_STATUS_ACCEPTED:
+	g_vfs_job_succeeded(G_VFS_JOB(job));
+	break;
+      case SOUP_STATUS_NOT_FOUND:
+	if(cdn_enabled) 
+	{
+	  // The first time the container is CDN-enabled it must be added with a 
+	  // PUT request. Subsequent enable/disable operations can be done with
+	  // a POST like any other attribute
+	  container_enable_cdn_initial(G_VFS_BACKEND_RACK(backend), job, path);
+	}
+	else
+	{
+	  g_vfs_job_failed (G_VFS_JOB (job), G_IO_ERROR, G_IO_ERROR_NOT_FOUND,_("Container not found"));
+	}
+	break;
+      default:
+	g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_FAILED, _("HTTP Error: %s"), msg->reason_phrase);
+      }
+  }
+  else
+  {
+    g_vfs_job_failed (G_VFS_JOB (job), G_IO_ERROR, G_IO_ERROR_NOT_SUPPORTED,_("Attribute not supported"));
+  }
+  
+  g_object_unref(msg);
+  rack_path_free(path);
+}
+
 static void
 g_vfs_backend_rack_class_init (GVfsBackendRackClass *klass)
 {
@@ -1677,4 +1967,6 @@ g_vfs_backend_rack_class_init (GVfsBackendRackClass *klass)
   backend_class->set_display_name = NULL; // Renaming isn't supported
   backend_class->try_mount = NULL;
   backend_class->try_query_info = NULL;
+  backend_class->try_query_settable_attributes = try_query_settable_attributes;
+  backend_class->set_attribute = do_set_attribute;
 }
