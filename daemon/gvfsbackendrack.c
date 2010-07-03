@@ -603,17 +603,6 @@ new_create_container_message(GVfsBackendRack *rack, RackPath *path)
 }
 
 static SoupMessage*
-new_object_read_message(GVfsBackendRack *rack, RackPath *path)
-{
-  char *object = rack_path_as_object(path);
-  SoupMessage *msg = new_cloud_message(rack, SOUP_METHOD_GET, object, NULL);
-  g_free(object);
-  g_print("read objecturi: %s\n", soup_uri_to_string(soup_message_get_uri(msg), FALSE));
-
-  return msg;
-}
-
-static SoupMessage*
 new_delete_container_message(GVfsBackendRack *rack, RackPath *path)
 {
   SoupMessage *msg = new_cloud_message(rack, SOUP_METHOD_DELETE, path->container, NULL);
@@ -1378,41 +1367,61 @@ open_for_read_ready (GObject      *source_object,
   g_vfs_job_succeeded (job);
 }
 
-
-static gboolean
-try_open_for_read (GVfsBackend        *backend,
-                   GVfsJobOpenForRead *job,
-                   const char         *filename)
+static void
+try_tested_object (SoupSession *session, SoupMessage *head_msg,
+                   gpointer user_data)
 {
-  GVfsBackendHttp *op_backend;
   GInputStream    *stream;
-  SoupMessage     *msg;
+  SoupMessage     *get_msg;
+  GVfsJob *job = G_VFS_JOB (user_data);
+  GVfsBackendHttp *op_backend = job->backend_data;
 
-  RackPath *path = rack_path_new(filename);
-  FileType type = rack_path_get_type(path);
-  if (type != FILE_TYPE_OBJECT)
-    {
-      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_NOT_SUPPORTED, _("Can only open objects"));
-      rack_path_free(path);
-      return FALSE;
-    }
+  const char *content_type = soup_message_headers_get_one(head_msg->response_headers, "Content-Type");
+  if(!g_strcmp0(content_type, "application/directory"))
+  {
+    g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_IS_DIRECTORY, _("Can't open directory"));
+    return;
+  }
 
-  g_print("[try_open_for_read] %s\n", filename);
+  get_msg = new_object_message_from_uri(G_VFS_BACKEND_RACK(op_backend), soup_message_get_uri(head_msg), SOUP_METHOD_GET);
 
-  op_backend = G_VFS_BACKEND_HTTP (backend);
-  msg = new_object_read_message(G_VFS_BACKEND_RACK(backend), path);
-  rack_path_free(path);
+  soup_message_body_set_accumulate (get_msg->response_body, FALSE);
 
-  soup_message_body_set_accumulate (msg->response_body, FALSE);
-
-  stream = soup_input_stream_new (op_backend->session_async, msg);
-  g_object_unref (msg);
+  stream = soup_input_stream_new (op_backend->session_async, get_msg);
 
   soup_input_stream_send_async (stream,
                                 G_PRIORITY_DEFAULT,
                                 G_VFS_JOB (job)->cancellable,
                                 open_for_read_ready,
                                 job);
+}
+
+static gboolean
+try_open_for_read (GVfsBackend        *backend,
+                   GVfsJobOpenForRead *job,
+                   const char         *filename)
+{
+  RackPath *path;
+  FileType type;
+  SoupMessage *msg;
+
+  path = rack_path_new(filename);
+  type = rack_path_get_type(path);
+
+  if (type != FILE_TYPE_OBJECT)
+    {
+      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_IS_DIRECTORY, _("Can't open directory"));
+      rack_path_free(path);
+      return TRUE;
+    }
+
+  msg = new_object_message(G_VFS_BACKEND_RACK(backend), path, SOUP_METHOD_HEAD);
+
+  g_vfs_job_set_backend_data (G_VFS_JOB (job), backend, NULL);
+  http_backend_queue_message (G_VFS_BACKEND(backend), msg, try_tested_object, job);
+
+  rack_path_free(path);
+
   return TRUE;
 }
 
