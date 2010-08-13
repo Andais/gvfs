@@ -157,17 +157,18 @@ static RackPath* rack_path_new(const char *filename)
   for (i = 0; split[i] != NULL; i++)
     {
       char *current = split[i];
+      char *encoded = soup_uri_encode(current, NULL);
       if (!g_strcmp0(current,""))
         {
           continue;
         }
       if (rack_path->container == NULL)
         {
-          rack_path->container = g_strdup(current);
+          rack_path->container = encoded;
         }
       else if (split[i+1] == NULL)
         {
-          rack_path->object = g_strdup(current);
+          rack_path->object = encoded;
         }
       else
         {
@@ -175,7 +176,8 @@ static RackPath* rack_path_new(const char *filename)
             {
               g_string_append_c(folder, '/');
             }
-          g_string_append(folder, current);
+          g_string_append(folder, encoded);
+	  g_free(encoded);
         }
     }
   g_strfreev(split);
@@ -509,11 +511,9 @@ new_cloud_message(GVfsBackendRack *rack, const gchar *http_method, const gchar *
   SoupURI *uri = soup_uri_copy(rack->storage_uri);
   gchar *base_path = uri->path;
   gchar *full_path = g_strconcat(base_path, "/", custom_path, NULL);
-  gchar *encoded_path = soup_uri_encode(full_path, NULL);
-  g_free(full_path);
 
-  soup_uri_set_path(uri, encoded_path);
-  g_free(encoded_path);
+  soup_uri_set_path(uri, full_path);
+  g_free(full_path);
 
   if (query)
     {
@@ -637,14 +637,17 @@ new_folder_list_message(GVfsBackendRack *rack, RackPath *path, gboolean json)
 {
 
   char *folder = rack_path_as_folder(path);
+  char *decoded_folder = soup_uri_decode(folder);
+  g_free(folder);
+
   GHashTable *query = query_new();
+  query_set_path(query, decoded_folder); 
+  g_free(decoded_folder);
+
   if (json)
     {
       query_set_json(query);
     }
-
-  query_set_path(query, folder);
-  g_free(folder);
 
   SoupMessage *msg = new_cloud_message(rack, SOUP_METHOD_GET, path->container, query);
   g_hash_table_unref(query);
@@ -830,7 +833,9 @@ static gboolean enumerate_folder(GVfsBackendRack *rack,
                                  const char *data,
                                  gsize len)
 {
-  char *folder = rack_path_as_folder(path);
+  char *encoded_folder = rack_path_as_folder(path);
+  char *folder = soup_uri_decode(encoded_folder);
+  g_free(encoded_folder);
   gsize folder_len = strlen(folder);
   JsonParser *parser = json_parser_new();
   gboolean ret;
@@ -1055,8 +1060,10 @@ query_container(GVfsBackend *backend,
     {
     case SOUP_STATUS_NO_CONTENT:
       g_file_info_set_file_type(info, G_FILE_TYPE_DIRECTORY);
-      g_file_info_set_display_name(info, path->container);
       content_type_to_file_info("application/directory", path->container, info);
+      char *decoded = soup_uri_decode(path->container);
+      g_file_info_set_name(info, decoded);
+      g_free(decoded);
       
       if(g_file_attribute_matcher_matches(matcher, "cdn::*"))
       {
@@ -1090,9 +1097,9 @@ query_object(GVfsBackend *backend,
   goffset content_length;
 
   msg = new_object_message(G_VFS_BACKEND_RACK(backend), path, SOUP_METHOD_HEAD);
-  g_file_info_set_display_name(info, path->object);
-  g_file_info_set_edit_name(info, path->object);
-  g_file_info_set_name(info, path->object);
+  char *decoded = soup_uri_decode(path->object);
+  g_file_info_set_name(info, decoded);
+  g_free(decoded);
   ret = http_backend_send_message(backend, msg);
   if (ret == SOUP_STATUS_NOT_FOUND)
     {
@@ -1150,6 +1157,9 @@ do_query_info (GVfsBackend           *backend,
       break;
     case FILE_TYPE_OBJECT:
       query_object(backend, job, info, path);
+      break;
+    default:
+      g_assert_not_reached();
     }
 
   rack_path_free(path);
@@ -1631,21 +1641,6 @@ try_replace (GVfsBackend *backend,
                         G_IO_ERROR,
                         G_IO_ERROR_CANT_CREATE_BACKUP,
                         _("Backup file creation failed"));
-      return TRUE;
-    }
-
-  if (etag)
-    {
-      /*      SoupMessage *msg;
-
-            msg = soup_message_new_from_uri (SOUP_METHOD_HEAD, uri);
-            soup_uri_free (uri);
-            soup_message_headers_append (msg->request_headers, "If-Match", etag);
-
-            g_vfs_job_set_backend_data (G_VFS_JOB (job), op_backend, NULL);
-            soup_session_queue_message (op_backend->session, msg,
-                                        try_replace_checked_etag, job);
-      				*/
       return TRUE;
     }
 
