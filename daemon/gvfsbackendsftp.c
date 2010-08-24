@@ -851,6 +851,7 @@ handle_login (GVfsBackend *backend,
   gboolean password_in_keyring = FALSE;
   const gchar *authtype = NULL;
   gchar *object = NULL;
+  char *prompt;
   
   if (op_backend->client_vendor == SFTP_VENDOR_SSH) 
     prompt_fd = stderr_fd;
@@ -953,11 +954,23 @@ handle_login (GVfsBackend *backend,
 
               g_free (new_password);
               
+              if (op_backend->user_specified)
+                if (strcmp (authtype, "publickey") == 0)
+                  /* Translators: the first %s is the username, the second the host name */
+                  prompt = g_strdup_printf (_("Enter passphrase for key for ssh as %s on %s"), op_backend->user, op_backend->host);
+                else
+                  /* Translators: the first %s is the username, the second the host name */
+                  prompt = g_strdup_printf (_("Enter password for ssh as %s on %s"), op_backend->user, op_backend->host);
+              else
+                if (strcmp (authtype, "publickey") == 0)
+                  /* Translators: %s is the hostname */
+                  prompt = g_strdup_printf (_("Enter passphrase for key for ssh on %s"), op_backend->host);
+                else
+                  /* Translators: %s is the hostname */
+                  prompt = g_strdup_printf (_("Enter password for ssh on %s"), op_backend->host);
+
               if (!g_mount_source_ask_password (mount_source,
-                                                strcmp (authtype, "publickey") == 0 ?
-                                                _("Enter passphrase for key")
-                                                :
-                                                _("Enter password"),
+                                                prompt,
                                                 op_backend->user,
                                                 NULL,
                                                 flags,
@@ -975,6 +988,7 @@ handle_login (GVfsBackend *backend,
                   ret_val = FALSE;
                   break;
                 }
+                g_free (prompt);
             }
 	  else if (op_backend->tmp_password)
 	    {
