@@ -1303,13 +1303,13 @@ delete_object(GVfsBackend *backend,
         {
           g_vfs_job_succeeded(G_VFS_JOB(job));
         }
+      g_object_unref(msg);
     }
   else
     {
       g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_NOT_EMPTY, _("Not empty"));
     }
 
-  g_object_unref(msg);
 }
 
 static void
