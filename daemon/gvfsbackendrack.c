@@ -1148,6 +1148,7 @@ do_query_info (GVfsBackend           *backend,
       g_print("[do_query_info] FILE_TYPE_ROOT\n");
       g_file_info_set_file_type(info, G_FILE_TYPE_DIRECTORY);
       g_file_info_set_display_name(info, "/");
+      content_type_to_file_info("application/directory", "/", info);
 
       g_vfs_job_succeeded(G_VFS_JOB(job));
 
