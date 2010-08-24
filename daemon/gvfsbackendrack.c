@@ -408,7 +408,6 @@ do_mount (GVfsBackend  *backend,
   auth_uri = g_mount_spec_to_rack_auth_uri(mount_spec);
   port = auth_uri->port;
   host = auth_uri->host;
-  g_print("host: %s\n", host);
 
   session = G_VFS_BACKEND_HTTP(backend)->session;
 
@@ -457,7 +456,6 @@ do_mount (GVfsBackend  *backend,
 
       const gchar *auth_token = soup_message_headers_get_one(auth_msg->response_headers, "X-Auth-Token");
       rack->auth_token = auth_token;
-      g_print("AUTH TOKEN: %s\n",auth_token);
 
       save_auth(rack, host, port);
 
@@ -543,8 +541,6 @@ new_container_cdn_message(GVfsBackendRack *rack, RackPath *path, const gchar* me
   SoupMessage *msg = soup_message_new_from_uri(method, uri);
   soup_message_headers_append(msg->request_headers, "X-Auth-Token", rack->auth_token);
   
-  g_print("container cdn uri: %s\n", soup_uri_to_string(soup_message_get_uri(msg), FALSE));
-
   return msg;
 }
 
@@ -555,7 +551,6 @@ new_object_message(GVfsBackendRack *rack, RackPath *path, const char *method)
   SoupMessage *msg = new_cloud_message(rack, method, object, NULL);
   g_free(object);
 
-  g_print("object %s uri: %s\n", method, soup_uri_to_string(soup_message_get_uri(msg), FALSE));
   return msg;
 }
 
@@ -577,7 +572,6 @@ new_folder_put_message(GVfsBackendRack *rack, RackPath *path)
   soup_message_headers_set_content_length(msg->request_headers, 0);
   soup_message_headers_set_content_type(msg->request_headers, "application/directory", NULL);
 
-  g_print("folder put uri: %s\n", soup_uri_to_string(soup_message_get_uri(msg), FALSE));
   return msg;
 }
 
@@ -588,7 +582,6 @@ new_root_list_message(GVfsBackendRack *rack)
   query_set_json(query);
   SoupMessage *msg = new_cloud_message(rack, SOUP_METHOD_GET, NULL, query);
   g_hash_table_unref(query);
-  g_print("container list uri: %s\n", soup_uri_to_string(soup_message_get_uri(msg), FALSE));
 
   return msg;
 }
@@ -597,7 +590,6 @@ static SoupMessage*
 new_create_container_message(GVfsBackendRack *rack, RackPath *path)
 {
   SoupMessage *msg = new_cloud_message(rack, SOUP_METHOD_PUT, path->container, NULL);
-  g_print("mkcontainer uri: %s\n", soup_uri_to_string(soup_message_get_uri(msg), FALSE));
 
   return msg;
 }
@@ -606,7 +598,6 @@ static SoupMessage*
 new_delete_container_message(GVfsBackendRack *rack, RackPath *path)
 {
   SoupMessage *msg = new_cloud_message(rack, SOUP_METHOD_DELETE, path->container, NULL);
-  g_print("rmcontainer uri: %s\n", soup_uri_to_string(soup_message_get_uri(msg), FALSE));
 
   return msg;
 }
@@ -615,7 +606,6 @@ static SoupMessage*
 new_head_container_message(GVfsBackendRack *rack, RackPath *path)
 {
   SoupMessage *msg = new_cloud_message(rack, SOUP_METHOD_HEAD, path->container, NULL);
-  g_print("headcontainer uri: %s\n", soup_uri_to_string(soup_message_get_uri(msg), FALSE));
 
   return msg;
 }
@@ -628,7 +618,6 @@ new_container_list_message(GVfsBackendRack *rack, RackPath *path)
   query_set_json(query);
   SoupMessage *msg = new_cloud_message(rack, SOUP_METHOD_GET, path->container, query);
   g_hash_table_unref(query);
-  g_print("object list uri: %s\n", soup_uri_to_string(soup_message_get_uri(msg), FALSE));
   return msg;
 }
 
@@ -863,7 +852,6 @@ static gboolean enumerate_folder(GVfsBackendRack *rack,
       GFileInfo *info = g_file_info_new();
 
       const gchar *name = json_object_get_string_member(object, "name");
-      g_print("[folder_enumerate] name: %s\n", name);
       if (strlen(name) > folder_len)
         {
           name += folder_len + 1;
@@ -1137,7 +1125,6 @@ do_query_info (GVfsBackend           *backend,
                GFileAttributeMatcher *matcher)
 {
 
-  g_print("rack:do_query_info filename: %s\n", filename);
   RackPath *path = rack_path_new(filename);
   FileType type = rack_path_get_type(path);
 
@@ -1145,7 +1132,6 @@ do_query_info (GVfsBackend           *backend,
     {
     case FILE_TYPE_ROOT:
       // don't really have any info for the root
-      g_print("[do_query_info] FILE_TYPE_ROOT\n");
       g_file_info_set_file_type(info, G_FILE_TYPE_DIRECTORY);
       g_file_info_set_display_name(info, "/");
       content_type_to_file_info("application/directory", "/", info);
@@ -1479,8 +1465,6 @@ try_read (GVfsBackend        *backend,
 {
   GInputStream    *stream;
 
-  g_print("[try_for_read]\n");
-
   stream = G_INPUT_STREAM (handle);
 
   g_input_stream_read_async (stream,
@@ -1546,7 +1530,6 @@ write_ready (GObject      *source_object,
              GAsyncResult *result,
              gpointer      user_data)
 {
-  g_print("[write_ready]\n");
   GOutputStream *stream;
   GVfsJob       *job;
   GError        *error;
@@ -1581,7 +1564,6 @@ try_write (GVfsBackend *backend,
            char *buffer,
            gsize buffer_size)
 {
-  g_print("[try_write]\n");
   GOutputStream   *stream;
 
   stream = G_OUTPUT_STREAM (handle);
@@ -1627,7 +1609,6 @@ try_replace (GVfsBackend *backend,
              gboolean make_backup,
              GFileCreateFlags flags)
 {
-  g_print("[try_replace]\n");
   GVfsBackendHttp *op_backend;
 
   /* TODO: if SoupOutputStream supported chunked requests, we could
@@ -1706,7 +1687,6 @@ try_create (GVfsBackend *backend,
             const char *filename,
             GFileCreateFlags flags)
 {
-  g_printf("[try_create]\n");
   SoupMessage *msg;
 
   /* TODO: if SoupOutputStream supported chunked requests, we could
