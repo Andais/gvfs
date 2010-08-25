@@ -75,6 +75,10 @@
 #include "soup-input-stream.h"
 #include "soup-output-stream.h"
 
+#define RACK_PROTOCOL_SCHEME "rack"
+#define RACK_PROTOCOL_DISPLAY_NAME "Cloud Files"
+#define RACK_KEYRING_REALM "Cloud Files"
+
 #define RACK_ATTRIBUTE_CDN_ENABLED        "cdn::enabled"
 #define RACK_ATTRIBUTE_CDN_URI            "cdn::uri"
 #define RACK_ATTRIBUTE_CDN_TTL            "cdn::ttl"
@@ -97,11 +101,6 @@ struct _GVfsBackendRack
   int port;
 
   GPasswordSave password_save;
-
-  gboolean user_specified;
-  gboolean user_specified_in_uri;
-  char *tmp_password;
-
 };
 
 G_DEFINE_TYPE (GVfsBackendRack, g_vfs_backend_rack, G_VFS_TYPE_BACKEND_HTTP)
@@ -283,103 +282,66 @@ g_mount_spec_to_rack_auth_uri (GMountSpec *spec)
   return uri;
 }
 
-static gboolean authenticate(GVfsBackendRack *rack,
-                             const gchar *host,
-                             const gchar *username, 
-                             int port,
-                             GMountSource *mount_source,
-                             SoupMessage *auth_msg)
+static gboolean get_credentials(GVfsBackendRack *rack,
+                                SoupURI *uri,
+                                GMountSource *mount_source,
+                                gchar **username, 
+                                gchar **password)
 {
-  gboolean res;
+  GAskPasswordFlags pass_flags;
+  gchar *prompt;
   gboolean aborted;
-  gchar* new_username;
-  gchar* new_password;
-  gboolean obtained;
+  gchar *new_username;
 
-  obtained = FALSE;
-  res = FALSE;
-  new_username = NULL;
-  new_password = NULL;
-
-  if (g_vfs_keyring_is_available ())
+  if (g_vfs_keyring_is_available () &&
+      g_vfs_keyring_lookup_password (*username,
+                                     uri->host,
+                                     NULL,
+                                     RACK_PROTOCOL_SCHEME,
+                                     RACK_KEYRING_REALM,
+                                     "basic",
+                                     uri->port,
+                                     username,
+                                     NULL,
+                                     password))
     {
-      obtained = g_vfs_keyring_lookup_password (username,
-                                                host,
-                                                NULL,
-                                                "rack",
-                                                "Cloud Files", //realm,
-                                                "basic",
-                                                port,
-                                                &new_username,
-                                                NULL,
-                                                &new_password);
+      return TRUE;
     }
 
   // No info in the keyring, so ask the user interactively
-  if (!obtained)
+  pass_flags = G_ASK_PASSWORD_NEED_PASSWORD;
+  if (!*username)
     {
-      GAskPasswordFlags pass_flags;
-      gchar *prompt;
-
-      pass_flags = G_ASK_PASSWORD_NEED_PASSWORD;
-      if (!username)
-        {
-          pass_flags |= G_ASK_PASSWORD_NEED_USERNAME;
-        }
-      if (g_vfs_keyring_is_available())
-        {
-          pass_flags |= G_ASK_PASSWORD_SAVING_SUPPORTED;
-        }
-
-      prompt = g_strdup("Enter password for Cloud Files: ");
-
-      res = g_mount_source_ask_password (mount_source,
-                                         prompt,
-                                         username,
-                                         NULL,
-                                         pass_flags,
-                                         &aborted,
-                                         &new_password,
-                                         &new_username,
-                                         NULL,
-                                         NULL,
-                                         &rack->password_save);
-      obtained = res && (!aborted);
-      g_free(prompt);
+      pass_flags |= G_ASK_PASSWORD_NEED_USERNAME;
+    }
+  if (g_vfs_keyring_is_available())
+    {
+      pass_flags |= G_ASK_PASSWORD_SAVING_SUPPORTED;
+    }
+  
+  prompt = g_strdup_printf("Enter password for %s: ", RACK_PROTOCOL_DISPLAY_NAME);
+  new_username = NULL;
+  
+  g_mount_source_ask_password (mount_source,
+                               prompt,
+                               *username,
+                               NULL,
+                               pass_flags,
+                               &aborted,
+                               password,
+                               &new_username,
+                               NULL,
+                               NULL,
+                               &rack->password_save);
+  g_free(prompt);
+  
+  if(new_username)
+    {
+      *username = new_username;
     }
 
-  if (obtained)
-    {
-      if (username)
-        {
-          rack->user = g_strdup(username);
-        }
-      else
-        {
-          rack->user = g_strdup(new_username);
-        }
-      rack->api_key = g_strdup(new_password);
-    }
-
-  return obtained;
+  return !aborted;
 }
-
-static void save_auth(GVfsBackendRack *rack,
-                      const gchar *host,
-                      int port)
-{
-
-  g_vfs_keyring_save_password(rack->user,
-                              host,
-                              NULL,
-                              "rack",
-                              "Cloud Files",
-                              "basic",
-                              port,
-                              rack->api_key,
-                              rack->password_save);
-}
-
 
 static void
 do_mount (GVfsBackend  *backend,
@@ -390,86 +352,84 @@ do_mount (GVfsBackend  *backend,
 {
 
   GVfsBackendRack *rack;
-  const char *host;
-  const char *user;
-  int port;
   SoupURI *auth_uri;
-  SoupSession *session;
   SoupMessage *auth_msg;
-  SoupMessageHeaders *auth_msg_headers;
   guint auth_return;
-  gboolean auth_success;
-
-  G_VFS_BACKEND_RACK(backend)->password_save = G_PASSWORD_SAVE_NEVER;
+  const gchar *storage_uri, *cdn_uri, *auth_token;
+  gchar *display_name;
 
   rack = G_VFS_BACKEND_RACK(backend);
-  user = g_mount_spec_get (mount_spec, "user");
+  rack->password_save = G_PASSWORD_SAVE_NEVER;
+  rack->user = g_strdup(g_mount_spec_get (mount_spec, "user"));
 
   auth_uri = g_mount_spec_to_rack_auth_uri(mount_spec);
-  port = auth_uri->port;
-  host = auth_uri->host;
 
-  session = G_VFS_BACKEND_HTTP(backend)->session;
-
+  // ask the user for auth credentials
+  if (!get_credentials(rack, auth_uri, mount_source, &rack->user, &rack->api_key))
+    {
+      g_vfs_job_failed (G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_FAILED_HANDLED,
+                        _("Password dialog cancelled"));
+      return;
+    }
+  
+  // got credentials from the user. now try them against the server
   auth_msg = soup_message_new_from_uri(SOUP_METHOD_GET, auth_uri);
-  auth_msg_headers = auth_msg->request_headers;
-
-  if (!authenticate(rack, host, user, port, mount_source, auth_msg))
-    {
-      /*g_set_error_literal (error, G_IO_ERROR,
-        aborted ? G_IO_ERROR_FAILED_HANDLED : G_IO_ERROR_PERMISSION_DENIED,
-        _("Password dialog cancelled"));*/
-
-      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_FAILED, _("Authentication cancelled"));
-      return;
-    }
-
-  if (!rack->user || !rack->api_key)
-    {
-      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_FAILED, _("Need username and password"));
-      return;
-    }
-  soup_message_headers_append(auth_msg_headers, "X-Auth-User", rack->user);
-  soup_message_headers_append(auth_msg_headers, "X-Auth-Key", rack->api_key);
+  soup_message_headers_append(auth_msg->request_headers, "X-Auth-User", rack->user);
+  soup_message_headers_append(auth_msg->request_headers, "X-Auth-Key", rack->api_key);
   auth_return = http_backend_send_message(backend, auth_msg);
-  auth_success = SOUP_STATUS_IS_SUCCESSFUL(auth_return);
 
-  if (!auth_success)
+  if (auth_return == SOUP_STATUS_UNAUTHORIZED)
     {
-      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_FAILED, _("HTTP Error: %s"), auth_msg->reason_phrase);
+      g_vfs_job_failed (G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_PERMISSION_DENIED,
+                        _("Permission denied"));
+      return;
+    }
+  else if (auth_return != SOUP_STATUS_NO_CONTENT)
+    {
+      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_FAILED, 
+                       _("HTTP Error: %s"), auth_msg->reason_phrase);
       return;
     }
 
-  if (auth_return == SOUP_STATUS_NO_CONTENT)
+  // successful auth against server. extract the info we need from the response
+  storage_uri = soup_message_headers_get_one(auth_msg->response_headers, "X-Storage-Url");
+  cdn_uri = soup_message_headers_get_one(auth_msg->response_headers, "X-CDN-Management-Url");
+  auth_token = soup_message_headers_get_one(auth_msg->response_headers, "X-Auth-Token");
+
+  if (!storage_uri || !cdn_uri || !auth_token)
     {
-      // auth was successful
-      GVfsBackendRack* rack = G_VFS_BACKEND_RACK(backend);
-      const gchar *storage_uri_value;
-      storage_uri_value = soup_message_headers_get_one(auth_msg->response_headers, "X-Storage-Url");
-      SoupURI *storage_uri;
-      storage_uri = soup_uri_new(storage_uri_value);
-      rack->storage_uri = storage_uri;
-
-      const gchar *cdn_uri_value = soup_message_headers_get_one(auth_msg->response_headers, "X-CDN-Management-Url");
-      SoupURI *cdn_uri = soup_uri_new(cdn_uri_value);
-      rack->cdn_uri = cdn_uri;
-
-      const gchar *auth_token = soup_message_headers_get_one(auth_msg->response_headers, "X-Auth-Token");
-      rack->auth_token = auth_token;
-
-      save_auth(rack, host, port);
-
-    }
-  else
-    {
-      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_FAILED, _("Authentication failed"));
+      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_FAILED, 
+                       _("Protocol error"));
       return;
     }
 
-  const gchar *display_name = g_strdup_printf("Cloud Files on %s", host);
+  rack->storage_uri = soup_uri_new(storage_uri);
+  rack->cdn_uri = soup_uri_new(cdn_uri);
+  rack->auth_token = g_strdup(auth_token);
+
+  // save credentials for next time if the user requested it
+  g_vfs_keyring_save_password(rack->user,
+                              auth_uri->host,
+                              NULL,
+                              RACK_PROTOCOL_SCHEME,
+                              RACK_KEYRING_REALM,
+                              "basic",
+                              auth_uri->port,
+                              rack->api_key,
+                              rack->password_save);
+
+  // set the return value
+  display_name = g_strdup_printf("%s on %s@%s", 
+                                 RACK_PROTOCOL_DISPLAY_NAME, 
+                                 rack->user, 
+                                 auth_uri->host);
   g_vfs_backend_set_display_name(backend, display_name);
+  g_free(display_name);
   g_vfs_backend_set_mount_spec (backend, mount_spec);
   g_vfs_backend_set_icon_name (backend, "folder-remote");
+
+  g_object_unref(auth_msg);
+  soup_uri_free(auth_uri);
 
   g_vfs_job_succeeded(G_VFS_JOB(job));
 }
