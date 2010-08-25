@@ -374,7 +374,7 @@ do_mount (GVfsBackend  *backend,
   if (!storage_uri || !cdn_uri || !auth_token)
     {
       g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_FAILED, 
-                       _("Protocol error"));
+                       _("Response invalid"));
       return;
     }
 
@@ -593,7 +593,7 @@ static gboolean enumerate_root(GVfsBackendRack *rack,
   ret = json_parser_load_from_data(parser, data, len, &err);
   if (!ret)
     {
-      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_FAILED, _("Unable to parse JSON response: %s"), err->message);
+      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_FAILED, _("Could not parse response: %s"), err->message);
       g_error_free(err);
       return FALSE;
     }
@@ -717,7 +717,7 @@ static gboolean enumerate_container(GVfsBackendRack *rack,
   ret = json_parser_load_from_data(parser, data, len, &err);
   if (!ret)
     {
-      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_FAILED, _("Unable to parse JSON response: %s"), err->message);
+      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_FAILED, _("Could not parse response: %s"), err->message);
       g_error_free(err);
       return FALSE;
     }
@@ -768,7 +768,7 @@ static gboolean enumerate_folder(GVfsBackendRack *rack,
   ret = json_parser_load_from_data(parser, data, len, &err);
   if (!ret)
     {
-      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_FAILED, _("Unable to parse JSON response: %s"), err->message);
+      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_FAILED, _("Could not parse response: %s"), err->message);
       g_error_free(err);
       g_free(folder);
       return FALSE;
@@ -999,7 +999,7 @@ query_container(GVfsBackend *backend,
 
       break;
     case SOUP_STATUS_NOT_FOUND:
-      g_vfs_job_failed (G_VFS_JOB (job), G_IO_ERROR, G_IO_ERROR_NOT_FOUND,_("Container not found"));
+      g_vfs_job_failed (G_VFS_JOB (job), G_IO_ERROR, G_IO_ERROR_NOT_FOUND,_("No such file or directory"));
       break;
     default:
       g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_FAILED, _("HTTP Error: %s"), msg->reason_phrase);
@@ -1026,7 +1026,7 @@ query_object(GVfsBackend *backend,
   ret = http_backend_send_message(backend, msg);
   if (ret == SOUP_STATUS_NOT_FOUND)
     {
-      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_NOT_FOUND, _("Not Found"));
+      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_NOT_FOUND, _("No such file or directory"));
     }
   else if (!SOUP_STATUS_IS_SUCCESSFUL(ret))
     {
@@ -1103,7 +1103,7 @@ make_container(GVfsBackend *backend,
     }
   else if (ret == SOUP_STATUS_ACCEPTED)
     {
-      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_EXISTS, _("Container exists"));
+      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_EXISTS, _("Target file exists"));
     }
   else
     {
@@ -1188,11 +1188,11 @@ delete_container(GVfsBackend *backend,
     }
   else if (ret == SOUP_STATUS_NOT_FOUND)
     {
-      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_NOT_FOUND, _("Not found"));
+      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_NOT_FOUND, _("No such file or directory"));
     }
   else if (ret == SOUP_STATUS_CONFLICT)
     {
-      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_NOT_EMPTY, _("Not empty"));
+      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_NOT_EMPTY, _("Directory not empty"));
     }
 
   g_object_unref(msg);
@@ -1215,7 +1215,7 @@ delete_object(GVfsBackend *backend,
       ret = http_backend_send_message(backend, msg);
       if (ret == SOUP_STATUS_NOT_FOUND)
         {
-          g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_NOT_FOUND, _("Not found"));
+          g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_NOT_FOUND, _("No such file or directory"));
         }
       else if (ret != SOUP_STATUS_NO_CONTENT)
         {
@@ -1229,7 +1229,7 @@ delete_object(GVfsBackend *backend,
     }
   else
     {
-      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_NOT_EMPTY, _("Not empty"));
+      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_NOT_EMPTY, _("Directory not empty"));
     }
 
 }
@@ -1248,7 +1248,7 @@ do_delete (GVfsBackend   *backend,
   switch (type)
     {
     case FILE_TYPE_ROOT:
-      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_NOT_SUPPORTED, _("Cannot delete root"));
+      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_NOT_SUPPORTED, _("Operation unsupported"));
       rack_path_free(path);
       return;
     case FILE_TYPE_CONTAINER:
@@ -1311,7 +1311,7 @@ try_tested_object (SoupSession *session, SoupMessage *head_msg,
   const char *content_type = soup_message_headers_get_one(head_msg->response_headers, "Content-Type");
   if(!g_strcmp0(content_type, "application/directory"))
     {
-      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_IS_DIRECTORY, _("Can't open directory"));
+      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_IS_DIRECTORY, _("File is directory"));
       return;
     }
 
@@ -1342,7 +1342,7 @@ try_open_for_read (GVfsBackend        *backend,
 
   if (type != FILE_TYPE_OBJECT)
     {
-      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_IS_DIRECTORY, _("Can't open directory"));
+      g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_IS_DIRECTORY, _("File is directory"));
       rack_path_free(path);
       return TRUE;
     }
@@ -1603,7 +1603,7 @@ try_create_tested_existence (SoupSession *session, SoupMessage *msg,
       g_vfs_job_failed (job,
                         G_IO_ERROR,
                         G_IO_ERROR_EXISTS,
-                        _("Target file already exists"));
+                        _("Target file exists"));
       return;
     }
 
@@ -1751,7 +1751,7 @@ container_enable_cdn_initial(GVfsBackendRack *rack,
       g_vfs_job_succeeded(G_VFS_JOB(job));
       break;
     case SOUP_STATUS_NOT_FOUND: 
-      g_vfs_job_failed (G_VFS_JOB (job), G_IO_ERROR, G_IO_ERROR_NOT_FOUND,_("Container not found"));
+      g_vfs_job_failed (G_VFS_JOB (job), G_IO_ERROR, G_IO_ERROR_NOT_FOUND,_("No such file or directory"));
       break;
     default:
       g_vfs_job_failed(G_VFS_JOB(job), G_IO_ERROR, G_IO_ERROR_FAILED, _("HTTP Error: %s"), msg->reason_phrase);
@@ -1793,7 +1793,7 @@ do_set_attribute (GVfsBackend *backend,
 
   if(file_type != FILE_TYPE_CONTAINER)
     {
-      g_vfs_job_failed (G_VFS_JOB (job), G_IO_ERROR, G_IO_ERROR_NOT_SUPPORTED,_("Operation not supported by backend"));
+      g_vfs_job_failed (G_VFS_JOB (job), G_IO_ERROR, G_IO_ERROR_NOT_SUPPORTED,_("Operation unsupported"));
       rack_path_free(path);
       return;
     }
@@ -1845,7 +1845,7 @@ do_set_attribute (GVfsBackend *backend,
             }
           else
             {
-              g_vfs_job_failed (G_VFS_JOB (job), G_IO_ERROR, G_IO_ERROR_NOT_FOUND,_("Container not found"));
+              g_vfs_job_failed (G_VFS_JOB (job), G_IO_ERROR, G_IO_ERROR_NOT_FOUND,_("No such file or directory"));
             }
           break;
         default:
@@ -1854,7 +1854,7 @@ do_set_attribute (GVfsBackend *backend,
     }
   else
     {
-      g_vfs_job_failed (G_VFS_JOB (job), G_IO_ERROR, G_IO_ERROR_NOT_SUPPORTED,_("Attribute not supported"));
+      g_vfs_job_failed (G_VFS_JOB (job), G_IO_ERROR, G_IO_ERROR_NOT_SUPPORTED,_("Operation unsupported"));
     }
   
   g_object_unref(msg);
