@@ -30,48 +30,19 @@
 
 #include <config.h>
 
-#include <stdlib.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <sys/time.h>
-#include <errno.h>
 #include <unistd.h>
-#include <fcntl.h>
-#include <string.h>
-
-#include <glib/gstdio.h>
 #include <glib/gi18n.h>
-#include <gio/gio.h>
-#include <gio/gunixinputstream.h>
-#include <gio/gunixoutputstream.h>
-
-#include "gvfsicon.h"
-
-#include "gvfsbackendrack.h"
-#include "gvfsjobopenforread.h"
-#include "gvfsjobopeniconforread.h"
-#include "gvfsjobmount.h"
-#include "gvfsjobread.h"
-#include "gvfsjobseekread.h"
-#include "gvfsjobopenforwrite.h"
-#include "gvfsjobwrite.h"
-#include "gvfsjobclosewrite.h"
-#include "gvfsjobseekwrite.h"
-#include "gvfsjobsetdisplayname.h"
-#include "gvfsjobqueryinfo.h"
-#include "gvfsjobqueryinforead.h"
-#include "gvfsjobqueryinfowrite.h"
-#include "gvfsjobmove.h"
-#include "gvfsjobdelete.h"
-#include "gvfsjobqueryfsinfo.h"
-#include "gvfsjobqueryattributes.h"
-#include "gvfsjobenumerate.h"
-#include "gvfsjobmakedirectory.h"
-#include "gvfsdaemonprotocol.h"
-#include "gvfskeyring.h"
-
 #include <libsoup/soup.h>
 #include <json-glib/json-glib.h>
+
+#include "gvfsbackendrack.h"
+#include "gvfsjobopeniconforread.h"
+#include "gvfsjobread.h"
+#include "gvfsjobopenforwrite.h"
+#include "gvfsjobwrite.h"
+#include "gvfsjobqueryattributes.h"
+#include "gvfsjobenumerate.h"
+#include "gvfskeyring.h"
 #include "soup-input-stream.h"
 #include "soup-output-stream.h"
 
@@ -272,8 +243,12 @@ g_mount_spec_to_rack_auth_uri (GMountSpec *spec)
 
   soup_uri_set_scheme (uri, SOUP_URI_SCHEME_HTTPS);
 
-  if (port && (port_num = atoi (port)))
-    soup_uri_set_port (uri, port_num);
+  if(port)
+    {
+      port_num = g_ascii_strtoll(port, NULL, 10);
+      g_assert(port_num > 0 && port_num < 65536);
+      soup_uri_set_port (uri, port_num);
+    }
 
   soup_uri_set_host(uri, host);
 
