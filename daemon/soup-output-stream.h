@@ -58,6 +58,9 @@ GOutputStream *soup_output_stream_new         (SoupSession         *session,
 					       SoupMessage         *msg,
 					       goffset              size);
 
+GOutputStream *soup_output_stream_new_chunked (SoupSession         *session,
+					       SoupMessage         *msg);
+
 G_END_DECLS
 
 #endif /* __SOUP_OUTPUT_STREAM_H__ */

@@ -1529,7 +1529,7 @@ open_for_replace_succeeded (GVfsBackendRack *op_backend, GVfsJob *job,
   /*if (etag)
     soup_message_headers_append (put_msg->request_headers, "If-Match", etag);
   */
-  stream = soup_output_stream_new (G_VFS_BACKEND_HTTP(op_backend)->session, put_msg, -1);
+  stream = soup_output_stream_new_chunked (G_VFS_BACKEND_HTTP(op_backend)->session_async, put_msg);
   g_object_unref (put_msg);
 
   g_vfs_job_open_for_write_set_handle (G_VFS_JOB_OPEN_FOR_WRITE (job), stream);
@@ -1583,7 +1583,7 @@ try_created_object (SoupSession *session, SoupMessage *create_msg,
 
   write_msg = new_object_message_from_uri(G_VFS_BACKEND_RACK(op_backend), soup_message_get_uri(create_msg), SOUP_METHOD_PUT);
 
-  stream = soup_output_stream_new (op_backend->session, write_msg, -1);
+  stream = soup_output_stream_new_chunked (op_backend->session_async, write_msg);
   g_object_unref (write_msg);
 
   g_vfs_job_open_for_write_set_handle (G_VFS_JOB_OPEN_FOR_WRITE (job), stream);

@@ -49,6 +49,11 @@ typedef struct {
   SoupOutputStreamCallback cancelled_cb;
 
   GSimpleAsyncResult *result;
+
+  gboolean chunked; /* Whether chunked encoding should be used */
+  gboolean msg_queued; /* Whether a chunked request has been queued yet */
+  gsize chunk_size; /* Size of chunk currently being written */
+  gboolean chunk_finished; /* FALSE if chunk I/O is currently in progress */
 } SoupOutputStreamPrivate;
 #define SOUP_OUTPUT_STREAM_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), SOUP_TYPE_OUTPUT_STREAM, SoupOutputStreamPrivate))
 
@@ -80,6 +85,24 @@ static gboolean soup_output_stream_close_finish (GOutputStream        *stream,
 						 GError              **error);
 
 static void soup_output_stream_finished (SoupMessage *msg, gpointer stream);
+static void soup_output_stream_done_io (GOutputStream *stream);
+
+static void
+soup_output_stream_wrote_chunk(SoupMessage *msg, gpointer ud)
+{
+  SoupOutputStreamPrivate *priv;
+  SoupOutputStream *stream;
+
+  stream = SOUP_OUTPUT_STREAM(ud);
+  priv = SOUP_OUTPUT_STREAM_GET_PRIVATE (stream);
+  priv->chunk_finished = TRUE;
+
+  GSimpleAsyncResult *result = priv->result;
+  soup_output_stream_done_io (G_OUTPUT_STREAM(ud));
+  g_simple_async_result_set_op_res_gssize (result, priv->chunk_size);
+  g_simple_async_result_complete (result);
+  g_object_unref(result);
+}
 
 static void
 soup_output_stream_finalize (GObject *object)
@@ -89,6 +112,7 @@ soup_output_stream_finalize (GObject *object)
   g_object_unref (priv->session);
 
   g_signal_handlers_disconnect_by_func (priv->msg, G_CALLBACK (soup_output_stream_finished), object);
+  g_signal_handlers_disconnect_by_func (priv->msg, G_CALLBACK (soup_output_stream_wrote_chunk), object);
   g_object_unref (priv->msg);
 
   if (priv->ba)
@@ -127,7 +151,7 @@ soup_output_stream_init (SoupOutputStream *stream)
 
 /**
  * soup_output_stream_new:
- * @session: the #SoupSession to use
+ * @session: the #SoupSessionSync to use
  * @msg: the #SoupMessage whose request will be streamed
  * @size: the total size of the request body, or -1 if not known
  * 
@@ -172,8 +196,34 @@ soup_output_stream_new (SoupSession *session, SoupMessage *msg, goffset size)
   priv->async_context = soup_session_get_async_context (session);
   priv->msg = g_object_ref (msg);
   priv->size = size;
+  priv->chunked = FALSE;
 
   return G_OUTPUT_STREAM (stream);
+}
+
+/**
+ * soup_output_stream_new_chunked:
+ * @session: the #SoupSessionAsync to use
+ * @msg: the #SoupMessage whose request will be streamed
+ *
+ * Returns: a new #GOutputStream.
+ **/
+GOutputStream *
+soup_output_stream_new_chunked(SoupSession *session, SoupMessage *msg)
+{
+  SoupOutputStreamPrivate *priv;
+  GOutputStream *stream;
+
+  stream = soup_output_stream_new (session, msg, -1);
+  priv = SOUP_OUTPUT_STREAM_GET_PRIVATE (SOUP_OUTPUT_STREAM(stream));
+  priv->chunked = TRUE;
+  priv->msg_queued = FALSE;
+  priv->finished = FALSE;
+  soup_message_headers_set_encoding (priv->msg->request_headers, SOUP_ENCODING_CHUNKED);
+
+  g_signal_connect (priv->msg, "wrote-chunk",
+                    G_CALLBACK (soup_output_stream_wrote_chunk), stream);
+  return stream;
 }
 
 static gboolean
@@ -192,18 +242,11 @@ soup_output_stream_cancelled (GIOChannel *chan, GIOCondition condition,
 }  
 
 static void
-soup_output_stream_prepare_for_io (GOutputStream *stream, GCancellable *cancellable)
+soup_output_stream_setup_cancellation(GOutputStream *stream, 
+				      SoupOutputStreamPrivate *priv,
+				      GCancellable *cancellable)
 {
-  SoupOutputStreamPrivate *priv = SOUP_OUTPUT_STREAM_GET_PRIVATE (stream);
-  int cancel_fd;
-
-  /* Move the buffer to the SoupMessage */
-  soup_message_body_append (priv->msg->request_body, SOUP_MEMORY_TAKE,
-			    priv->ba->data, priv->ba->len);
-  g_byte_array_free (priv->ba, FALSE);
-  priv->ba = NULL;
-
-  /* Set up cancellation */
+  gint cancel_fd;
   priv->cancellable = cancellable;
   cancel_fd = g_cancellable_get_fd (cancellable);
   if (cancel_fd != -1)
@@ -215,9 +258,21 @@ soup_output_stream_prepare_for_io (GOutputStream *stream, GCancellable *cancella
 					      stream);
       g_io_channel_unref (chan);
     }
+}
 
-  /* Add an extra ref since soup_session_queue_message steals one */
-  g_object_ref (priv->msg);
+static void
+soup_output_stream_prepare_for_io (GOutputStream *stream, GCancellable *cancellable)
+{
+  SoupOutputStreamPrivate *priv = SOUP_OUTPUT_STREAM_GET_PRIVATE (stream);
+
+  /* Move the buffer to the SoupMessage */
+  soup_message_body_append (priv->msg->request_body, SOUP_MEMORY_TAKE,
+			    priv->ba->data, priv->ba->len);
+  g_byte_array_free (priv->ba, FALSE);
+  priv->ba = NULL;
+
+  soup_output_stream_setup_cancellation (stream, priv, cancellable);
+
   soup_session_queue_message (priv->session, priv->msg, NULL, NULL);
 }
 
@@ -246,6 +301,31 @@ set_error_if_http_failed (SoupMessage *msg, GError **error)
     }
   return FALSE;
 }
+static void
+soup_output_stream_do_chunked_io (GOutputStream *stream, const void *buf, gsize len, GCancellable *cancellable)
+{
+  SoupOutputStreamPrivate *priv = SOUP_OUTPUT_STREAM_GET_PRIVATE (stream);
+  SoupBuffer *soup_buf;
+
+  priv->chunk_finished = FALSE;
+
+  soup_buf = soup_buffer_new (SOUP_MEMORY_STATIC, buf, len);
+
+  soup_message_body_append_buffer (priv->msg->request_body, soup_buf);
+  soup_output_stream_setup_cancellation (stream, priv, cancellable);
+
+  if(priv->msg_queued)
+  {
+    soup_session_unpause_message (priv->session, priv->msg);
+  }
+  else
+  {
+    priv->msg_queued = TRUE;
+    /* Add an extra ref since soup_session_queue_message steals one */
+    g_object_ref (priv->msg);
+    soup_session_queue_message (priv->session, priv->msg, NULL, stream);
+  }
+}
 
 static gssize
 soup_output_stream_write (GOutputStream  *stream,
@@ -256,14 +336,30 @@ soup_output_stream_write (GOutputStream  *stream,
 {
   SoupOutputStreamPrivate *priv = SOUP_OUTPUT_STREAM_GET_PRIVATE (stream);
 
-  if (priv->size > 0 && priv->offset + count > priv->size) {
-      g_set_error_literal (error, G_IO_ERROR, G_IO_ERROR_NO_SPACE,
-			   "Write would exceed caller-defined file size");
-      return -1;
+  if(priv->chunked) 
+  {
+    GSimpleAsyncResult *result = g_simple_async_result_new (G_OBJECT (stream),
+				      NULL, NULL,
+				      soup_output_stream_write);
+    priv->chunk_size = count;
+    priv->result = result;
+    soup_output_stream_do_chunked_io (stream, buffer, count, cancellable);
+    while (!priv->chunk_finished && !g_cancellable_is_cancelled (cancellable))
+      g_main_context_iteration (priv->async_context, TRUE);
+  }
+  else
+  {
+    if (priv->size > 0 && priv->offset + count > priv->size) 
+    {
+       g_set_error_literal (error, G_IO_ERROR, G_IO_ERROR_NO_SPACE,
+  			   "Write would exceed caller-defined file size");
+       return -1;
+    }
+
+    g_byte_array_append (priv->ba, buffer, count);
+    priv->offset += count;
   }
 
-  g_byte_array_append (priv->ba, buffer, count);
-  priv->offset += count;
   return count;
 }
 
@@ -274,16 +370,38 @@ soup_output_stream_close (GOutputStream  *stream,
 {
   SoupOutputStreamPrivate *priv = SOUP_OUTPUT_STREAM_GET_PRIVATE (stream);
 
-  if (priv->size > 0 && priv->offset != priv->size) {
-      g_set_error_literal (error, G_IO_ERROR, G_IO_ERROR_NO_SPACE,
-			   "File is incomplete");
-      return -1;
+  if(priv->chunked)
+  {
+    GSimpleAsyncResult *result = g_simple_async_result_new (G_OBJECT (stream),
+				NULL, NULL, soup_output_stream_close);
+    if(priv->msg_queued)
+    {
+      soup_output_stream_setup_cancellation (stream, priv, cancellable);
+      soup_message_body_complete (priv->msg->request_body);
+      soup_session_unpause_message (priv->session, priv->msg);
+      while (!priv->chunk_finished && !g_cancellable_is_cancelled (cancellable))
+        g_main_context_iteration (priv->async_context, TRUE);
+    }
+    else
+    {
+      g_simple_async_result_set_op_res_gboolean (result, TRUE);
+      g_simple_async_result_complete_in_idle (result);
+      g_object_unref (result);
+    }
+  } 
+  else
+  {
+    if (priv->size > 0 && priv->offset != priv->size) 
+    {
+	g_set_error_literal (error, G_IO_ERROR, G_IO_ERROR_NO_SPACE,
+			    "File is incomplete");
+	return -1;
+    }
+    soup_output_stream_prepare_for_io (stream, cancellable);
+    while (!priv->finished && !g_cancellable_is_cancelled (cancellable))
+      g_main_context_iteration (priv->async_context, TRUE);
+    soup_output_stream_done_io (stream);
   }
-
-  soup_output_stream_prepare_for_io (stream, cancellable);
-  while (!priv->finished && !g_cancellable_is_cancelled (cancellable))
-    g_main_context_iteration (priv->async_context, TRUE);
-  soup_output_stream_done_io (stream);
 
   return !set_error_if_http_failed (priv->msg, error);
 }
@@ -304,23 +422,33 @@ soup_output_stream_write_async (GOutputStream       *stream,
 				      callback, user_data,
 				      soup_output_stream_write_async);
 
-  if (priv->size > 0 && priv->offset + count > priv->size)
+  if (priv->chunked)
     {
-      GError *error;
-
-      error = g_error_new (G_IO_ERROR, G_IO_ERROR_NO_SPACE,
-			   "Write would exceed caller-defined file size");
-      g_simple_async_result_set_from_error (result, error);
-      g_error_free (error);
+      priv->chunk_size = count;
+      priv->result = result;
+      soup_output_stream_do_chunked_io(stream, buffer, count, cancellable);
     }
-  else
+  else 
     {
-      g_byte_array_append (priv->ba, buffer, count);
-      priv->offset += count;
-      g_simple_async_result_set_op_res_gssize (result, count);
+      if (priv->size > 0 && priv->offset + count > priv->size)
+      {
+	GError *error;
+
+	error = g_error_new (G_IO_ERROR, G_IO_ERROR_NO_SPACE,
+	    		   "Write would exceed caller-defined file size");
+	g_simple_async_result_set_from_error (result, error);
+	g_error_free (error);
+      }
+      else
+      {
+	g_byte_array_append (priv->ba, buffer, count);
+	priv->offset += count;
+	g_simple_async_result_set_op_res_gssize (result, count);
+      }
+      g_simple_async_result_complete_in_idle (result);
+      g_object_unref (result);
     }
 
-  g_simple_async_result_complete_in_idle (result);
 }
 
 static gssize
@@ -362,6 +490,7 @@ close_async_done (GOutputStream *stream)
   soup_output_stream_done_io (stream);
 
   g_simple_async_result_complete (result);
+  g_object_unref (result);
 }
 
 static void
@@ -372,6 +501,8 @@ soup_output_stream_finished (SoupMessage *msg, gpointer stream)
   priv->finished = TRUE;
 
   g_signal_handlers_disconnect_by_func (priv->msg, G_CALLBACK (soup_output_stream_finished), stream);
+  g_signal_handlers_disconnect_by_func (priv->msg, G_CALLBACK (soup_output_stream_wrote_chunk), stream);
+
   close_async_done (stream);
 }
 
@@ -388,24 +519,43 @@ soup_output_stream_close_async (GOutputStream        *stream,
   result = g_simple_async_result_new (G_OBJECT (stream),
 				      callback, user_data,
 				      soup_output_stream_close_async);
-
-  if (priv->size > 0 && priv->offset != priv->size)
-    {
-      GError *error;
-
-      error = g_error_new (G_IO_ERROR, G_IO_ERROR_NO_SPACE,
-			   "File is incomplete");
-      g_simple_async_result_set_from_error (result, error);
-      g_error_free (error);
-      g_simple_async_result_complete_in_idle (result);
-      return;
-    }
-
   priv->result = result;
   priv->cancelled_cb = close_async_done;
   g_signal_connect (priv->msg, "finished",
-		    G_CALLBACK (soup_output_stream_finished), stream);
-  soup_output_stream_prepare_for_io (stream, cancellable);
+                  G_CALLBACK (soup_output_stream_finished), stream);
+
+  if (priv->chunked)
+  {
+    if (priv->msg_queued) 
+    {
+      soup_output_stream_setup_cancellation (stream, priv, cancellable);
+      soup_message_body_complete (priv->msg->request_body);
+      soup_session_unpause_message (priv->session, priv->msg);
+    }
+    else
+    {
+      g_simple_async_result_set_op_res_gboolean (result, TRUE);
+      g_simple_async_result_complete_in_idle (result);
+      g_object_unref (result);
+    }
+  }
+  else
+  {
+    if (priv->size > 0 && priv->offset != priv->size)
+      {
+        GError *error;
+
+        error = g_error_new (G_IO_ERROR, G_IO_ERROR_NO_SPACE,
+                             "File is incomplete");
+        g_simple_async_result_set_from_error (result, error);
+        g_error_free (error);
+        g_simple_async_result_complete_in_idle (result);
+        g_object_unref(result);
+        return;
+      }
+
+    soup_output_stream_prepare_for_io (stream, cancellable);
+  }
 }
 
 static gboolean
