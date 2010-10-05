@@ -1,30 +1,25 @@
-# Dutch translation for gvfs
-#
+# Afrikaans translation for gvfs.
 # This file is distributed under the same license as the gvfs package.
-#
-# Wouter Bolsterlee <wbolster@gnome.org>, 2008–2010
-# Reinout van Schouwen <reinouts@gnome.org>, 2009 (typo)
-#
-# LET OP! Wouter wil graag de controle over dit bestand houden. Neem
-# a.u.b. eerst even contact op voordat je wijzigingen doorvoert.
-#
+# F Wolff <friedel@translate.org.za>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: gvfs\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-26 14:42+0200\n"
-"PO-Revision-Date: 2010-09-27 19:22+0200\n"
-"Last-Translator: Wouter Bolsterlee <wbolster@gnome.org>\n"
-"Language-Team: Dutch <vertaling@vrijschrift.org>\n"
-"Language: nl\n"
+"Project-Id-Version: gvfs master\n"
+"Report-Msgid-Bugs-To: "
+"http://bugzilla.gnome.org/enter_bug.cgi?product=gvfs&component=general\n"
+"POT-Creation-Date: 2010-09-05 15:11+0000\n"
+"PO-Revision-Date: 2010-09-08 23:36+0200\n"
+"Last-Translator: F Wolff <friedel@translate.org.za>\n"
+"Language-Team: translate-discuss-af@lists.sourceforge.net\n"
+"Language: af\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.0-beta1\n"
 
 #: ../client/gdaemonfile.c:498 ../client/gdaemonfile.c:2376
 msgid "Operation not supported, files on different mounts"
-msgstr "Bewerking niet ondersteund; bestanden op verschillende koppelpunten"
+msgstr ""
 
 #. Translators: %s is the name of a programming function
 #: ../client/gdaemonfile.c:868 ../client/gdaemonfile.c:902
@@ -40,38 +35,38 @@ msgstr "Bewerking niet ondersteund; bestanden op verschillende koppelpunten"
 #: ../client/gvfsiconloadable.c:374
 #, c-format
 msgid "Invalid return value from %s"
-msgstr "Ongeldig resultaat van ‘%s’"
+msgstr ""
 
 #: ../client/gdaemonfile.c:985 ../client/gvfsiconloadable.c:339
 msgid "Couldn't get stream file descriptor"
-msgstr "Kon ‘stream file descriptor’ niet verkrijgen"
+msgstr ""
 
 #: ../client/gdaemonfile.c:1106 ../client/gdaemonfile.c:1169
 #: ../client/gdaemonfile.c:1232 ../client/gdaemonfile.c:1298
 #: ../client/gdaemonfile.c:2615 ../client/gvfsiconloadable.c:155
 msgid "Didn't get stream file descriptor"
-msgstr "Kon ‘stream file descriptor’ niet verkrijgen"
+msgstr ""
 
 #. translators: this is an error message when there is no user visible "mount" object
 #. corresponding to a particular path/uri
 #: ../client/gdaemonfile.c:1964
 msgid "Could not find enclosing mount"
-msgstr "Kon omvattend koppelpunt niet vinden"
+msgstr ""
 
 #: ../client/gdaemonfile.c:1994
 #, c-format
 msgid "Invalid filename %s"
-msgstr "Ongeldige bestandsnaam: ‘%s’"
+msgstr "Ongeldige lêernaam %s"
 
 #: ../client/gdaemonfile.c:2232 ../client/gdaemonvfs.c:1200
 #: ../client/gdaemonvfs.c:1335 ../client/gdaemonvfs.c:1388
 #, c-format
 msgid "Error setting file metadata: %s"
-msgstr "Fout bij opslaan van bestandsmetadata: %s"
+msgstr "Fout met instel van lêermetadata: %s"
 
 #: ../client/gdaemonfile.c:2233 ../client/gdaemonvfs.c:1389
 msgid "values must be string or list of strings"
-msgstr "waarden moeten een string of een lijst van strings zijn"
+msgstr "waardes moet string of lys van stringe wees"
 
 #: ../client/gdaemonfileenumerator.c:466 ../client/gdaemonfileenumerator.c:549
 #: ../client/gdaemonfileenumerator.c:600
@@ -90,7 +85,7 @@ msgstr "waarden moeten een string of een lijst van strings zijn"
 #: ../daemon/gvfsbackendobexftp.c:1735 ../daemon/gvfsbackendobexftp.c:1897
 #: ../daemon/gvfsbackendobexftp.c:1924 ../daemon/gvfsbackendobexftp.c:1983
 #: ../daemon/gvfsbackendobexftp.c:2005 ../daemon/gvfsbackendobexftp.c:2068
-#: ../daemon/gvfsbackendobexftp.c:2087 ../daemon/gvfsbackendsmb.c:1184
+#: ../daemon/gvfsbackendobexftp.c:2087 ../daemon/gvfsbackendsmb.c:1163
 #: ../daemon/gvfsbackendtest.c:91 ../daemon/gvfsbackendtest.c:124
 #: ../daemon/gvfsbackendtest.c:187 ../daemon/gvfschannel.c:319
 #: ../daemon/gvfsftptask.c:202 ../monitor/gdu/ggdumount.c:1069
@@ -100,7 +95,7 @@ msgstr "waarden moeten een string of een lijst van strings zijn"
 #: ../monitor/proxy/gproxymount.c:471 ../monitor/proxy/gproxymount.c:556
 #: ../monitor/proxy/gproxyvolume.c:807 ../monitor/proxy/gproxyvolume.c:884
 msgid "Operation was cancelled"
-msgstr "Bewerking is geannuleerd"
+msgstr "Bewerking is gekanselleer"
 
 #: ../client/gdaemonfileinputstream.c:527
 #: ../client/gdaemonfileinputstream.c:535
@@ -112,61 +107,61 @@ msgstr "Bewerking is geannuleerd"
 #: ../client/gdaemonfileoutputstream.c:1246
 #, c-format
 msgid "Error in stream protocol: %s"
-msgstr "Fout in stream-protocol: %s"
+msgstr "Fout in stroomprotokol: %s"
 
 #: ../client/gdaemonfileinputstream.c:535
 #: ../client/gdaemonfileinputstream.c:1694
 #: ../client/gdaemonfileoutputstream.c:458
 #: ../client/gdaemonfileoutputstream.c:1246
 msgid "End of stream"
-msgstr "Einde van stream"
+msgstr "Einde van stroom"
 
 #: ../client/gdaemonfileinputstream.c:1330
 #: ../client/gdaemonfileoutputstream.c:981
 msgid "Seek not supported on stream"
-msgstr "Zoeken in stream niet ondersteund"
+msgstr ""
 
 #: ../client/gdaemonvfs.c:832
 #, c-format
 msgid "Error while getting mount info: %s"
-msgstr "Kon koppelingsinfo niet verkrijgen: %s"
+msgstr ""
 
 #: ../client/gdaemonvfs.c:1201
 msgid "Can't contact session bus"
-msgstr "Kan niet met ‘system bus’ verbinden"
+msgstr ""
 
 #: ../client/gvfsdaemondbus.c:570 ../client/gvfsdaemondbus.c:1002
 #, c-format
 msgid "Error connecting to daemon: %s"
-msgstr "Fout bij verbinden naar voorziening: %s"
+msgstr ""
 
 #: ../common/gsysutils.c:136
 #, c-format
 msgid "Error creating socket: %s"
-msgstr "Fout bij maken van socket: %s"
+msgstr "Fout met skep van sok: %s"
 
 #: ../common/gsysutils.c:174
 #, c-format
 msgid "Error connecting to socket: %s"
-msgstr "Fout bij verbinden met socket: %s"
+msgstr ""
 
 #: ../common/gvfsdaemonprotocol.c:521
 msgid "Invalid file info format"
-msgstr "Ongeldig formaat bestandsinformatie"
+msgstr "Ongeldige lêerinligtingformaat"
 
 #: ../common/gvfsdaemonprotocol.c:539
 msgid "Invalid attribute info list content"
-msgstr "Ongeldige inhoud in eigenschappenlijst"
+msgstr ""
 
 #: ../common/gvfsdnssdresolver.c:209
 #, c-format
 msgid "Error initializing Avahi: %s"
-msgstr "Fout bij initialiseren van Avahi: %s"
+msgstr "Fout met inisialisering van Avahi: %s"
 
 #: ../common/gvfsdnssdresolver.c:255
 #, c-format
 msgid "Error creating Avahi resolver: %s"
-msgstr "Fout bij maken van Avahi-resolver: %s"
+msgstr ""
 
 #. Translators:
 #. * - the first %s refers to the service type
@@ -176,7 +171,7 @@ msgstr "Fout bij maken van Avahi-resolver: %s"
 #: ../common/gvfsdnssdresolver.c:1100
 #, c-format
 msgid "Error resolving \"%s\" service \"%s\" on domain \"%s\""
-msgstr "Fout bij resolven van ‘%s’-service ‘%s’ in domein ‘%s’"
+msgstr ""
 
 #. Translators:
 #. * - the first %s refers to the service type
@@ -190,8 +185,6 @@ msgid ""
 "Error resolving \"%s\" service \"%s\" on domain \"%s\". One or more TXT "
 "records are missing. Keys required: \"%s\"."
 msgstr ""
-"Fout bij resolven van ‘%s’-service ‘%s’ in domein ‘%s’. Een of meerdere TXT-"
-"records ontbreken. Benodigde keys: ‘%s’."
 
 #. Translators:
 #. * - the first %s refers to the service type
@@ -201,34 +194,34 @@ msgstr ""
 #: ../common/gvfsdnssdresolver.c:1143
 #, c-format
 msgid "Timed out resolving \"%s\" service \"%s\" on domain \"%s\""
-msgstr "Timeout bij resolven van ‘%s’-service ‘%s’ in domein ‘%s’"
+msgstr ""
 
 #: ../common/gvfsdnssdutils.c:233 ../common/gvfsdnssdutils.c:263
 #: ../common/gvfsdnssdutils.c:280
 #, c-format
 msgid "Malformed dns-sd encoded_triple '%s'"
-msgstr "Ongeldige ‘dns-sd encoded_triple’: ‘%s’"
+msgstr ""
 
 #: ../common/gvfsicon.c:250
 #, c-format
 msgid "Can't handle version %d of GVfsIcon encoding"
-msgstr "Kan versie %d van GVfsIcon-codering niet verwerken"
+msgstr ""
 
 #: ../common/gvfsicon.c:260
 msgid "Malformed input data for GVfsIcon"
-msgstr "Ongeldige invoergegevens voor GVfsIcon"
+msgstr ""
 
 #: ../daemon/daemon-main.c:76 ../daemon/daemon-main.c:230
 #, c-format
 msgid "Error connecting to D-Bus: %s"
-msgstr "Fout bij verbinden met D-Bus: %s"
+msgstr ""
 
 #. translators: This is the default daemon's application name,
 #. * the %s is the type of the backend, like "ftp"
 #: ../daemon/daemon-main.c:91
 #, c-format
 msgid "%s Filesystem Service"
-msgstr "Bestandssysteemvoorziening voor %s"
+msgstr ""
 
 #: ../daemon/daemon-main.c:110 ../programs/gvfs-copy.c:90
 #: ../programs/gvfs-move.c:78
@@ -239,134 +232,130 @@ msgstr "Fout: %s"
 #: ../daemon/daemon-main.c:155
 #, c-format
 msgid "Usage: %s --spawner dbus-id object_path"
-msgstr "Gebruik: %s --spawner dbus-id object_path"
+msgstr ""
 
 #: ../daemon/daemon-main.c:179 ../daemon/daemon-main.c:197
 #, c-format
 msgid "Usage: %s key=value key=value ..."
-msgstr "Gebruik: %s key=value key=value ..."
+msgstr ""
 
 #: ../daemon/daemon-main.c:195
 #, c-format
 msgid "No mount type specified"
-msgstr "Geen koppeltype opgegeven"
+msgstr ""
 
 #: ../daemon/daemon-main.c:265
 #, c-format
 msgid "mountpoint for %s already running"
-msgstr "koppelpunt voor %s reeds actief"
+msgstr ""
 
 #: ../daemon/daemon-main.c:276
 msgid "error starting mount daemon"
-msgstr "fout bij starten van koppelvoorziening"
+msgstr ""
 
 #: ../daemon/gvfsbackend.c:933 ../monitor/gdu/ggdumount.c:921
 msgid "Unmount Anyway"
-msgstr "Toch ontkoppelen"
+msgstr ""
 
 #: ../daemon/gvfsbackend.c:934 ../daemon/gvfsbackendafc.c:281
 #: ../monitor/gdu/ggdudrive.c:1022 ../monitor/gdu/ggdumount.c:922
 msgid "Cancel"
-msgstr "Annuleren"
+msgstr "Kanselleer"
 
 #: ../daemon/gvfsbackend.c:936 ../monitor/gdu/ggdumount.c:923
 msgid ""
 "Volume is busy\n"
 "One or more applications are keeping the volume busy."
 msgstr ""
-"Volumen is bezig\n"
-"Een of meerdere toepassingen houden dit volumen bezig"
 
 #: ../daemon/gvfsbackendafc.c:159
 msgid "Internal Apple File Control error"
-msgstr "Interne Apple File Control-fout"
+msgstr ""
 
 #: ../daemon/gvfsbackendafc.c:163 ../daemon/gvfsbackendftp.c:669
 msgid "File does not exist"
-msgstr "Bestand bestaat niet"
+msgstr "Lêer bestaan nie"
 
 #: ../daemon/gvfsbackendafc.c:166
 msgid "The directory is not empty"
-msgstr "Map is niet leeg"
+msgstr "Die gids is nie leeg nie"
 
 #: ../daemon/gvfsbackendafc.c:170
 msgid "The device did not respond"
-msgstr "Het apparaat antwoordde niet"
+msgstr "Die toestel het nie reageer nie"
 
 #: ../daemon/gvfsbackendafc.c:174
 msgid "The connection was interrupted"
-msgstr "De verbinding werd onderbroken"
+msgstr ""
 
 #: ../daemon/gvfsbackendafc.c:178
 msgid "Invalid Apple File Control data received"
-msgstr "Ongeldige Apple File Control-gegevens ontvangen"
+msgstr ""
 
 #: ../daemon/gvfsbackendafc.c:182
 #, c-format
 msgid "Unhandled Apple File Control error (%d)"
-msgstr "Onafgehandelde Apple File Control-fout (%d)"
+msgstr ""
 
 #: ../daemon/gvfsbackendafc.c:199
 msgid "Lockdown Error: Invalid Argument"
-msgstr "Lockdown-fout: ongeldige parameter"
+msgstr ""
 
 #: ../daemon/gvfsbackendafc.c:203 ../daemon/gvfsbackendsftp.c:309
 #: ../daemon/gvfsbackendsftp.c:1836 ../daemon/gvfsftptask.c:400
 msgid "Permission denied"
-msgstr "Toegang geweigerd"
+msgstr "Toestemming gewyer"
 
 #: ../daemon/gvfsbackendafc.c:206
 #, c-format
 msgid "Unhandled Lockdown error (%d)"
-msgstr "Onafgehandelde lockdown-fout (%d)"
+msgstr ""
 
 #: ../daemon/gvfsbackendafc.c:223
 msgid "libimobiledevice Error: Invalid Argument"
-msgstr "libimobiledevice-fout: ongeldige parameter"
+msgstr ""
 
 #: ../daemon/gvfsbackendafc.c:227
 msgid ""
 "libimobiledevice Error: No device found. Make sure usbmuxd is set up "
 "correctly."
 msgstr ""
-"libimobiledevice-fout: geen apparaat gevonden. Controleer dat usbmuxd "
-"correct functioneert."
 
 #: ../daemon/gvfsbackendafc.c:230
 #, c-format
 msgid "Unhandled libimobiledevice error (%d)"
-msgstr "Onafgehandelde libimobiledevice-fout (%d)"
+msgstr ""
 
 #: ../daemon/gvfsbackendafc.c:281
 msgid "Try again"
-msgstr "Opnieuw proberen"
+msgstr "Probeer weer"
 
 #: ../daemon/gvfsbackendafc.c:299 ../daemon/gvfsbackendarchive.c:536
 #: ../daemon/gvfsbackendarchive.c:565 ../daemon/gvfsbackenddav.c:1631
 #: ../daemon/gvfsbackendhttp.c:315 ../daemon/gvfsbackendobexftp.c:861
 #: ../daemon/gvfsbackendobexftp.c:877 ../daemon/gvfsbackendobexftp.c:896
-#: ../daemon/gvfsbackendsmb.c:669
+#: ../daemon/gvfsbackendsmb.c:648
 msgid "Invalid mount spec"
-msgstr "Ongeldige aankoppelspecificatie"
+msgstr ""
 
 #: ../daemon/gvfsbackendafc.c:305
 msgid "Invalid AFC location: must be in the form of afc://uuid:port-number"
-msgstr "Ongeldige AFC-locatie: de juiste vorm is afc://uuid:poortnummer"
+msgstr ""
 
 #: ../daemon/gvfsbackendafc.c:320
 #, c-format
 msgid "Service %d on Apple Mobile Device"
-msgstr "Service %d op Apple Mobile Device"
+msgstr ""
 
 #: ../daemon/gvfsbackendafc.c:326
 #, c-format
 msgid "Apple Mobile Device"
-msgstr "Apple Mobile Device"
+msgstr ""
 
 #: ../daemon/gvfsbackendafc.c:375
 #, c-format
 msgid "%s (%s)"
-msgstr "%s (%s)"
+msgstr ""
 
 #. translators:
 #. * %s is the device name. 'Try again' is the caption of the button
@@ -377,40 +366,40 @@ msgid ""
 "Device '%s' is password protected. Enter the password on the device and "
 "click 'Try again'."
 msgstr ""
-"Het apparaat ‘%s’ is met een wachtwoord beveiligd. Geeft het wachtwoord op "
-"het apparaat en klik op ‘Opnieuw proberen’."
+"Die toestel '%s' word met 'n wagwoord beskerm. Gee die wagwoord vir die "
+"toestel en klik 'Probeer weer'."
 
 #: ../daemon/gvfsbackendafc.c:585 ../daemon/gvfsbackendarchive.c:632
 #: ../daemon/gvfsbackendcomputer.c:645 ../daemon/gvfsbackendgphoto2.c:1886
-#: ../daemon/gvfsbackendobexftp.c:1071 ../daemon/gvfsbackendsmb.c:723
+#: ../daemon/gvfsbackendobexftp.c:1071 ../daemon/gvfsbackendsmb.c:702
 #: ../daemon/gvfsbackendtrash.c:232
 msgid "Can't open directory"
-msgstr "Kan map niet openen"
+msgstr "Kan nie gids open nie"
 
 #: ../daemon/gvfsbackendafc.c:593 ../daemon/gvfsbackendarchive.c:624
 #: ../daemon/gvfsbackendarchive.c:668 ../daemon/gvfsbackendarchive.c:720
 #: ../daemon/gvfsbackendarchive.c:749 ../daemon/gvfsbackendcdda.c:986
 #: ../daemon/gvfsbackendcomputer.c:627 ../daemon/gvfsbackenddnssd.c:392
 #: ../daemon/gvfsbackendftp.c:1000 ../daemon/gvfsbackendnetwork.c:646
-#: ../daemon/gvfsbackendsmbbrowse.c:1109 ../daemon/gvfsbackendsmbbrowse.c:1176
-#: ../daemon/gvfsbackendsmbbrowse.c:1348 ../daemon/gvfsbackendsmbbrowse.c:1418
+#: ../daemon/gvfsbackendsmbbrowse.c:1085 ../daemon/gvfsbackendsmbbrowse.c:1152
+#: ../daemon/gvfsbackendsmbbrowse.c:1324 ../daemon/gvfsbackendsmbbrowse.c:1394
 #, c-format
 msgid "File doesn't exist"
-msgstr "Bestand bestaat niet"
+msgstr "Lêer bestaan nie"
 
 #: ../daemon/gvfsbackendafc.c:701 ../daemon/gvfsbackendafc.c:1506
 msgid "Backups are not yet supported."
-msgstr "Backups worden (nog) niet ondersteund"
+msgstr "Rugsteun word nog nie ondersteun nie."
 
 #: ../daemon/gvfsbackendafc.c:839
 msgid "Invalid seek type"
-msgstr "Ongeldig seek-type"
+msgstr ""
 
 #: ../daemon/gvfsbackendafc.c:1425 ../daemon/gvfsbackendsftp.c:1834
-#: ../daemon/gvfsbackendsftp.c:4639 ../daemon/gvfsbackendsmb.c:1723
+#: ../daemon/gvfsbackendsftp.c:4639 ../daemon/gvfsbackendsmb.c:1702
 #: ../daemon/gvfsftptask.c:392
 msgid "Operation unsupported"
-msgstr "Bewerking niet ondersteund"
+msgstr ""
 
 #. FIXME: this should really be "/ in %s", but can't change
 #. due to string freeze.
@@ -424,23 +413,23 @@ msgstr "/ op %s"
 #: ../daemon/gvfsbackendarchive.c:525 ../daemon/gvfsbackendftp.c:600
 #: ../daemon/gvfsbackendsftp.c:1747
 msgid "No hostname specified"
-msgstr "Geen hostnaam opgegeven"
+msgstr "Geen gasheernaam gespesifiseer nie"
 
 #: ../daemon/gvfsbackendarchive.c:758 ../daemon/gvfsbackendburn.c:680
 #: ../daemon/gvfsbackendcomputer.c:714 ../daemon/gvfsbackenddnssd.c:439
 #: ../daemon/gvfsbackendftp.c:294 ../daemon/gvfsbackendnetwork.c:693
 #: ../daemon/gvfsbackendsftp.c:3885 ../daemon/gvfsftpdircache.c:154
 msgid "The file is not a directory"
-msgstr "Het bestand is geen map"
+msgstr "Die lêer is nie 'n gids nie"
 
 #. Translators: This is the name of the backend
 #: ../daemon/gvfsbackendburn.c:346
 msgid "Burn"
-msgstr "Branden"
+msgstr "Skryf"
 
 #: ../daemon/gvfsbackendburn.c:376
 msgid "Unable to create temporary directory"
-msgstr "Kon tijdelijke map niet aanmaken"
+msgstr "Kan nie tydelike gids skep nie"
 
 #: ../daemon/gvfsbackendburn.c:405 ../daemon/gvfsbackendburn.c:416
 #: ../daemon/gvfsbackendburn.c:451 ../daemon/gvfsbackendburn.c:672
@@ -453,29 +442,29 @@ msgstr "Kon tijdelijke map niet aanmaken"
 #: ../daemon/gvfsbackendsftp.c:2984 ../daemon/gvfsbackendtrash.c:216
 #, c-format
 msgid "No such file or directory"
-msgstr "Bestand of map bestaat niet"
+msgstr ""
 
 #: ../daemon/gvfsbackendburn.c:425 ../daemon/gvfsbackenddav.c:2223
 #: ../daemon/gvfsbackendsftp.c:1830
 msgid "Directory not empty"
-msgstr "Map is niet leeg"
+msgstr "Gids nie leeg nie"
 
 #: ../daemon/gvfsbackendburn.c:459 ../daemon/gvfsbackendburn.c:904
 #: ../daemon/gvfsbackendobexftp.c:1810
 msgid "Can't copy file over directory"
-msgstr "Kan bestand niet over map heen kopiëren"
+msgstr "Kan nie lêer oor 'n gids kopieer nie"
 
 #. Translators: this is the display name of the backend
 #: ../daemon/gvfsbackendburn.c:651
 msgid "CD/DVD Creator"
-msgstr "Cd/dvd branden"
+msgstr "CD/DVD-bouer"
 
 #: ../daemon/gvfsbackendburn.c:753 ../daemon/gvfsbackendburn.c:789
 #: ../daemon/gvfsbackendburn.c:924 ../daemon/gvfsbackendburn.c:986
 #: ../daemon/gvfsbackendburn.c:990 ../daemon/gvfsbackendburn.c:1000
 #: ../daemon/gvfsbackendgphoto2.c:3000
 msgid "File exists"
-msgstr "Bestand bestaat al"
+msgstr "Lêer bestaan"
 
 #: ../daemon/gvfsbackendburn.c:828 ../daemon/gvfsjobcloseread.c:112
 #: ../daemon/gvfsjobclosewrite.c:120 ../daemon/gvfsjobcopy.c:169
@@ -499,125 +488,125 @@ msgstr "Bestand bestaat al"
 #: ../monitor/gdu/ggdumount.c:1173 ../monitor/gdu/ggdumount.c:1257
 #: ../monitor/gdu/ggduvolume.c:1595
 msgid "Operation not supported by backend"
-msgstr "Bewerking niet door backend ondersteund"
+msgstr ""
 
 #: ../daemon/gvfsbackendburn.c:853
 msgid "No such file or directory in target path"
-msgstr "Bestand of map niet in doelmap gevonden"
+msgstr ""
 
 #: ../daemon/gvfsbackendburn.c:876 ../daemon/gvfsbackendftp.c:1386
 #: ../daemon/gvfsbackendobexftp.c:1779
 msgid "Can't copy directory over directory"
-msgstr "Kan map niet over map heen kopiëren"
+msgstr "Kan nie 'n gids oor 'n gids kopieer nie"
 
 #: ../daemon/gvfsbackendburn.c:885 ../daemon/gvfsbackendobexftp.c:1787
 #: ../daemon/gvfsbackendobexftp.c:1818 ../daemon/gvfsbackendsftp.c:1832
 #: ../daemon/gvfsbackendsftp.c:4447
 msgid "Target file exists"
-msgstr "Doelbestand bestaat al"
+msgstr "Teiken lêer bestaan"
 
 #: ../daemon/gvfsbackendburn.c:892 ../daemon/gvfsbackendftp.c:1409
 #: ../daemon/gvfsbackendobexftp.c:1794
 msgid "Can't recursively copy directory"
-msgstr "Kan map niet recursief kopiëren"
+msgstr "Kan nie gids rekursief kopieer nie"
 
 #: ../daemon/gvfsbackendburn.c:950 ../daemon/gvfsbackendcomputer.c:794
 #: ../daemon/gvfsbackendgphoto2.c:2580 ../daemon/gvfsbackendgphoto2.c:2789
 #: ../daemon/gvfsbackendgphoto2.c:2886 ../daemon/gvfsbackendgphoto2.c:2979
 msgid "Not supported"
-msgstr "Niet ondersteund"
+msgstr "Nie ondersteun nie"
 
 #: ../daemon/gvfsbackendcdda.c:332 ../daemon/gvfsbackendgphoto2.c:1510
 msgid "Cannot create gudev client"
-msgstr "Kon gudev-client niet aanmaken"
+msgstr ""
 
 #: ../daemon/gvfsbackendcdda.c:352 ../daemon/gvfsbackendgphoto2.c:1528
 msgid "Cannot connect to the system bus"
-msgstr "Kon niet met ‘system bus’ verbinden"
+msgstr ""
 
 #: ../daemon/gvfsbackendcdda.c:363 ../daemon/gvfsbackendgphoto2.c:1540
 msgid "Cannot create libhal context"
-msgstr "Kon libhal-context niet aanmaken"
+msgstr ""
 
 #: ../daemon/gvfsbackendcdda.c:377 ../daemon/gvfsbackendgphoto2.c:1553
 msgid "Cannot initialize libhal"
-msgstr "Kon libhal niet initialiseren"
+msgstr ""
 
 #: ../daemon/gvfsbackendcdda.c:393 ../daemon/gvfsbackendcdda.c:477
 msgid "No drive specified"
-msgstr "Geen station opgegeven"
+msgstr ""
 
 #: ../daemon/gvfsbackendcdda.c:417
 #, c-format
 msgid "Cannot find drive %s"
-msgstr "Can station %s niet vinden"
+msgstr "Kan nie aandrywer %s vind nie"
 
 #: ../daemon/gvfsbackendcdda.c:430
 #, c-format
 msgid "Drive %s does not contain audio files"
-msgstr "Station %s bevat geen audiobestanden"
+msgstr "Aandrywer %s bevat nie oudiolêers nie"
 
 #. Translator: %s is the device the disc is inserted into
 #: ../daemon/gvfsbackendcdda.c:439
 #, c-format
 msgid "cdda mount on %s"
-msgstr "cdda-koppeling op %s"
+msgstr ""
 
 #: ../daemon/gvfsbackendcdda.c:440 ../daemon/gvfsbackendcdda.c:960
 #: ../monitor/gdu/ggduvolume.c:337 ../monitor/hal/ghalmount.c:325
 #: ../monitor/hal/ghalvolume.c:225 ../monitor/hal/ghalvolume.c:246
 #, c-format
 msgid "Audio Disc"
-msgstr "Audio-cd"
+msgstr "Oudioskyf"
 
 #: ../daemon/gvfsbackendcdda.c:503
 #, c-format
 msgid "File system is busy: %d open file"
 msgid_plural "File system is busy: %d open files"
-msgstr[0] "Bestandssysteem is bezig: %d open bestand"
-msgstr[1] "Bestandssysteem is bezig: %d open bestanden"
+msgstr[0] "Lêerstelsel is besig: %d oop lêer"
+msgstr[1] "Lêerstelsel is besig: %d oop lêers"
 
 #: ../daemon/gvfsbackendcdda.c:695
 #, c-format
 msgid "No such file %s on drive %s"
-msgstr "Geen bestand %s op station %s"
+msgstr ""
 
 #. Translators: paranoia is the name of the cd audio reading library
 #: ../daemon/gvfsbackendcdda.c:804
 #, c-format
 msgid "Error from 'paranoia' on drive %s"
-msgstr "Fout van ‘paranoia’ op station %s"
+msgstr "Fout vanaf 'paranoia' op aandrywer %s"
 
 #: ../daemon/gvfsbackendcdda.c:867
 #, c-format
 msgid "Error seeking in stream on drive %s"
-msgstr "Fout bij zoeken in stream op station %s"
+msgstr ""
 
 #: ../daemon/gvfsbackendcdda.c:979 ../daemon/gvfsbackendgphoto2.c:1894
 #, c-format
 msgid "No such file"
-msgstr "Bestand bestaat niet"
+msgstr ""
 
 #: ../daemon/gvfsbackendcdda.c:993
 #, c-format
 msgid "The file does not exist or isn't an audio track"
-msgstr "Het bestand bestaat niet of is geen muziekbestand"
+msgstr "Die lêer bestaan nie of is nie 'n oudiosnit nie"
 
 #: ../daemon/gvfsbackendcdda.c:1099
 msgid "Audio CD Filesystem Service"
-msgstr "Bestandssysteemvoorziening voor audio-cd's"
+msgstr ""
 
 #: ../daemon/gvfsbackendcomputer.c:192 ../daemon/gvfsbackendcomputer.c:756
 msgid "Computer"
-msgstr "Computer"
+msgstr "Rekenaar"
 
 #: ../daemon/gvfsbackendcomputer.c:521
 msgid "File System"
-msgstr "Bestandssysteem"
+msgstr "Lêerstelsel"
 
 #: ../daemon/gvfsbackendcomputer.c:649
 msgid "Can't open mountable file"
-msgstr "Kan aankoppelbaar bestand niet openen"
+msgstr ""
 
 #: ../daemon/gvfsbackendcomputer.c:840 ../daemon/gvfsbackendsftp.c:1165
 #, c-format
@@ -626,38 +615,37 @@ msgstr "Interne fout: %s"
 
 #: ../daemon/gvfsbackendcomputer.c:872 ../daemon/gvfsbackendcomputer.c:991
 msgid "Can't mount file"
-msgstr "Kan bestand niet aankoppelen"
+msgstr ""
 
-# Vrij vertaald (Wouter Bolsterlee)
 #: ../daemon/gvfsbackendcomputer.c:884
 msgid "No media in the drive"
-msgstr "Geen media in schijf of lade"
+msgstr "Geen media in die aandrywer nie"
 
 #: ../daemon/gvfsbackendcomputer.c:941 ../daemon/gvfsbackendcomputer.c:1036
 #: ../daemon/gvfsbackendcomputer.c:1142 ../daemon/gvfsbackendcomputer.c:1232
 #: ../daemon/gvfsbackendcomputer.c:1305 ../daemon/gvfsbackendcomputer.c:1374
 msgid "Not a mountable file"
-msgstr "Geen aankoppelbaar bestand"
+msgstr ""
 
 #: ../daemon/gvfsbackendcomputer.c:1055
 msgid "Can't unmount file"
-msgstr "Kan bestand niet ontkoppelen"
+msgstr ""
 
 #: ../daemon/gvfsbackendcomputer.c:1185
 msgid "Can't eject file"
-msgstr "Kan bestand niet uitwerpen"
+msgstr "Kan nie lêer uitskiet nie"
 
 #: ../daemon/gvfsbackendcomputer.c:1252 ../daemon/gvfsbackendcomputer.c:1259
 msgid "Can't start file"
-msgstr "Kan bestand niet starten"
+msgstr ""
 
 #: ../daemon/gvfsbackendcomputer.c:1325 ../daemon/gvfsbackendcomputer.c:1332
 msgid "Can't stop file"
-msgstr "Kan bestand niet stoppen"
+msgstr ""
 
 #: ../daemon/gvfsbackendcomputer.c:1389 ../daemon/gvfsbackendcomputer.c:1396
 msgid "Can't poll file"
-msgstr "Kan bestand niet polsen"
+msgstr ""
 
 #: ../daemon/gvfsbackenddav.c:561 ../daemon/gvfsbackenddav.c:1698
 #: ../daemon/gvfsbackendhttp.c:261
@@ -667,37 +655,36 @@ msgstr "HTTP-fout: %s"
 
 #: ../daemon/gvfsbackenddav.c:578
 msgid "Could not parse response"
-msgstr "Kan antwoord niet verwerken"
+msgstr "Kon nie antwoord ontleed nie"
 
 #: ../daemon/gvfsbackenddav.c:587
 msgid "Empty response"
-msgstr "Leeg antwoord"
+msgstr "Leë antwoord"
 
 #: ../daemon/gvfsbackenddav.c:595
 msgid "Unexpected reply from server"
-msgstr "Onverwacht antwoord van server"
+msgstr "Onverwagse antwoord vanaf bediener"
 
 #: ../daemon/gvfsbackenddav.c:1214 ../daemon/gvfsbackenddav.c:1838
 msgid "Response invalid"
-msgstr "Ongeldig antwoord"
+msgstr "Antwoord is ongeldig"
 
-# Vrij vertaald (Wouter Bolsterlee)
 #: ../daemon/gvfsbackenddav.c:1357
 msgid "WebDAV share"
-msgstr "WebDAV-map"
+msgstr "WebDAV-deelgids"
 
 #: ../daemon/gvfsbackenddav.c:1359
 #, c-format
 msgid "Enter password for %s"
-msgstr "Voer wachtwoord voor %s in"
+msgstr "Gee wagwoord vir %s"
 
 #: ../daemon/gvfsbackenddav.c:1362
 msgid "Please enter proxy password"
-msgstr "Voer uw proxy-wachtwoord in"
+msgstr "Gee die wagwoord vir die instaanbediener"
 
 #: ../daemon/gvfsbackenddav.c:1702 ../daemon/gvfsbackenddav.c:1706
 msgid "Not a WebDAV enabled share"
-msgstr "Geen WebDAV-schijf"
+msgstr "Nie 'n WebDAV-geaktiveerde deelgids nie"
 
 #: ../daemon/gvfsbackenddav.c:1734
 #, c-format
@@ -706,40 +693,39 @@ msgstr "WebDAV op %s"
 
 #: ../daemon/gvfsbackenddav.c:1794 ../daemon/gvfsbackenddav.c:1867
 msgid "Could not create request"
-msgstr "Kon aanvraag niet aanmaken"
+msgstr "Kon nie versoek skep nie"
 
 #: ../daemon/gvfsbackenddav.c:1930 ../daemon/gvfsbackenddav.c:2183
 #: ../daemon/gvfsbackenddav.c:2294 ../daemon/gvfsbackendftp.c:685
 #: ../daemon/gvfsbackendftp.c:866 ../daemon/gvfsbackendftp.c:1216
 #: ../daemon/gvfsbackendftp.c:1394 ../daemon/gvfsbackendsftp.c:4291
-#: ../daemon/gvfsbackendsmb.c:2059
+#: ../daemon/gvfsbackendsmb.c:2038
 msgid "Target file already exists"
-msgstr "Doelbestand bestaat al"
+msgstr "Teikenlêer bestaan reeds"
 
-# Vrij vertaald (Wouter Bolsterlee)
 #: ../daemon/gvfsbackenddav.c:2003 ../daemon/gvfsbackendsftp.c:3425
-#: ../daemon/gvfsbackendsmb.c:1153
+#: ../daemon/gvfsbackendsmb.c:1132
 msgid "The file was externally modified"
-msgstr "Het bestand is tussentijds gewijzigd"
+msgstr "Die lêer is ekstern gewysig"
 
-#: ../daemon/gvfsbackenddav.c:2034 ../daemon/gvfsbackendsmb.c:1189
-#: ../daemon/gvfsbackendsmb.c:2076
+#: ../daemon/gvfsbackenddav.c:2034 ../daemon/gvfsbackendsmb.c:1168
+#: ../daemon/gvfsbackendsmb.c:2055
 msgid "Backup file creation failed"
-msgstr "Aanmaken reservekopie"
+msgstr "Kon nie rugsteunlêer skep nie"
 
 #. "separate": a link to dns-sd://local/
 #: ../daemon/gvfsbackenddnssd.c:486 ../daemon/gvfsbackendnetwork.c:393
 msgid "Local Network"
-msgstr "Lokaal netwerk"
+msgstr "Plaaslike netwerk"
 
 #: ../daemon/gvfsbackenddnssd.c:730 ../daemon/gvfsbackendnetwork.c:797
 msgid "Can't monitor file or directory."
-msgstr "Kan bestand of map niet monitoren."
+msgstr "Kan nie die lêer of gids monitor nie."
 
 #. TODO: Names, etc
 #: ../daemon/gvfsbackenddnssd.c:748
 msgid "Dns-SD"
-msgstr "Dns-SD"
+msgstr "DNS-SD"
 
 #: ../daemon/gvfsbackenddnssd.c:749 ../daemon/gvfsbackendnetwork.c:732
 #: ../daemon/gvfsbackendnetwork.c:882 ../daemon/gvfsbackendnetwork.c:883
@@ -750,70 +736,70 @@ msgstr "Netwerk"
 #: ../daemon/gvfsbackendftp.c:423
 #, c-format
 msgid "Enter password for ftp as %s on %s"
-msgstr "Voer wachtwoord voor ftp voor %s op %s in"
+msgstr "Gee die wagwoord vir FTP as gebruiker %s op %s"
 
 #. translators: %s here is the hostname
 #: ../daemon/gvfsbackendftp.c:426
 #, c-format
 msgid "Enter password for ftp on %s"
-msgstr "Voer wachtwoord voor ftp op %s in"
+msgstr "Gee die wagwoord vir FTP op %s"
 
 #: ../daemon/gvfsbackendftp.c:453 ../daemon/gvfsbackendsftp.c:987
-#: ../daemon/gvfsbackendsmb.c:627 ../daemon/gvfsbackendsmbbrowse.c:1010
+#: ../daemon/gvfsbackendsmb.c:606 ../daemon/gvfsbackendsmbbrowse.c:986
 msgid "Password dialog cancelled"
-msgstr "Wachtwoordvenster geannuleerd"
+msgstr "Wagwoorddialoog is gekanselleer"
 
 #: ../daemon/gvfsbackendftp.c:563
 #, c-format
 msgid "ftp on %s"
-msgstr "ftp op %s"
+msgstr "FTP op %s"
 
 #. Translators: the first %s is the username, the second the host name
 #: ../daemon/gvfsbackendftp.c:567
 #, c-format
 msgid "ftp as %s on %s"
-msgstr "ftp voor %s op %s"
+msgstr "FTP as %s op %s"
 
 #: ../daemon/gvfsbackendftp.c:660
 msgid "Insufficient permissions"
-msgstr "Onvoldoende toegangsrechten"
+msgstr ""
 
 #: ../daemon/gvfsbackendftp.c:706 ../daemon/gvfsbackendsftp.c:2335
 #: ../daemon/gvfsbackendsftp.c:3071 ../daemon/gvfsbackendsftp.c:3412
 #: ../daemon/gvfsbackendsftp.c:4282
 msgid "File is directory"
-msgstr "Bestand is een map"
+msgstr ""
 
 #: ../daemon/gvfsbackendftp.c:914 ../daemon/gvfsbackendftp.c:1179
 #: ../daemon/gvfsbackendsftp.c:3278
 msgid "backups not supported yet"
-msgstr "backups (nog) niet ondersteund"
+msgstr "rugsteun word nog nie ondersteun nie"
 
 #: ../daemon/gvfsbackendgphoto2.c:506
 #, c-format
 msgid "%s: %d: Directory or file exists"
-msgstr "%s: %d: Bestand of map bestaat al"
+msgstr ""
 
 #: ../daemon/gvfsbackendgphoto2.c:513
 #, c-format
 msgid "%s: %d: No such file or directory"
-msgstr "%s: %d: Bestand of map bestaat niet"
+msgstr ""
 
 #: ../daemon/gvfsbackendgphoto2.c:519
 #, c-format
 msgid "%s: %d: Invalid filename"
-msgstr "%s: %d: Ongeldige bestandsnaam"
+msgstr ""
 
 #: ../daemon/gvfsbackendgphoto2.c:525
 #, c-format
 msgid "%s: %d: Not Supported"
-msgstr "%s: %d: Niet ondersteund"
+msgstr ""
 
 #. Translator: %s represents the device, e.g. usb:001,042
 #: ../daemon/gvfsbackendgphoto2.c:720 ../daemon/gvfsbackendgphoto2.c:726
 #, c-format
 msgid "Digital Camera (%s)"
-msgstr "Digitale camera (%s)"
+msgstr "Digitale kamera (%s)"
 
 #. Translator: %s is the vendor name, e.g. Panasonic
 #. Translators: %s is the device vendor
@@ -821,7 +807,7 @@ msgstr "Digitale camera (%s)"
 #: ../monitor/gphoto2/ggphoto2volume.c:299
 #, c-format
 msgid "%s Camera"
-msgstr "%s-camera"
+msgstr "%s-kamera"
 
 #. Translator: %s is the vendor name, e.g. Panasonic
 #. Translators: %s is the device vendor
@@ -829,179 +815,179 @@ msgstr "%s-camera"
 #: ../monitor/gphoto2/ggphoto2volume.c:294
 #, c-format
 msgid "%s Audio Player"
-msgstr "%s-muziekspeler"
+msgstr "%s-oudiospeler"
 
 #: ../daemon/gvfsbackendgphoto2.c:961 ../monitor/gphoto2/ggphoto2volume.c:203
 #: ../monitor/gphoto2/ggphoto2volume.c:308
 msgid "Camera"
-msgstr "Camera"
+msgstr "Kamera"
 
 #: ../daemon/gvfsbackendgphoto2.c:963 ../monitor/gphoto2/ggphoto2volume.c:306
 msgid "Audio Player"
-msgstr "Muziekspeler"
+msgstr "Oudiospeler"
 
 #: ../daemon/gvfsbackendgphoto2.c:1569
 msgid "No device specified"
-msgstr "Geen apparaat opgegeven"
+msgstr "Geen toestel gespesifiseer nie"
 
 #: ../daemon/gvfsbackendgphoto2.c:1590
 msgid "Cannot create gphoto2 context"
-msgstr "Kon gphoto2-context niet aanmaken"
+msgstr ""
 
 #: ../daemon/gvfsbackendgphoto2.c:1600
 msgid "Error creating camera"
-msgstr "Kon camera niet aanmaken"
+msgstr ""
 
 #: ../daemon/gvfsbackendgphoto2.c:1613 ../daemon/gvfsbackendgphoto2.c:1623
 msgid "Error loading device information"
-msgstr "Fout bij opvragen van apparaatinformatie"
+msgstr ""
 
 #: ../daemon/gvfsbackendgphoto2.c:1635
 msgid "Error looking up device information"
-msgstr "Fout bij opvragen van apparaatinformatie"
+msgstr ""
 
 #: ../daemon/gvfsbackendgphoto2.c:1645
 msgid "Error getting device information"
-msgstr "Fout bij verkrijgen van apparaatinformatie"
+msgstr "Fout met kry van toestelinligting"
 
 #: ../daemon/gvfsbackendgphoto2.c:1658
 msgid "Error setting up camera communications port"
-msgstr "Instellen communicatiepoort voor camera mislukt"
+msgstr ""
 
 #: ../daemon/gvfsbackendgphoto2.c:1669
 msgid "Error initializing camera"
-msgstr "Fout bij initialiseren camera"
+msgstr "Fout met inisialiseer van kamera"
 
 #. Translator: %s represents the device, e.g. usb:001,042
 #: ../daemon/gvfsbackendgphoto2.c:1683
 #, c-format
 msgid "gphoto2 mount on %s"
-msgstr "gphoto2-koppeling op %s"
+msgstr ""
 
 #: ../daemon/gvfsbackendgphoto2.c:1765
 msgid "No camera specified"
-msgstr "Geen camera opgegeven"
+msgstr "Geen kamera gespesifiseer nie"
 
 #: ../daemon/gvfsbackendgphoto2.c:1806 ../daemon/gvfsbackendgphoto2.c:1832
 #, c-format
 msgid "Filesystem is busy"
-msgstr "Bestandssysteem is bezig"
+msgstr "Lêerstelsel is besig"
 
 #: ../daemon/gvfsbackendgphoto2.c:1902
 msgid "Error creating file object"
-msgstr "Fout bij aanmaken bestandobject"
+msgstr "Fout met skep van lêerobjek"
 
 #: ../daemon/gvfsbackendgphoto2.c:1917
 msgid "Error getting file"
-msgstr "Fout bij ophalen bestand"
+msgstr ""
 
 #: ../daemon/gvfsbackendgphoto2.c:1927
 msgid "Error getting data from file"
-msgstr "Fout bij verkrijgen data van bestand"
+msgstr ""
 
 #: ../daemon/gvfsbackendgphoto2.c:1985
 #, c-format
 msgid "Malformed icon identifier '%s'"
-msgstr "Ongeldige pictogram-identifier ‘%s’"
+msgstr ""
 
 #: ../daemon/gvfsbackendgphoto2.c:2061 ../daemon/gvfsbackendgphoto2.c:3250
 #, c-format
 msgid "Error seeking in stream on camera %s"
-msgstr "Fout bij zoeken in stream op camera %s"
+msgstr ""
 
 #: ../daemon/gvfsbackendgphoto2.c:2201 ../daemon/gvfsbackendsftp.c:2954
-#: ../daemon/gvfsbackendsmbbrowse.c:1414
+#: ../daemon/gvfsbackendsmbbrowse.c:1390
 msgid "Not a directory"
-msgstr "Geen map"
+msgstr "Nie 'n gids nie"
 
 #: ../daemon/gvfsbackendgphoto2.c:2234
 msgid "Failed to get folder list"
-msgstr "Opvragen van mappenlijst mislukt"
+msgstr "Kon nie lys van gidse kry nie"
 
 #: ../daemon/gvfsbackendgphoto2.c:2300
 msgid "Failed to get file list"
-msgstr "Opvragen van bestandenlijst mislukt"
+msgstr "Kon nie lys van lêers kry nie"
 
 #: ../daemon/gvfsbackendgphoto2.c:2592
 msgid "Error creating directory"
-msgstr "Fout bij aanmaken van map"
+msgstr "Fout met skep van gids"
 
 #: ../daemon/gvfsbackendgphoto2.c:2801
 msgid "Name already exists"
-msgstr "Naam bestaat al"
+msgstr "Naam bestaan reeds"
 
 #: ../daemon/gvfsbackendgphoto2.c:2812 ../daemon/gvfsbackendgphoto2.c:3441
 msgid "New name too long"
-msgstr "Nieuwe naam te lang"
+msgstr "Nuwe naam te lank"
 
 #: ../daemon/gvfsbackendgphoto2.c:2822 ../daemon/gvfsbackendgphoto2.c:3452
 msgid "Error renaming dir"
-msgstr "Fout bij hernoemen van map"
+msgstr "Fout met hernoem van gids"
 
 #: ../daemon/gvfsbackendgphoto2.c:2835 ../daemon/gvfsbackendgphoto2.c:3465
 msgid "Error renaming file"
-msgstr "Fout bij hernoemen van bestand"
+msgstr "Fout met hernoem van lêer"
 
 #: ../daemon/gvfsbackendgphoto2.c:2899
 #, c-format
 msgid "Directory '%s' is not empty"
-msgstr "Map ‘%s’ is niet leeg"
+msgstr "Gids '%s' is nie leeg nie"
 
 #: ../daemon/gvfsbackendgphoto2.c:2910
 msgid "Error deleting directory"
-msgstr "Fout bij verwijderen van map"
+msgstr "Fout met skrap van gids"
 
 #: ../daemon/gvfsbackendgphoto2.c:2936
 msgid "Error deleting file"
-msgstr "Fout bij verwijderen van bestand"
+msgstr "Fout met skrap van lêer"
 
 #: ../daemon/gvfsbackendgphoto2.c:2989
 msgid "Can't write to directory"
-msgstr "Kan niet in map schrijven"
+msgstr "Kan nie na gids skryf nie"
 
 #: ../daemon/gvfsbackendgphoto2.c:3036
 msgid "Cannot allocate new file to append to"
-msgstr "Kan geen nieuw bestand om naar te schrijven aanmaken"
+msgstr ""
 
 #: ../daemon/gvfsbackendgphoto2.c:3051
 msgid "Cannot read file to append to"
-msgstr "Kan bestand om naar te schrijven niet lezen"
+msgstr ""
 
 #: ../daemon/gvfsbackendgphoto2.c:3062
 msgid "Cannot get data of file to append to"
-msgstr "Kan data in bestand om naar te schrijven niet opvragen"
+msgstr ""
 
 #: ../daemon/gvfsbackendgphoto2.c:3349
 msgid "Error writing file"
-msgstr "Fout bij schrijven van bestand"
+msgstr "Fout met skryf van lêer"
 
 #: ../daemon/gvfsbackendgphoto2.c:3397
 msgid "Not supported (not same directory)"
-msgstr "Niet ondersteund (niet dezelfde map)"
+msgstr "Nie ondersteun nie (nie dieselfde gids nie)"
 
 #: ../daemon/gvfsbackendgphoto2.c:3409
 msgid "Not supported (src is dir, dst is dir)"
-msgstr "Niet ondersteund (bron is map, doel is map)"
+msgstr ""
 
 #: ../daemon/gvfsbackendgphoto2.c:3417
 msgid "Not supported (src is dir, dst is existing file)"
-msgstr "Niet ondersteund (bron is map, doel is bestaand bestand)"
+msgstr ""
 
 #: ../daemon/gvfsbackendgphoto2.c:3429
 msgid "Not supported (src is file, dst is dir)"
-msgstr "Niet ondersteund (bron is bestand, doel is map)"
+msgstr ""
 
 #: ../daemon/gvfsbackendhttp.c:257
 #, c-format
 msgid "HTTP Client Error: %s"
-msgstr "HTTP-clientfout: %s"
+msgstr "HTTP-kliëntfout: %s"
 
 #: ../daemon/gvfsbackendlocaltest.c:855
 msgid "Directory notification not supported"
-msgstr "Mapwijzigingsmeldingen niet ondersteund"
+msgstr "Gidskennisgewing nie ondersteun nie"
 
 #. smb:/// root link
-#: ../daemon/gvfsbackendnetwork.c:269 ../daemon/gvfsbackendsmbbrowse.c:909
+#: ../daemon/gvfsbackendnetwork.c:269 ../daemon/gvfsbackendsmbbrowse.c:885
 msgid "Windows Network"
 msgstr "Windows-netwerk"
 
@@ -1009,7 +995,7 @@ msgstr "Windows-netwerk"
 #. * shows computers in your local network.
 #: ../daemon/gvfsbackendnetwork.c:931
 msgid "Network Location Monitor"
-msgstr "Monitor voor netwerklokaties"
+msgstr ""
 
 #. Set the mountspec according to original uri, no matter whether user changes
 #. credentials during mount loop. Nautilus and other gio clients depend
@@ -1017,98 +1003,97 @@ msgstr "Monitor voor netwerklokaties"
 #. lead to G_IO_ERROR_NOT_MOUNTED errors
 #.
 #. Translators: This is "<sharename> on <servername>" and is used as name for an SMB share
-#: ../daemon/gvfsbackendobexftp.c:681 ../daemon/gvfsbackendsmb.c:566
-#: ../daemon/gvfsbackendsmb.c:1438
+#: ../daemon/gvfsbackendobexftp.c:681 ../daemon/gvfsbackendsmb.c:545
+#: ../daemon/gvfsbackendsmb.c:1417
 #, c-format
 msgid "%s on %s"
 msgstr "%s op %s"
 
-# Vrij vertaald (Wouter Bolsterlee)
 #: ../daemon/gvfsbackendobexftp.c:890
 msgid "USB support missing. Please contact your software vendor"
-msgstr "USB-ondersteuning ontbreekt. Neem contact op met uw beheerder."
+msgstr "USB-ondersteuning ontbreek. Kontak die sagtewareverskaffer."
 
 #: ../daemon/gvfsbackendobexftp.c:1010
 msgid "Connection to the device lost"
-msgstr "Verbinding met apparaat verloren"
+msgstr ""
 
 #: ../daemon/gvfsbackendobexftp.c:1507
 msgid "Device requires a software update"
-msgstr "Het apparaat heeft een software-update nodig"
+msgstr "Toestel benodig opgradering van sagteware"
 
-#: ../daemon/gvfsbackendobexftp.c:1855 ../daemon/gvfsbackendsmb.c:1950
+#: ../daemon/gvfsbackendobexftp.c:1855 ../daemon/gvfsbackendsmb.c:1929
 #, c-format
 msgid "Error deleting file: %s"
-msgstr "Fout bij verwijderen van bestand: %s"
+msgstr "Fout met skrap van lêer: %s"
 
 #: ../daemon/gvfsbackendsftp.c:301 ../daemon/gvfsbackendsftp.c:657
 msgid "ssh program unexpectedly exited"
-msgstr "SSH-programma werd onverwacht afgesloten"
+msgstr "ssh-program het onverwags geëindig"
 
 #: ../daemon/gvfsbackendsftp.c:316
 msgid "Hostname not known"
-msgstr "Hostnaam onbekend"
+msgstr "Gasheernaam is onbekend"
 
 #: ../daemon/gvfsbackendsftp.c:323
 msgid "No route to host"
-msgstr "Geen route naar host"
+msgstr "Geen roete na gasheer nie"
 
 #: ../daemon/gvfsbackendsftp.c:330
 msgid "Connection refused by server"
-msgstr "Verbinding geweigerd door server"
+msgstr ""
 
 #: ../daemon/gvfsbackendsftp.c:337
 msgid "Host key verification failed"
-msgstr "Controle van hostsleutel mislukt"
+msgstr ""
 
 #: ../daemon/gvfsbackendsftp.c:501
 msgid "Unable to spawn ssh program"
-msgstr "Kon SSH-programma niet starten"
+msgstr ""
 
 #: ../daemon/gvfsbackendsftp.c:517
 #, c-format
 msgid "Unable to spawn ssh program: %s"
-msgstr "Kon SSH-programma niet starten: %s"
+msgstr ""
 
 #: ../daemon/gvfsbackendsftp.c:619 ../daemon/gvfsbackendsftp.c:880
 msgid "Timed out when logging in"
-msgstr "Wachttijd voor aanmelden overschreden"
+msgstr "Uittelling tydens aanmelding"
 
 #. Translators: the first %s is the username, the second the host name
 #: ../daemon/gvfsbackendsftp.c:960
 #, c-format
 msgid "Enter passphrase for key for ssh as %s on %s"
-msgstr "Voer wachtwoordzin in voor SSH-sleutel van %s op %s"
+msgstr ""
 
 #. Translators: the first %s is the username, the second the host name
 #: ../daemon/gvfsbackendsftp.c:963
 #, c-format
 msgid "Enter password for ssh as %s on %s"
-msgstr "Voer SSH-wachtwoord in van %s op %s"
+msgstr ""
 
 #. Translators: %s is the hostname
 #: ../daemon/gvfsbackendsftp.c:967
 #, c-format
 msgid "Enter passphrase for key for ssh on %s"
-msgstr "Voer wachtwoordzin in voor SSH-sleutel van het account op %s"
+msgstr ""
 
 #. Translators: %s is the hostname
 #: ../daemon/gvfsbackendsftp.c:970
 #, c-format
 msgid "Enter password for ssh on %s"
-msgstr "Voer SSH-wachtwoord in voor het account op %s"
+msgstr ""
 
 #: ../daemon/gvfsbackendsftp.c:1050
 msgid "Can't send password"
-msgstr "Kon wachtwoord niet zenden"
+msgstr ""
 
 #: ../daemon/gvfsbackendsftp.c:1058
 msgid "Log In Anyway"
-msgstr "Toch aanmelden"
+msgstr "Meld in elk geval aan"
 
 #: ../daemon/gvfsbackendsftp.c:1058
 msgid "Cancel Login"
-msgstr "Aanmelden annuleren"
+msgstr "Kanselleer aanmelding"
 
 #: ../daemon/gvfsbackendsftp.c:1067
 #, c-format
@@ -1119,40 +1104,34 @@ msgid ""
 "The identity sent by the remote computer is %s. If you want to be absolutely "
 "sure it is safe to continue, contact the system administrator."
 msgstr ""
-"De identiteit van de computer op afstand (%s) is onbekend.\n"
-"Dit gebeurt wanneer u zich voor de eerste keer bij een computer aanmeldt.\n"
-"\n"
-"De identiteit die door de computer op afstand is verzonden is %s. Indien u "
-"absoluut zeker wilt weten of het veilig is om door te gaan, neem dan contact "
-"op met de systeembeheerder."
 
 #: ../daemon/gvfsbackendsftp.c:1087
 msgid "Login dialog cancelled"
-msgstr "Aanmeldvenster geannuleerd"
+msgstr ""
 
 #: ../daemon/gvfsbackendsftp.c:1107
 msgid "Can't send host identity confirmation"
-msgstr "Kan informatie over host-identiteit niet zenden"
+msgstr ""
 
 #: ../daemon/gvfsbackendsftp.c:1645 ../daemon/gvfsbackendsftp.c:1668
 msgid "Protocol error"
-msgstr "Protocolfout"
+msgstr "Protokolfout"
 
 #. Translators: This is the name of an sftp share, like "sftp for <user>on <hostname>"
 #: ../daemon/gvfsbackendsftp.c:1693
 #, c-format
 msgid "sftp for %s on %s"
-msgstr "sftp voor %s op %s"
+msgstr "SFTP vir gebruiker %s op %s"
 
 #. Translators: This is the name of an sftp share, like "sftp on <hostname>"
 #: ../daemon/gvfsbackendsftp.c:1696
 #, c-format
 msgid "sftp on %s"
-msgstr "sftp op %s"
+msgstr "SFTP op %s"
 
 #: ../daemon/gvfsbackendsftp.c:1737
 msgid "Unable to find supported ssh command"
-msgstr "Kon geen ondersteund SSH-programma vinden"
+msgstr "Kan nie ondersteunde ssh-opdrag kry nie"
 
 #: ../daemon/gvfsbackendsftp.c:2011 ../daemon/gvfsbackendsftp.c:2400
 #: ../daemon/gvfsbackendsftp.c:2479 ../daemon/gvfsbackendsftp.c:2490
@@ -1172,220 +1151,219 @@ msgstr "Kon geen ondersteund SSH-programma vinden"
 #: ../daemon/gvfsbackendsftp.c:4512 ../daemon/gvfsbackendsftp.c:4527
 #: ../daemon/gvfsbackendsftp.c:4542 ../daemon/gvfsbackendsftp.c:4620
 msgid "Invalid reply received"
-msgstr "Ongeldig antwoord ontvangen"
+msgstr "Ongeldige antwoord ontvang"
 
-#: ../daemon/gvfsbackendsftp.c:2259 ../daemon/gvfsbackendsmb.c:1445
+#: ../daemon/gvfsbackendsftp.c:2259 ../daemon/gvfsbackendsmb.c:1424
 #: ../daemon/gvfsdaemonutils.c:211
 msgid " (invalid encoding)"
-msgstr " (ongeldige codering)"
+msgstr " (ongeldige enkodering)"
 
 #: ../daemon/gvfsbackendsftp.c:2344
 msgid "Failure"
-msgstr "Mislukt"
+msgstr ""
 
 #: ../daemon/gvfsbackendsftp.c:2452
 #, c-format
 msgid "Invalid icon_id '%s' in OpenIconForRead"
-msgstr "Ongeldig icon_id ‘%s’ in OpenIconForRead"
+msgstr ""
 
 #: ../daemon/gvfsbackendsftp.c:2748
 #, c-format
 msgid "Error creating backup file: %s"
-msgstr "Fout bij maken reservekopie: %s"
+msgstr "Fout met skep van rugsteunlêer: %s"
 
 #: ../daemon/gvfsbackendsftp.c:3354
 msgid "Unable to create temporary file"
-msgstr "Kon tijdelijk bestand niet maken"
+msgstr "Kan nie tydelike lêer skep nie"
 
-#: ../daemon/gvfsbackendsftp.c:4277 ../daemon/gvfsbackendsmb.c:2048
+#: ../daemon/gvfsbackendsftp.c:4277 ../daemon/gvfsbackendsmb.c:2027
 msgid "Can't move directory over directory"
-msgstr "Kan map niet over andere map heen verplaatsen"
+msgstr "Kan nie 'n gids oor 'n gids skuif nie"
 
 #. translators: First %s is a share name, second is a server name
-#: ../daemon/gvfsbackendsmb.c:250
+#: ../daemon/gvfsbackendsmb.c:229
 #, c-format
 msgid "Password required for share %s on %s"
-msgstr "Wachtwoord benodigd voor gedeelde map %s op %s"
+msgstr "Wagwoord vereis vir deelgids %s op %s"
 
-#: ../daemon/gvfsbackendsmb.c:506 ../daemon/gvfsbackendsmb.c:552
+#: ../daemon/gvfsbackendsmb.c:485 ../daemon/gvfsbackendsmb.c:531
 #: ../daemon/gvfsdaemonutils.c:92
 #, c-format
 msgid "Internal Error (%s)"
 msgstr "Interne fout (%s)"
 
 #. translators: We tried to mount a windows (samba) share, but failed
-#: ../daemon/gvfsbackendsmb.c:632
+#: ../daemon/gvfsbackendsmb.c:611
 msgid "Failed to mount Windows share"
-msgstr "Kon gedeelde Windows-map niet aankoppelen"
+msgstr ""
 
-#: ../daemon/gvfsbackendsmb.c:793 ../daemon/gvfsbackendsmb.c:1289
+#: ../daemon/gvfsbackendsmb.c:772 ../daemon/gvfsbackendsmb.c:1268
 msgid "Unsupported seek type"
-msgstr "Niet ondersteund zoektype"
+msgstr ""
 
-#: ../daemon/gvfsbackendsmb.c:1381
+#: ../daemon/gvfsbackendsmb.c:1360
 #, c-format
 msgid "Backup file creation failed: %s"
-msgstr "Kon reservekopiebestand niet maken: %s"
+msgstr "Kon nie rugsteunlêer skep nie: %s"
 
-#: ../daemon/gvfsbackendsmb.c:2024
+#: ../daemon/gvfsbackendsmb.c:2003
 #, c-format
 msgid "Error moving file: %s"
-msgstr "Fout bij verplaatsen van bestand: %s"
+msgstr "Fout met skuif van lêer: %s"
 
-#: ../daemon/gvfsbackendsmb.c:2096
+#: ../daemon/gvfsbackendsmb.c:2075
 #, c-format
 msgid "Error removing target file: %s"
-msgstr "Fout bij verwijderen doelbestand: %s"
+msgstr "Fout met skrap van teikenlêer: %s"
 
-#: ../daemon/gvfsbackendsmb.c:2120
+#: ../daemon/gvfsbackendsmb.c:2099
 msgid "Can't recursively move directory"
-msgstr "Kan map niet recursief verplaatsen"
+msgstr "Kan nie gids rekursief skuif nie"
 
-#: ../daemon/gvfsbackendsmb.c:2164
+#: ../daemon/gvfsbackendsmb.c:2165
 msgid "Windows Shares Filesystem Service"
-msgstr "Bestandssysteemvoorziening voor gedeelde Windows-mappen"
+msgstr ""
 
 #. translators: %s is a server name
-#: ../daemon/gvfsbackendsmbbrowse.c:389
+#: ../daemon/gvfsbackendsmbbrowse.c:365
 #, c-format
 msgid "Password required for %s"
-msgstr "Wachtwoord benodigd voor %s"
+msgstr "Wagwoord word vereis vir %s"
 
 #. translators: Name for the location that lists the smb shares
 #. availible on a server (%s is the name of the server)
-#: ../daemon/gvfsbackendsmbbrowse.c:917
+#: ../daemon/gvfsbackendsmbbrowse.c:893
 #, c-format
 msgid "Windows shares on %s"
-msgstr "Gedeelde Windows-mappen op %s"
+msgstr "Windows-deelgidse op %s"
 
 #. translators: We tried to mount a windows (samba) share, but failed
-#: ../daemon/gvfsbackendsmbbrowse.c:1016
+#: ../daemon/gvfsbackendsmbbrowse.c:992
 msgid "Failed to retrieve share list from server"
-msgstr "Kon lijst van gedeelde mappen niet van server opvragen"
+msgstr "Kon nie lys van deelgidse van bediener kry nie"
 
-#: ../daemon/gvfsbackendsmbbrowse.c:1104 ../daemon/gvfsbackendsmbbrowse.c:1150
+#: ../daemon/gvfsbackendsmbbrowse.c:1080 ../daemon/gvfsbackendsmbbrowse.c:1126
 msgid "The file is not a mountable"
-msgstr "Het bestand is niet aankoppelbaar"
+msgstr ""
 
-#: ../daemon/gvfsbackendsmbbrowse.c:1172
+#: ../daemon/gvfsbackendsmbbrowse.c:1148
 msgid "Not a regular file"
-msgstr "Geen normaal bestand"
+msgstr "Nie 'n gewone lêer nie"
 
-#: ../daemon/gvfsbackendsmbbrowse.c:1504
+#: ../daemon/gvfsbackendsmbbrowse.c:1503
 msgid "Windows Network Filesystem Service"
-msgstr "Bestandssysteemvoorziening voor Windows-netwerken"
+msgstr "Windows-netwerk-lêerstelseldiens"
 
 #: ../daemon/gvfsbackendtrash.c:370 ../daemon/gvfsbackendtrash.c:426
 msgid "The trash folder may not be deleted"
-msgstr "De prullenbak kan niet verwijderd worden"
+msgstr "Die asblik gids kan nie geskrap word nie"
 
 #: ../daemon/gvfsbackendtrash.c:387 ../daemon/gvfsbackendtrash.c:440
 msgid "Items in the trash may not be modified"
-msgstr "Items in de prullenbak kunnen niet gewijzigd worden"
+msgstr "Items in die asblik kan nie verander word nie"
 
 #. Translators: this is the display name of the backend
 #. translators: This is the name of the backend
 #: ../daemon/gvfsbackendtrash.c:742 ../daemon/gvfsbackendtrash.c:850
 msgid "Trash"
-msgstr "Prullenbak"
+msgstr "Asblik"
 
 #: ../daemon/gvfsdaemon.c:1056
 msgid "Invalid backend type"
-msgstr "Ongeldig backend-type"
+msgstr ""
 
 #: ../daemon/gvfsdaemonutils.c:104
 #, c-format
 msgid "Error sending fd: %s"
-msgstr "Fout bij zenden naar ‘file descriptor’: %s"
+msgstr ""
 
 #: ../daemon/gvfsftpconnection.c:180
 msgid "Unexpected end of stream"
-msgstr "Gegevensstroom onverwacht beëindigd"
+msgstr ""
 
 #: ../daemon/gvfsftpconnection.c:196 ../daemon/gvfsftpconnection.c:209
 #: ../daemon/gvfsftptask.c:412 ../daemon/gvfsftptask.c:840
 msgid "Invalid reply"
-msgstr "Ongeldig antwoord"
+msgstr "Ongeldige antwoord"
 
 #: ../daemon/gvfsftpconnection.c:392
 msgid ""
 "Failed to create active FTP connection. Maybe your router does not support "
 "this?"
 msgstr ""
-"Kan geen actieve FTP-verbinding maken. Misschien ondersteunt de router dit "
-"niet."
 
 #: ../daemon/gvfsftpconnection.c:399
 msgid "Failed to create active FTP connection."
-msgstr "Opzetten actieve FTP-verbinding mislukt."
+msgstr ""
 
 #: ../daemon/gvfsftpfile.c:170
 msgid "Filename contains invalid characters."
-msgstr "Bestandsnaam bevat ongeldige tekens."
+msgstr "Die lêernaam bevat ongeldige karakters."
 
 #: ../daemon/gvfsftptask.c:262
 msgid "The FTP server is busy. Try again later"
-msgstr "De FTP-server is bezig. Probeer het later opnieuw."
+msgstr "Die FTP-bediener is besig. Probeer gerus later weer."
 
 #: ../daemon/gvfsftptask.c:356
 msgid "Accounts are unsupported"
-msgstr "Accounts worden niet ondersteund"
+msgstr "Rekeninge word nie ondersteun nie"
 
 #: ../daemon/gvfsftptask.c:360
+#, fuzzy
 msgid "Host closed connection"
-msgstr "De host heeft de verbinding verbroken"
+msgstr "Gasheer het die koppeling gesluit"
 
 #: ../daemon/gvfsftptask.c:364
 msgid "Cannot open data connection. Maybe your firewall prevents this?"
-msgstr "Kan dataverbinding niet openen. Wellicht blokkeert uw firewall dit."
+msgstr ""
 
 #: ../daemon/gvfsftptask.c:368
 msgid "Data connection closed"
-msgstr "Dataverbinding gesloten"
+msgstr ""
 
 #: ../daemon/gvfsftptask.c:375 ../daemon/gvfsftptask.c:379
 msgid "Operation failed"
-msgstr "Bewerking is mislukt"
+msgstr ""
 
 #: ../daemon/gvfsftptask.c:384
 msgid "No space left on server"
-msgstr "Geen vrije ruimte meer op server"
+msgstr ""
 
 #: ../daemon/gvfsftptask.c:396
 msgid "Unsupported network protocol"
-msgstr "Niet ondersteund netwerkprotocol"
+msgstr ""
 
 #: ../daemon/gvfsftptask.c:404
 msgid "Page type unknown"
-msgstr "Paginatype onbekend"
+msgstr ""
 
 #: ../daemon/gvfsftptask.c:408
 msgid "Invalid filename"
-msgstr "Ongeldige bestandsnaam"
+msgstr "Ongeldige lêernaam"
 
 #: ../daemon/gvfsjobmakesymlink.c:126
 msgid "Symlinks not supported by backend"
-msgstr "Symbolische verwijzingen niet door backend ondersteund"
+msgstr ""
 
 #: ../daemon/gvfsjobsetattribute.c:120
 msgid "Invalid dbus message"
-msgstr "Ongeldig D-Bus-bericht"
+msgstr ""
 
 #: ../daemon/main.c:45 ../metadata/meta-daemon.c:694
 msgid "Replace old daemon."
-msgstr "Oude voorziending vervangen."
+msgstr ""
 
 #: ../daemon/main.c:46
 msgid "Don't start fuse."
-msgstr "Fuse niet starten."
+msgstr ""
 
 #: ../daemon/main.c:58
 msgid "GVFS Daemon"
-msgstr "GVFS-voorziening"
+msgstr ""
 
 #: ../daemon/main.c:61
 msgid "Main daemon for GVFS"
-msgstr "Hoofdvoorziening voor GVFS"
+msgstr ""
 
 #. Translators: the first %s is the application name,
 #. the second %s is the error message
@@ -1403,85 +1381,85 @@ msgstr "%s: %s"
 #: ../programs/gvfs-set-attribute.c:128 ../programs/gvfs-tree.c:251
 #, c-format
 msgid "Try \"%s --help\" for more information."
-msgstr "Probeer ‘%s --help’ voor meer informatie."
+msgstr "Sien \"%s --help\" vir meer inligting."
 
 #: ../daemon/mount.c:459
 msgid "Invalid arguments from spawned child"
-msgstr "Ongeldige parameters van opgestart dochterproces"
+msgstr ""
 
 #: ../daemon/mount.c:779
 #, c-format
 msgid "Automount failed: %s"
-msgstr "Auto-aankoppelen mislukt: %s"
+msgstr ""
 
 #: ../daemon/mount.c:824 ../daemon/mount.c:898
 msgid "The specified location is not mounted"
-msgstr "De opgegeven locatie is niet aangekoppeld"
+msgstr ""
 
 #: ../daemon/mount.c:829
 msgid "The specified location is not supported"
-msgstr "De opgegeven locatie wordt niet ondersteund"
+msgstr ""
 
 #: ../daemon/mount.c:1036
 msgid "Location is already mounted"
-msgstr "Locatie is reeds aangekoppeld"
+msgstr ""
 
 #: ../daemon/mount.c:1044
 msgid "Location is not mountable"
-msgstr "Locatie is niet aankoppelbaar"
+msgstr ""
 
 #: ../metadata/meta-daemon.c:130 ../metadata/meta-daemon.c:336
 #: ../metadata/meta-daemon.c:390 ../metadata/meta-daemon.c:419
 #: ../metadata/meta-daemon.c:449
 #, c-format
 msgid "Can't find metadata file %s"
-msgstr "Can metadatabestand %s niet vinden"
+msgstr "Kan nie metadatalêer %s kry nie"
 
 #: ../metadata/meta-daemon.c:160 ../metadata/meta-daemon.c:179
 msgid "Unable to set metadata key"
-msgstr "Kon metadata-sleutel niet opslaan"
+msgstr ""
 
 #: ../metadata/meta-daemon.c:197 ../metadata/meta-daemon.c:399
 msgid "Unable to unset metadata key"
-msgstr "Kon metadata-sleutel niet verwijderen"
+msgstr ""
 
 #: ../metadata/meta-daemon.c:428
 msgid "Unable to remove metadata keys"
-msgstr "Kon metadata-sleutels niet verwijderen"
+msgstr ""
 
 #: ../metadata/meta-daemon.c:459
 msgid "Unable to move metadata keys"
-msgstr "Kon metadata-sleutels niet verplaatsen"
+msgstr ""
 
 #: ../metadata/meta-daemon.c:704
 msgid "GVFS Metadata Daemon"
-msgstr "GVFS-metadata-voorziening"
+msgstr ""
 
 #: ../metadata/meta-daemon.c:707
 msgid "Metadata daemon for GVFS"
-msgstr "Metadata-voorziening voor GVFS"
+msgstr ""
 
 #: ../monitor/gdu/gdu-volume-monitor-daemon.c:40
 msgid "GVfs GDU Volume Monitor"
-msgstr "GVfs-GDU-volumenmonitor"
+msgstr ""
 
 #: ../monitor/gdu/ggdudrive.c:168 ../monitor/hal/ghaldrive.c:179
 msgid "Floppy Drive"
-msgstr "Diskettestation"
+msgstr ""
 
 #: ../monitor/gdu/ggdudrive.c:258
 #, c-format
 msgid "Unnamed Drive (%s)"
-msgstr "Naamloze schrijf (%s)"
+msgstr ""
 
 #: ../monitor/gdu/ggdudrive.c:260
 msgid "Unnamed Drive"
-msgstr "Naamloze schijf"
+msgstr ""
 
 #: ../monitor/gdu/ggdudrive.c:561 ../monitor/hal/ghaldrive.c:662
 #, c-format
 msgid "Failed to eject media; one or more volumes on the media are busy."
-msgstr "Kon media niet uitwerpen; een of meerdere volumina zijn bezig."
+msgstr ""
 
 #: ../monitor/gdu/ggdudrive.c:1015
 msgid ""
@@ -1489,30 +1467,27 @@ msgid ""
 "Starting a drive in degraded mode means that the drive is no longer tolerant "
 "to failures. Data on the drive may be irrevocably lost if a component fails."
 msgstr ""
-"Schijf in ‘degraded mode’ starten?\n"
-"Dit houdt in dat de schijf niet langer fouttolerantie ondersteunt. Als een "
-"onderdeel het begeeft kunnen gegevens definitief verloren gaan."
 
 #: ../monitor/gdu/ggdudrive.c:1021
 msgid "Start Anyway"
-msgstr "Toch starten"
+msgstr ""
 
 #: ../monitor/gdu/ggdumount.c:856
 msgid "One or more programs are preventing the unmount operation."
-msgstr "Ontkoppelen wordt door één of meer toepassingen verhinderd"
+msgstr ""
 
 #: ../monitor/gdu/ggdumount.c:984
 msgid "Cannot get LUKS cleartext slave"
-msgstr "Kon LUKS-cleartext-slave niet verkrijgen"
+msgstr ""
 
 #: ../monitor/gdu/ggdumount.c:1006
 #, c-format
 msgid "Cannot get LUKS cleartext slave from path `%s'"
-msgstr "Kon LUKS-cleartext-slave niet verkrijgen van pad ‘%s’"
+msgstr ""
 
 #: ../monitor/gdu/ggduvolume.c:325
 msgid "Floppy Disk"
-msgstr "Diskette"
+msgstr ""
 
 #: ../monitor/gdu/ggduvolume.c:1075
 #, c-format
@@ -1520,8 +1495,6 @@ msgid ""
 "Enter a password to unlock the volume\n"
 "The device \"%s\" contains encrypted data on partition %d."
 msgstr ""
-"Geef een wachtwoord om het volumen te ontgrendelen\n"
-"Het apparaat ‘%s’ bevat vercijferde gegevens op partitie %d."
 
 #: ../monitor/gdu/ggduvolume.c:1082
 #, c-format
@@ -1529,8 +1502,6 @@ msgid ""
 "Enter a password to unlock the volume\n"
 "The device \"%s\" contains encrypted data."
 msgstr ""
-"Geef een wachtwoord om het volumen te ontgrendelen\n"
-"Het apparaat ‘%s’ bevat vercijferde gegevens."
 
 #: ../monitor/gdu/ggduvolume.c:1089
 #, c-format
@@ -1538,202 +1509,200 @@ msgid ""
 "Enter a password to unlock the volume\n"
 "The device %s contains encrypted data."
 msgstr ""
-"Geef een wachtwoord om het volumen te ontgrendelen\n"
-"Het apparaat %s bevat vercijferde gegevens."
 
 #: ../monitor/gphoto2/hal-utils.c:40 ../monitor/hal/hal-utils.c:40
 msgid "CD-ROM Disc"
-msgstr "Cd-rom-schijf"
+msgstr "CD-ROM-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:40 ../monitor/hal/hal-utils.c:40
 msgid "Blank CD-ROM Disc"
-msgstr "Lege cd-rom-schijf"
+msgstr "Skoon CD-ROM-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:41 ../monitor/hal/hal-utils.c:41
 msgid "CD-R Disc"
-msgstr "Cd-r-schijf"
+msgstr "CD-R-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:41 ../monitor/hal/hal-utils.c:41
 msgid "Blank CD-R Disc"
-msgstr "Lege cd-r-schijf"
+msgstr "Skoon CD-R-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:42 ../monitor/hal/hal-utils.c:42
 msgid "CD-RW Disc"
-msgstr "Cd-rw-schijf"
+msgstr "CD-RW-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:42 ../monitor/hal/hal-utils.c:42
 msgid "Blank CD-RW Disc"
-msgstr "Lege cd-rw-schijf"
+msgstr "Skoon CD-RW-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:43 ../monitor/gphoto2/hal-utils.c:45
 #: ../monitor/hal/hal-utils.c:43 ../monitor/hal/hal-utils.c:45
 msgid "DVD-ROM Disc"
-msgstr "Dvd-rom-schijf"
+msgstr "DVD-ROM-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:43 ../monitor/gphoto2/hal-utils.c:45
 #: ../monitor/hal/hal-utils.c:43 ../monitor/hal/hal-utils.c:45
 msgid "Blank DVD-ROM Disc"
-msgstr "Lege dvd-rom-schijf"
+msgstr "Skoon DVD-ROM-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:44 ../monitor/hal/hal-utils.c:44
 msgid "DVD-RAM Disc"
-msgstr "Dvd-ram-schijf"
+msgstr "DVD-RAM-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:44 ../monitor/hal/hal-utils.c:44
 msgid "Blank DVD-RAM Disc"
-msgstr "Lege dvd-ram-schijf"
+msgstr "Skoon DVD-RAM-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:46 ../monitor/hal/hal-utils.c:46
 msgid "DVD-RW Disc"
-msgstr "Dvd-rw-schijf"
+msgstr "DVD-RW-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:46 ../monitor/hal/hal-utils.c:46
 msgid "Blank DVD-RW Disc"
-msgstr "Lege dvd-rw-schijf"
+msgstr "Skoon DVD-RW-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:47 ../monitor/hal/hal-utils.c:47
 msgid "DVD+R Disc"
-msgstr "Dvd-r-schijf"
+msgstr "DVD+R-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:47 ../monitor/hal/hal-utils.c:47
 msgid "Blank DVD+R Disc"
-msgstr "Lege dvd-r-schijf"
+msgstr "Skoon DVD+R-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:48 ../monitor/hal/hal-utils.c:48
 msgid "DVD+RW Disc"
-msgstr "Dvd+rw-schijf"
+msgstr "DVD+RW-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:48 ../monitor/hal/hal-utils.c:48
 msgid "Blank DVD+RW Disc"
-msgstr "Lege dvd+rw-schijf"
+msgstr "Skoon DVD+RW-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:49 ../monitor/hal/hal-utils.c:49
 msgid "DVD+R DL Disc"
-msgstr "Dvd+r DL-schijf"
+msgstr ""
 
 #: ../monitor/gphoto2/hal-utils.c:49 ../monitor/hal/hal-utils.c:49
 msgid "Blank DVD+R DL Disc"
-msgstr "Lege dvd+r dl-schijf"
+msgstr ""
 
 #: ../monitor/gphoto2/hal-utils.c:50 ../monitor/hal/hal-utils.c:50
 msgid "Blu-Ray Disc"
-msgstr "Blu-ray-schijf"
+msgstr "Blu-ray-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:50 ../monitor/hal/hal-utils.c:50
 msgid "Blank Blu-Ray Disc"
-msgstr "Lege Blu-ray-schijf"
+msgstr "Skoon Blu-Ray-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:51 ../monitor/hal/hal-utils.c:51
 msgid "Blu-Ray R Disc"
-msgstr "Blu-ray-r-schijf"
+msgstr "Blu-ray-R-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:51 ../monitor/hal/hal-utils.c:51
 msgid "Blank Blu-Ray R Disc"
-msgstr "Lege Blu-ray-r-schijf"
+msgstr "Skoon Blu-Ray-R-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:52 ../monitor/hal/hal-utils.c:52
 msgid "Blu-Ray RW Disc"
-msgstr "Blu-ray-rw-schijf"
+msgstr "Blu-ray-RW-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:52 ../monitor/hal/hal-utils.c:52
 msgid "Blank Blu-Ray RW Disc"
-msgstr "Lege Blu-ray-rw-schijf"
+msgstr "Skoon Blu-Ray-RW-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:53 ../monitor/hal/hal-utils.c:53
 msgid "HD DVD Disc"
-msgstr "Hd-dvd-schijf"
+msgstr "HD-DVD-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:53 ../monitor/hal/hal-utils.c:53
 msgid "Blank HD DVD Disc"
-msgstr "Lege hd-dvd-schijf"
+msgstr "Skoon HD-DVD-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:54 ../monitor/hal/hal-utils.c:54
 msgid "HD DVD-R Disc"
-msgstr "Hd-dvd-r-schijf"
+msgstr "HD-DVD-R-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:54 ../monitor/hal/hal-utils.c:54
 msgid "Blank HD DVD-R Disc"
-msgstr "Lege hd-dvd-r-schijf"
+msgstr "Skoon HD-DVD-R-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:55 ../monitor/hal/hal-utils.c:55
 msgid "HD DVD-RW Disc"
-msgstr "Hd-dvd-rw-schijf"
+msgstr "HD-DVD-RW-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:55 ../monitor/hal/hal-utils.c:55
 msgid "Blank HD DVD-RW Disc"
-msgstr "Lege hd-dvd-rw-schijf"
+msgstr "Skoon HD-DVD-RW-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:56 ../monitor/hal/hal-utils.c:56
 msgid "MO Disc"
-msgstr "MO-schijf"
+msgstr "MO-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:56 ../monitor/hal/hal-utils.c:56
 msgid "Blank MO Disc"
-msgstr "Lege MO-schijf"
+msgstr "Skoon MO-skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:57 ../monitor/hal/hal-utils.c:57
 msgid "Disc"
-msgstr "Schijf"
+msgstr "Skyf"
 
 #: ../monitor/gphoto2/hal-utils.c:57 ../monitor/hal/hal-utils.c:57
 msgid "Blank Disc"
-msgstr "Lege schijf"
+msgstr "Skoon skyf"
 
 #: ../monitor/hal/ghaldrive.c:127
 msgid "CD-ROM"
-msgstr "Cd-rom"
+msgstr "CD-ROM"
 
 #: ../monitor/hal/ghaldrive.c:129
 msgid "CD-R"
-msgstr "Cd-r"
+msgstr "CD-R"
 
 #: ../monitor/hal/ghaldrive.c:131
 msgid "CD-RW"
-msgstr "Cd-rw"
+msgstr "CD-RW"
 
 #: ../monitor/hal/ghaldrive.c:135
 msgid "DVD-ROM"
-msgstr "Dvd-rom"
+msgstr "DVD-ROM"
 
 #: ../monitor/hal/ghaldrive.c:137
 msgid "DVD+R"
-msgstr "Dvd+r"
+msgstr "DVD+R"
 
 #: ../monitor/hal/ghaldrive.c:139
 msgid "DVD+RW"
-msgstr "Dvd+rw"
+msgstr "DVD+RW"
 
 #: ../monitor/hal/ghaldrive.c:141
 msgid "DVD-R"
-msgstr "Dvd-r"
+msgstr "DVD-R"
 
 #: ../monitor/hal/ghaldrive.c:143
 msgid "DVD-RW"
-msgstr "Dvd-rw"
+msgstr "DVD-RW"
 
 #: ../monitor/hal/ghaldrive.c:145
 msgid "DVD-RAM"
-msgstr "Dvd-ram"
+msgstr "DVD-RAM"
 
 #: ../monitor/hal/ghaldrive.c:148
 msgid "DVD±R"
-msgstr "Dvd±r"
+msgstr "DVD±R"
 
 #: ../monitor/hal/ghaldrive.c:151
 msgid "DVD±RW"
-msgstr "Dvd±rw"
+msgstr "DVD±RW"
 
 #: ../monitor/hal/ghaldrive.c:153
 msgid "HDDVD"
-msgstr "Hd-dvd"
+msgstr "HDDVD"
 
 #: ../monitor/hal/ghaldrive.c:155
 msgid "HDDVD-r"
-msgstr "Hd-dvd-r"
+msgstr "HDDVD-r"
 
 #: ../monitor/hal/ghaldrive.c:157
 msgid "HDDVD-RW"
-msgstr "Hd-dvd-rw"
+msgstr "HDDVD-RW"
 
 #: ../monitor/hal/ghaldrive.c:159
 msgid "Blu-ray"
@@ -1752,139 +1721,138 @@ msgstr "Blu-ray-RE"
 #: ../monitor/hal/ghaldrive.c:169
 #, c-format
 msgid "%s/%s Drive"
-msgstr "%s/%s-station"
+msgstr "%s/%s-aandrywer"
 
 #. translators: This wis something like "CD-ROM Drive" or "CD-RW Drive
 #. depending on the properties of the drive
 #: ../monitor/hal/ghaldrive.c:175
 #, c-format
 msgid "%s Drive"
-msgstr "%s-station"
+msgstr "%s-aandrywer"
 
 #: ../monitor/hal/ghaldrive.c:185
 msgid "Software RAID Drive"
-msgstr "Software RAID-schijf"
+msgstr "Sagteware-RAID-aandrywer"
 
 #: ../monitor/hal/ghaldrive.c:187
 msgid "USB Drive"
-msgstr "USB-schijf"
+msgstr "USB-aandrywer"
 
 #: ../monitor/hal/ghaldrive.c:189
 msgid "ATA Drive"
-msgstr "ATA-schijf"
+msgstr "ATA-aandrywer"
 
 #: ../monitor/hal/ghaldrive.c:191
 msgid "SCSI Drive"
-msgstr "SCSI-schijf"
+msgstr "SCSI-aandrywer"
 
 #: ../monitor/hal/ghaldrive.c:193
 msgid "FireWire Drive"
-msgstr "FireWire-schijf"
+msgstr "FireWire-aandrywer"
 
 #: ../monitor/hal/ghaldrive.c:197
 msgid "Tape Drive"
-msgstr "Tape-station"
+msgstr "Kasset-aandrywer"
 
 #: ../monitor/hal/ghaldrive.c:199
 msgid "CompactFlash Drive"
-msgstr "CompactFlash-station"
+msgstr "CompactFlash-aandrywer"
 
 #: ../monitor/hal/ghaldrive.c:201
 msgid "MemoryStick Drive"
-msgstr "MemoryStick-station"
+msgstr "MemoryStick-aandrywer"
 
 #: ../monitor/hal/ghaldrive.c:203
 msgid "SmartMedia Drive"
-msgstr "SmartMedia-station"
+msgstr "SmartMedia-aandrywer"
 
 #: ../monitor/hal/ghaldrive.c:205
 msgid "SD/MMC Drive"
-msgstr "SD/MMC-station"
+msgstr "SD/MMC-aandrywer"
 
 #: ../monitor/hal/ghaldrive.c:207
 msgid "Zip Drive"
-msgstr "Zip-station"
+msgstr "Zip-aandrywer"
 
 #: ../monitor/hal/ghaldrive.c:209
 msgid "Jaz Drive"
-msgstr "Jaz-station"
+msgstr "Jaz-aandrywer"
 
 #: ../monitor/hal/ghaldrive.c:211
 msgid "Thumb Drive"
-msgstr "Thumb-station"
+msgstr ""
 
 #: ../monitor/hal/ghaldrive.c:214
 msgid "Mass Storage Drive"
-msgstr "Opslagstation"
+msgstr ""
 
 #: ../monitor/hal/ghalmount.c:159 ../monitor/hal/ghalvolume.c:163
 #, c-format
 msgid "%.1f kB"
-msgstr "%.1f kB"
+msgstr "%.1f kG"
 
 #: ../monitor/hal/ghalmount.c:164 ../monitor/hal/ghalvolume.c:168
 #, c-format
 msgid "%.1f MB"
-msgstr "%.1f MB"
+msgstr "%.1f MG"
 
 #: ../monitor/hal/ghalmount.c:169 ../monitor/hal/ghalvolume.c:173
 #, c-format
 msgid "%.1f GB"
-msgstr "%.1f GB"
+msgstr "%.1f GG"
 
 #: ../monitor/hal/ghalmount.c:323 ../monitor/hal/ghalvolume.c:244
 msgid "Mixed Audio/Data Disc"
-msgstr "Schijf met audio en data"
+msgstr "Gemengde oudio-/data-skyf"
 
 #. Translators: %s is the size of the mount (e.g. 512 MB)
 #. Translators: %s is the size of the volume (e.g. 512 MB)
 #: ../monitor/hal/ghalmount.c:336 ../monitor/hal/ghalvolume.c:255
 #, c-format
 msgid "%s Media"
-msgstr "Media van %s"
+msgstr ""
 
 #. Translators: %s is the size of the volume (e.g. 512 MB)
 #: ../monitor/hal/ghalvolume.c:232
 #, c-format
 msgid "%s Encrypted Data"
-msgstr "%s versleutelde gegevens"
+msgstr "%s geënkripteerde data"
 
 #: ../programs/gvfs-cat.c:37
 msgid "locations"
-msgstr "locaties"
+msgstr ""
 
 #. Translators: the first %s is the program name, the second one
 #. is the URI of the file, the third is the error message.
 #: ../programs/gvfs-cat.c:57
 #, c-format
 msgid "%s: %s: error opening file: %s\n"
-msgstr "%s: %s: fout bij openen van bestand: %s\n"
+msgstr "%s: %s: fout met oopmaak van lêer: %s\n"
 
 #. Translators: the first %s is the program name, the
 #. second one is the URI of the file.
 #: ../programs/gvfs-cat.c:80
 #, c-format
 msgid "%s: %s, error writing to stdout"
-msgstr "%s: %s, schrijffout op ‘stdout’"
+msgstr "%s : %s, fout met skryf na stdout"
 
 #. Translators: the first %s is the program name, the second one
 #. is the URI of the file, the third is the error message.
 #: ../programs/gvfs-cat.c:92
 #, c-format
 msgid "%s: %s: error reading: %s\n"
-msgstr "%s: %s: leesfout: %s\n"
+msgstr "%s: %s: fout met lees: %s\n"
 
-# Er moet een spatie in het origineel bij (Wouter Bolsterlee)
 #. Translators: the first %s is the program name, the second one
 #. is the URI of the file, the third is the error message.
 #: ../programs/gvfs-cat.c:110
 #, c-format
 msgid "%s: %s:error closing: %s\n"
-msgstr "%s: %s: fout bij sluiten: %s\n"
+msgstr "%s: %s: fout met toemaak: %s\n"
 
 #: ../programs/gvfs-cat.c:136
 msgid "LOCATION... - concatenate LOCATIONS to standard output."
-msgstr "LOCATIE… — LOCATIES achter elkaar weergeven op standaarduitvoer"
+msgstr ""
 
 #. Translators: this message will appear after the usage string
 #. and before the list of options.
@@ -1895,18 +1863,12 @@ msgid ""
 "files: for example you can use something like smb://server/resource/file.txt "
 "as location to concatenate."
 msgstr ""
-"Bestanden op bepaalde locaties achter elkaar weergeven en op de "
-"standaarduitvoer tonen. Dit werkt net als het ‘cat’-programma, maar gebruikt "
-"gvfs-locaties in plaats van lokale bestanden. U kunt bijvoorbeeld iets als "
-"‘smb://server/map/naar/bestand.txt’ gebruiken als locatie."
 
 #: ../programs/gvfs-cat.c:148
 msgid ""
 "Note: just pipe through cat if you need its formatting option like -n, -T or "
 "other."
 msgstr ""
-"Let op: gebruik een ‘pipe’ als u opmaakopties zoals ‘-n’ of ‘-T’ wilt "
-"gebruiken."
 
 #: ../programs/gvfs-cat.c:161 ../programs/gvfs-copy.c:121
 #: ../programs/gvfs-info.c:369 ../programs/gvfs-ls.c:390
@@ -1915,315 +1877,313 @@ msgstr ""
 #: ../programs/gvfs-set-attribute.c:126 ../programs/gvfs-tree.c:249
 #, c-format
 msgid "Error parsing commandline options: %s\n"
-msgstr "Fout bij verwerken opdrachtregelopties: %s\n"
+msgstr ""
 
-# Vrij vertaald (Wouter Bolsterlee)
 #. Translators: the %s is the program name. This error message
 #. means the user is calling gvfs-cat without any argument.
 #: ../programs/gvfs-cat.c:174 ../programs/gvfs-open.c:151
 #, c-format
 msgid "%s: missing locations"
-msgstr "%s: locatie ontbreekt"
+msgstr ""
 
 #: ../programs/gvfs-copy.c:44 ../programs/gvfs-move.c:42
 msgid "no target directory"
-msgstr "geen doelmap"
+msgstr ""
 
 #: ../programs/gvfs-copy.c:45 ../programs/gvfs-move.c:43
 msgid "show progress"
-msgstr "voortgang tonen"
+msgstr ""
 
 #: ../programs/gvfs-copy.c:46 ../programs/gvfs-move.c:44
 msgid "prompt before overwrite"
-msgstr "overschrijven bevestigen"
+msgstr ""
 
 #: ../programs/gvfs-copy.c:47
 msgid "preserve all attributes"
-msgstr "alle attributen behouden"
+msgstr ""
 
 #: ../programs/gvfs-copy.c:48 ../programs/gvfs-move.c:45
 msgid "backup existing destination files"
-msgstr "backup maken van bestaande doelbestanden"
+msgstr ""
 
 #: ../programs/gvfs-copy.c:49
 msgid "never follow symbolic links"
-msgstr "nooit symbolische verwijzingen volgen"
+msgstr ""
 
 #: ../programs/gvfs-copy.c:78 ../programs/gvfs-move.c:67
 #, c-format
 msgid "progress"
-msgstr "voortgang"
+msgstr ""
 
 #: ../programs/gvfs-copy.c:115
 msgid "SOURCE... DEST - copy file(s) from SOURCE to DEST"
-msgstr "BRON… DOEL — bestand(en) kopiëren van BRON naar DOEL"
+msgstr ""
 
 #: ../programs/gvfs-copy.c:132 ../programs/gvfs-move.c:120
 msgid "Missing operand\n"
-msgstr "Ontbrekende operand\n"
+msgstr ""
 
 #: ../programs/gvfs-copy.c:140 ../programs/gvfs-move.c:128
 msgid "Too many arguments\n"
-msgstr "Te veel parameters\n"
+msgstr ""
 
 #: ../programs/gvfs-copy.c:149 ../programs/gvfs-move.c:137
 #, c-format
 msgid "Target %s is not a directory\n"
-msgstr "Doel %s is geen map\n"
+msgstr ""
 
 #: ../programs/gvfs-copy.c:193
 #, c-format
 msgid "overwrite %s?"
-msgstr "%s overschrijven?"
+msgstr ""
 
 #: ../programs/gvfs-copy.c:207
 #, c-format
 msgid "Error copying file %s: %s\n"
-msgstr "Fout bij kopiëren van bestand %s: %s\n"
+msgstr ""
 
 #: ../programs/gvfs-info.c:37
 msgid "List writable attributes"
-msgstr "Schrijfbare attributen tonen"
+msgstr ""
 
 #: ../programs/gvfs-info.c:38
 msgid "Get filesystem info"
-msgstr "Bestandssysteeminformatie opvragen"
+msgstr ""
 
 #: ../programs/gvfs-info.c:39 ../programs/gvfs-ls.c:39
 msgid "The attributes to get"
-msgstr "De op te vragen attributen"
+msgstr ""
 
 #: ../programs/gvfs-info.c:40 ../programs/gvfs-ls.c:43
 #: ../programs/gvfs-set-attribute.c:37
 msgid "Don't follow symlinks"
-msgstr "Geen symbolische verwijzingen volgen"
+msgstr ""
 
 #: ../programs/gvfs-info.c:50
 msgid "invalid type"
-msgstr "ongeldig type"
+msgstr ""
 
 #: ../programs/gvfs-info.c:53
 msgid "unknown"
-msgstr "onbekend"
+msgstr ""
 
 #: ../programs/gvfs-info.c:56
 msgid "regular"
-msgstr "normaal"
+msgstr ""
 
 #: ../programs/gvfs-info.c:59
 msgid "directory"
-msgstr "map"
+msgstr ""
 
 #: ../programs/gvfs-info.c:62
 msgid "symlink"
-msgstr "symbolische verwijzing"
+msgstr ""
 
 #: ../programs/gvfs-info.c:65
 msgid "special"
-msgstr "speciaal"
+msgstr ""
 
 #: ../programs/gvfs-info.c:68
 msgid "shortcut"
-msgstr "verwijzing"
+msgstr ""
 
 #: ../programs/gvfs-info.c:71
 msgid "mountable"
-msgstr "aankoppelbaar"
+msgstr ""
 
 #: ../programs/gvfs-info.c:109
 #, c-format
 msgid "attributes:\n"
-msgstr "attributen:\n"
+msgstr ""
 
 #: ../programs/gvfs-info.c:155
 #, c-format
 msgid "display name: %s\n"
-msgstr "weergavenaam: %s\n"
+msgstr ""
 
 #: ../programs/gvfs-info.c:159
 #, c-format
 msgid "edit name: %s\n"
-msgstr "bewerkbare naam: %s\n"
+msgstr ""
 
 #: ../programs/gvfs-info.c:165
 #, c-format
 msgid "name: %s\n"
-msgstr "naam: %s\n"
+msgstr ""
 
 #: ../programs/gvfs-info.c:172
 #, c-format
 msgid "type: %s\n"
-msgstr "type: %s\n"
+msgstr ""
 
 #: ../programs/gvfs-info.c:178
 #, c-format
 msgid "size: "
-msgstr "grootte: "
+msgstr ""
 
 #: ../programs/gvfs-info.c:183
 #, c-format
 msgid "hidden\n"
-msgstr "verborgen\n"
+msgstr ""
 
 #: ../programs/gvfs-info.c:266
 msgid "Copy with file"
-msgstr "Behouden bij kopiëren van bestand"
+msgstr ""
 
 #: ../programs/gvfs-info.c:270
 msgid "Keep with file when moved"
-msgstr "Behouden bij verplaatsen van bestand"
+msgstr ""
 
 #: ../programs/gvfs-info.c:307
 #, c-format
 msgid "Error getting writable attributes: %s\n"
-msgstr "Fout bij opvragen schrijfbare attributen: %s\n"
+msgstr ""
 
 #: ../programs/gvfs-info.c:312
 #, c-format
 msgid "Settable attributes:\n"
-msgstr "Instelbare attributen:\n"
+msgstr ""
 
 #: ../programs/gvfs-info.c:335
 #, c-format
 msgid "Writable attribute namespaces:\n"
-msgstr "Schrijfbare attribuut-namespaces:\n"
+msgstr ""
 
 #: ../programs/gvfs-info.c:362
 msgid "- show info for <location>"
-msgstr "- info tonen voor <locatie>"
+msgstr ""
 
 #: ../programs/gvfs-ls.c:40 ../programs/gvfs-tree.c:36
 msgid "Show hidden files"
-msgstr "Verborgen bestanden tonen"
+msgstr ""
 
 #: ../programs/gvfs-ls.c:41
 msgid "Use a long listing format"
-msgstr "Uitgebreid lijstformaat gebruiken"
+msgstr ""
 
 #: ../programs/gvfs-ls.c:42
 msgid "Show completions"
-msgstr "Aanvullingen tonen"
+msgstr ""
 
 #: ../programs/gvfs-ls.c:164 ../programs/gvfs-ls.c:171
 #: ../programs/gvfs-rename.c:69
 #, c-format
 msgid "Error: %s\n"
-msgstr "Fout: %s\n"
+msgstr ""
 
 #: ../programs/gvfs-ls.c:383
 msgid "- list files at <location>"
-msgstr "- bestandslijst van <locatie> tonen"
+msgstr ""
 
 #: ../programs/gvfs-mkdir.c:33
 msgid "create parent directories"
-msgstr "oudermappen aanmaken"
+msgstr ""
 
 #: ../programs/gvfs-mkdir.c:51
 msgid "- create directories"
-msgstr "- mappen aanmaken"
+msgstr ""
 
 #: ../programs/gvfs-mkdir.c:79 ../programs/gvfs-mkdir.c:88
 #, c-format
 msgid "Error creating directory: %s\n"
-msgstr "Fout bij aanmaken van map: %s\n"
+msgstr ""
 
 #: ../programs/gvfs-monitor-dir.c:38 ../programs/gvfs-monitor-file.c:38
 msgid "Don't send single MOVED events."
-msgstr "Geen afzonderlijke MOVED-gebeurtenissen sturen."
+msgstr ""
 
 #: ../programs/gvfs-mount.c:54
 msgid "Mount as mountable"
-msgstr "Als koppeling aankoppelen"
+msgstr ""
 
 #: ../programs/gvfs-mount.c:55
 msgid "Mount volume with device file"
-msgstr "Volume met apparaatbestand aankoppelen"
+msgstr ""
 
 #: ../programs/gvfs-mount.c:56
 msgid "Unmount"
-msgstr "Ontkoppelen"
+msgstr ""
 
 #: ../programs/gvfs-mount.c:57
 msgid "Unmount all mounts with the given scheme"
-msgstr "Alle koppelingen met het opgegeven schema ontkoppelen"
+msgstr ""
 
 #: ../programs/gvfs-mount.c:58
 msgid "List"
-msgstr "Lijst"
+msgstr ""
 
 #: ../programs/gvfs-mount.c:59
 msgid "Show extra information for List and Monitor"
-msgstr "Extra informatie tonen voor Lijst en Monitor"
+msgstr ""
 
 #: ../programs/gvfs-mount.c:60
 msgid "Monitor events"
-msgstr "Gebeurtenissen monitoren"
+msgstr ""
 
 #: ../programs/gvfs-mount.c:163 ../programs/gvfs-mount.c:184
 #, c-format
 msgid "Error mounting location: %s\n"
-msgstr "Fout bij aankoppelen locatie: %s\n"
+msgstr ""
 
 #: ../programs/gvfs-mount.c:241
 #, c-format
 msgid "Error unmounting mount: %s\n"
-msgstr "Fout bij ontkoppelen: %s\n"
+msgstr ""
 
 #: ../programs/gvfs-mount.c:262
 #, c-format
 msgid "Error finding enclosing mount: %s\n"
-msgstr "Kon omvattend koppelpunt niet vinden: %s\n"
+msgstr ""
 
 #: ../programs/gvfs-mount.c:682
 #, c-format
 msgid "Error mounting %s: %s\n"
-msgstr "Fout bij aankoppelen van %s: %s\n"
+msgstr ""
 
 #: ../programs/gvfs-mount.c:696
 #, c-format
 msgid "Mounted %s at %s\n"
-msgstr "%s aangekoppeld op %s\n"
+msgstr ""
 
 #: ../programs/gvfs-mount.c:747
 #, c-format
 msgid "No volume for device file %s\n"
-msgstr "Geen volumen voor apparaatbestand %s\n"
+msgstr ""
 
-# Vrij vertaald (Wouter Bolsterlee)
 #: ../programs/gvfs-mount.c:938
 msgid "- mount <location>"
-msgstr "- <locatie> aankoppelen"
+msgstr ""
 
 #: ../programs/gvfs-move.c:103
 msgid "SOURCE... DEST - move file(s) from SOURCE to DEST"
-msgstr "BRON… DOEL — bestand(en) van BRON naar DOEL verplaatsen"
+msgstr ""
 
 #: ../programs/gvfs-move.c:189
 #, c-format
 msgid "Error moving file %s: %s\n"
-msgstr "Fout bij verplaatsen van bestand %s: %s\n"
+msgstr ""
 
 #: ../programs/gvfs-open.c:37
 msgid "files"
-msgstr "bestanden"
+msgstr "lêers"
 
 #. Translators: the first %s is the program name, the second one
 #. is the URI of the file, the third is the error message.
 #: ../programs/gvfs-open.c:65
 #, c-format
 msgid "%s: %s: error opening location: %s\n"
-msgstr "%s: %s: fout bij openen locatie: %s\n"
+msgstr ""
 
 #. Translators: the first %s is the program name, the second one
 #. is the URI of the file, the third is the error message.
 #: ../programs/gvfs-open.c:92
 #, c-format
 msgid "%s: %s: error launching application: %s\n"
-msgstr "%s: %s: fout bij opstarten van toepassing: %s\n"
+msgstr ""
 
 #: ../programs/gvfs-open.c:122
 msgid "FILES... - open FILES with registered application."
-msgstr "BESTANDEN… — BESTANDEN openen met standaardtoepassing."
+msgstr ""
 
 #. Translators: this message will appear after the usage string
 #. and before the list of options.
@@ -2232,204 +2192,119 @@ msgid ""
 "Opens the file(s) with the default application registered to handle the type "
 "of the file."
 msgstr ""
-"Een of meerdere bestanden met de standaardtoepassing voor dit bestandstype "
-"openen."
 
 #: ../programs/gvfs-rename.c:50
 msgid "- rename file"
-msgstr "- bestand hernoemen"
+msgstr ""
 
 #: ../programs/gvfs-rename.c:76
 #, c-format
 msgid "Rename successful. New uri: %s\n"
-msgstr "Hernoemen succesvol. Nieuwe uri: %s\n"
+msgstr ""
 
 #: ../programs/gvfs-rm.c:35 ../programs/gvfs-trash.c:35
 msgid "ignore nonexistent files, never prompt"
-msgstr "niet-bestaande bestanden negeren, nooit vragen"
+msgstr ""
 
 #: ../programs/gvfs-rm.c:53
 msgid "- delete files"
-msgstr "- bestanden verwijderen"
+msgstr ""
 
 #: ../programs/gvfs-save.c:43
 msgid "Create backup"
-msgstr "Backup maken"
+msgstr ""
 
 #: ../programs/gvfs-save.c:44
 msgid "Only create if not existing"
-msgstr "Alleen maken indien niet-bestaand"
+msgstr ""
 
 #: ../programs/gvfs-save.c:45
 msgid "Append to end of file"
-msgstr "Aan einde van bestand toevoegen"
+msgstr ""
 
 #: ../programs/gvfs-save.c:46
 msgid "When creating a file, restrict access to the current user only"
-msgstr "Toegang beperken tot huidige gebruiken bij aanmaken bestand"
+msgstr ""
 
 #: ../programs/gvfs-save.c:47
 msgid "Print new etag at end"
-msgstr "Nieuwe etag tonen aan het einde"
+msgstr ""
 
 #: ../programs/gvfs-save.c:48
 msgid "The etag of the file being overwritten"
-msgstr "De etag van het te overschrijven bestand"
+msgstr ""
 
 #: ../programs/gvfs-save.c:76
 #, c-format
 msgid "Error opening file: %s\n"
-msgstr "Fout bij openen van bestand: %s\n"
+msgstr ""
 
 #: ../programs/gvfs-save.c:109
 msgid "Error reading stdin"
-msgstr "Fout bij lezen van stdin"
+msgstr ""
 
-# Er moet een spatie in het origineel bij (Wouter Bolsterlee)
 #: ../programs/gvfs-save.c:122
 #, c-format
 msgid "Error closing: %s\n"
-msgstr "Fout bij sluiten: %s\n"
+msgstr ""
 
 #: ../programs/gvfs-save.c:134
 #, c-format
 msgid "Etag not available\n"
-msgstr "Etag niet beschikbaar\n"
+msgstr ""
 
 #: ../programs/gvfs-save.c:156
 msgid "DEST - read from standard input and save to DEST"
-msgstr "DOEL — van standaardinvoer lezen en als DOEL opslaan"
+msgstr ""
 
 #: ../programs/gvfs-set-attribute.c:36
 msgid ""
 "attribute type [string, bytestring, boolean, uint32, int32, uint64, int64, "
 "stringv, unset]"
 msgstr ""
-"attribuuttype [string, bytestring, boolean, uint32, int32, uint64, int64, "
-"stringv, unset]"
 
 #: ../programs/gvfs-set-attribute.c:119
 msgid " <location> <attribute> <values> - set attribute"
-msgstr " <locatie> <attribuut> <waardes> — attribuut instellen"
+msgstr ""
 
 #: ../programs/gvfs-set-attribute.c:137
 #, c-format
 msgid "Location not specified\n"
-msgstr "Locatie niet opgegeven\n"
+msgstr ""
 
 #: ../programs/gvfs-set-attribute.c:145
 #, c-format
 msgid "Attribute not specified\n"
-msgstr "Attribuut niet opgegeven\n"
+msgstr ""
 
 #: ../programs/gvfs-set-attribute.c:154
 #, c-format
 msgid "Value not specified\n"
-msgstr "Waarde niet opgegeven\n"
+msgstr ""
 
 #: ../programs/gvfs-set-attribute.c:195
 #, c-format
 msgid "Invalid attribute type %s\n"
-msgstr "Ongeldige attribuuttype %s\n"
+msgstr ""
 
 #: ../programs/gvfs-set-attribute.c:205
 #, c-format
 msgid "Error setting attribute: %s\n"
-msgstr "Fout bij instellen van attribute: %s\n"
+msgstr ""
 
 #: ../programs/gvfs-trash.c:52
 msgid "- move files to trash"
-msgstr "- bestanden naar prullenbak verplaatsen"
+msgstr ""
 
 #: ../programs/gvfs-trash.c:69
 #, c-format
 msgid "Error trashing file: %s\n"
-msgstr "Fout bij verplaatsen naar prullenbak: %s\n"
+msgstr ""
 
 #: ../programs/gvfs-tree.c:37
 msgid "Follow symlinks, mounts and shortcuts like dirs"
 msgstr ""
-"Symbolische verwijzingen, koppelingen en verwijzingen als mappen volgen"
 
 #: ../programs/gvfs-tree.c:242
 msgid "- list contents of directories in a tree-like format"
-msgstr "- inhoud van mappen in een boomstructuur weergeven"
-
-#~ msgid "Enter password"
-#~ msgstr "Voer wachtwoord in"
-
-#~ msgid "- output files at <location>"
-#~ msgstr "- uitvoerbestanden op <locatie>"
-
-#~ msgid "Invalid return value from get_info"
-#~ msgstr "Ongeldig resultaat van ‘get_info’"
-
-#~ msgid "Invalid return value from query_info"
-#~ msgstr "Ongeldig resultaat van ‘query_info’"
-
-#~ msgid "Invalid return value from call"
-#~ msgstr "Ongeldig resultaat van aanroep"
-
-#~ msgid "Invalid return value from get_filesystem_info"
-#~ msgstr "Ongeldig resultaat van ‘get_filesystem_info’"
-
-#~ msgid "Invalid return value from query_filesystem_info"
-#~ msgstr "Ongeldig resultaat van ‘query_filesystem_info’"
-
-#~ msgid "Invalid return value from monitor_dir"
-#~ msgstr "Ongeldig resultaat van ‘monitor_dir’"
-
-#~ msgid "Invalid return value from monitor_file"
-#~ msgstr "Ongeldig resultaat van ‘monitor_file’"
-
-#~ msgid "Invalid return value from open_icon_for_read"
-#~ msgstr "Ongeldige resultaatwaarde van ‘open_icon_for_read’"
-
-# Vrij vertaald (Wouter Bolsterlee)
-#~ msgid "broken transmission"
-#~ msgstr "verzenden mislukt"
-
-#~ msgid "Could not connect to host"
-#~ msgstr "Kon niet met host verbinden"
-
-#~ msgid "filename too long"
-#~ msgstr "bestandsnaam te lang"
-
-#~ msgid "Invalid destination filename"
-#~ msgstr "Ongeldige doelbestandsnaam"
-
-#~ msgid "The query info operation is not supported"
-#~ msgstr "Bewerking voor opvragen van informatie wordt niet ondersteund"
-
-#~ msgid "Query info not supported on stream"
-#~ msgstr "Opvragen van informatie van stream niet ondersteund"
-
-#~ msgid "Can't delete trash"
-#~ msgstr "Kan prullenbak niet legen"
-
-#~ msgid "dns-sd"
-#~ msgstr "dns-sd"
-
-#~ msgid "%s (in trash)"
-#~ msgstr "%s (in prullenbak)"
-
-#~ msgid "Trash directory notification not supported"
-#~ msgstr "Prullenbakwijzigingsmeldingen niet ondersteund"
-
-#~ msgid "Error listing folders"
-#~ msgstr "Fout bij opvragen van mappen"
-
-#~ msgid "File system is busy: %d open files"
-#~ msgstr "Bestandssysteem is bezig: %d geopende bestanden"
-
-#~ msgid "%.1f kB Media"
-#~ msgstr "Media van %.1f kB"
-
-#~ msgid "%.1f MB Media"
-#~ msgstr "Media van %.1f MB"
-
-#~ msgid "%.1f GB Media"
-#~ msgstr "Media van %.1f GB"
-
-#~ msgid "Invalid reply from server."
-#~ msgstr "Ongeldig antwoord ontvangen van server."
+msgstr ""

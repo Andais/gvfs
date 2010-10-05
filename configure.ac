@@ -1,6 +1,6 @@
 AC_INIT(client/gdaemonvfs.h)
 
-AM_INIT_AUTOMAKE(gvfs, 1.6.4)
+AM_INIT_AUTOMAKE(gvfs, 1.6.5)
 AM_CONFIG_HEADER(config.h)
 
 AM_SANITY_CHECK
@@ -727,7 +727,6 @@ monitor/hal/Makefile
 monitor/gdu/Makefile
 monitor/gphoto2/Makefile
 monitor/afc/Makefile
-gconf/Makefile
 programs/Makefile
 test/Makefile
 po/Makefile.in

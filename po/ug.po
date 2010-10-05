@@ -1,30 +1,25 @@
-# Dutch translation for gvfs
-#
+# Uighur translation for gvfs.
+# Copyright (C) 2010 gvfs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gvfs package.
-#
-# Wouter Bolsterlee <wbolster@gnome.org>, 2008–2010
-# Reinout van Schouwen <reinouts@gnome.org>, 2009 (typo)
-#
-# LET OP! Wouter wil graag de controle over dit bestand houden. Neem
-# a.u.b. eerst even contact op voordat je wijzigingen doorvoert.
+# Sahran <sahran@live.com>, 2010.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gvfs\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-26 14:42+0200\n"
-"PO-Revision-Date: 2010-09-27 19:22+0200\n"
-"Last-Translator: Wouter Bolsterlee <wbolster@gnome.org>\n"
-"Language-Team: Dutch <vertaling@vrijschrift.org>\n"
-"Language: nl\n"
+"Project-Id-Version: gvfs master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=gvfs&component=general\n"
+"POT-Creation-Date: 2010-08-17 17:35+0000\n"
+"PO-Revision-Date: 2010-08-19 08:26+0600\n"
+"Last-Translator: Sahran <sahran@live.com>\n"
+"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../client/gdaemonfile.c:498 ../client/gdaemonfile.c:2376
 msgid "Operation not supported, files on different mounts"
-msgstr "Bewerking niet ondersteund; bestanden op verschillende koppelpunten"
+msgstr "ھۆججەت ئوخشاش بولمىغان يۈكلەش نۇقتىسىدا، بۇ مەشغۇلاتنى قوللىمايدۇ"
 
 #. Translators: %s is the name of a programming function
 #: ../client/gdaemonfile.c:868 ../client/gdaemonfile.c:902
@@ -40,38 +35,38 @@ msgstr "Bewerking niet ondersteund; bestanden op verschillende koppelpunten"
 #: ../client/gvfsiconloadable.c:374
 #, c-format
 msgid "Invalid return value from %s"
-msgstr "Ongeldig resultaat van ‘%s’"
+msgstr "قايتۇرغان ئىناۋەتسىز قىممىتى %s"
 
 #: ../client/gdaemonfile.c:985 ../client/gvfsiconloadable.c:339
 msgid "Couldn't get stream file descriptor"
-msgstr "Kon ‘stream file descriptor’ niet verkrijgen"
+msgstr "ئاقما ھۆججەت چۈشەندۈرۈش بەلگىسىگە ئېرىشەلمىدى"
 
 #: ../client/gdaemonfile.c:1106 ../client/gdaemonfile.c:1169
 #: ../client/gdaemonfile.c:1232 ../client/gdaemonfile.c:1298
 #: ../client/gdaemonfile.c:2615 ../client/gvfsiconloadable.c:155
 msgid "Didn't get stream file descriptor"
-msgstr "Kon ‘stream file descriptor’ niet verkrijgen"
+msgstr "ئاقما ھۆججەت چۈشەندۈرۈش بەلگىسىگە ئېرىشمىگەن"
 
 #. translators: this is an error message when there is no user visible "mount" object
 #. corresponding to a particular path/uri
 #: ../client/gdaemonfile.c:1964
 msgid "Could not find enclosing mount"
-msgstr "Kon omvattend koppelpunt niet vinden"
+msgstr "تەۋە يۈكلەش نۇقتىسىنى تاپالمىدى"
 
 #: ../client/gdaemonfile.c:1994
 #, c-format
 msgid "Invalid filename %s"
-msgstr "Ongeldige bestandsnaam: ‘%s’"
+msgstr "ئىناۋەتسىز ھۆججەت ئاتى %s"
 
 #: ../client/gdaemonfile.c:2232 ../client/gdaemonvfs.c:1200
 #: ../client/gdaemonvfs.c:1335 ../client/gdaemonvfs.c:1388
 #, c-format
 msgid "Error setting file metadata: %s"
-msgstr "Fout bij opslaan van bestandsmetadata: %s"
+msgstr "ھۆججەت مېتا سانلىق مەلۇماتىنى تەڭشەش خاتالىقى: %s"
 
 #: ../client/gdaemonfile.c:2233 ../client/gdaemonvfs.c:1389
 msgid "values must be string or list of strings"
-msgstr "waarden moeten een string of een lijst van strings zijn"
+msgstr "قىممىتى ھەرپ بەلگە ياكى ھەرپ بەلگە تىزمىسى بولۇشى لازىم"
 
 #: ../client/gdaemonfileenumerator.c:466 ../client/gdaemonfileenumerator.c:549
 #: ../client/gdaemonfileenumerator.c:600
@@ -90,7 +85,7 @@ msgstr "waarden moeten een string of een lijst van strings zijn"
 #: ../daemon/gvfsbackendobexftp.c:1735 ../daemon/gvfsbackendobexftp.c:1897
 #: ../daemon/gvfsbackendobexftp.c:1924 ../daemon/gvfsbackendobexftp.c:1983
 #: ../daemon/gvfsbackendobexftp.c:2005 ../daemon/gvfsbackendobexftp.c:2068
-#: ../daemon/gvfsbackendobexftp.c:2087 ../daemon/gvfsbackendsmb.c:1184
+#: ../daemon/gvfsbackendobexftp.c:2087 ../daemon/gvfsbackendsmb.c:1163
 #: ../daemon/gvfsbackendtest.c:91 ../daemon/gvfsbackendtest.c:124
 #: ../daemon/gvfsbackendtest.c:187 ../daemon/gvfschannel.c:319
 #: ../daemon/gvfsftptask.c:202 ../monitor/gdu/ggdumount.c:1069
@@ -100,7 +95,7 @@ msgstr "waarden moeten een string of een lijst van strings zijn"
 #: ../monitor/proxy/gproxymount.c:471 ../monitor/proxy/gproxymount.c:556
 #: ../monitor/proxy/gproxyvolume.c:807 ../monitor/proxy/gproxyvolume.c:884
 msgid "Operation was cancelled"
-msgstr "Bewerking is geannuleerd"
+msgstr "مەشغۇلات بىكار قىلىندى"
 
 #: ../client/gdaemonfileinputstream.c:527
 #: ../client/gdaemonfileinputstream.c:535
@@ -112,61 +107,61 @@ msgstr "Bewerking is geannuleerd"
 #: ../client/gdaemonfileoutputstream.c:1246
 #, c-format
 msgid "Error in stream protocol: %s"
-msgstr "Fout in stream-protocol: %s"
+msgstr "ئاقما كېلىشىم خاتالىقى: %s"
 
 #: ../client/gdaemonfileinputstream.c:535
 #: ../client/gdaemonfileinputstream.c:1694
 #: ../client/gdaemonfileoutputstream.c:458
 #: ../client/gdaemonfileoutputstream.c:1246
 msgid "End of stream"
-msgstr "Einde van stream"
+msgstr "ئاقما ئاخىرلاشتى"
 
 #: ../client/gdaemonfileinputstream.c:1330
 #: ../client/gdaemonfileoutputstream.c:981
 msgid "Seek not supported on stream"
-msgstr "Zoeken in stream niet ondersteund"
+msgstr "ئاقما ئىزدەشنى قوللىمايدۇ"
 
 #: ../client/gdaemonvfs.c:832
 #, c-format
 msgid "Error while getting mount info: %s"
-msgstr "Kon koppelingsinfo niet verkrijgen: %s"
+msgstr "يۈكلەش ئۇچۇرىغا ئېرىشىشتە خاتالىق كۆرۈلدى: %s"
 
 #: ../client/gdaemonvfs.c:1201
 msgid "Can't contact session bus"
-msgstr "Kan niet met ‘system bus’ verbinden"
+msgstr "ئەڭگىمە لىنىيىسى بىلەن ئالاقىلىشالمىدى"
 
 #: ../client/gvfsdaemondbus.c:570 ../client/gvfsdaemondbus.c:1002
 #, c-format
 msgid "Error connecting to daemon: %s"
-msgstr "Fout bij verbinden naar voorziening: %s"
+msgstr "مۇھاپىزەت جەريانىغا ئۇلىنىشتا خاتالىق كۆرۈلدى: %s"
 
 #: ../common/gsysutils.c:136
 #, c-format
 msgid "Error creating socket: %s"
-msgstr "Fout bij maken van socket: %s"
+msgstr "ئۇلىغۇچ قۇرۇش خاتالىقى: %s"
 
 #: ../common/gsysutils.c:174
 #, c-format
 msgid "Error connecting to socket: %s"
-msgstr "Fout bij verbinden met socket: %s"
+msgstr "socket قا ئۇلىنىش خاتالىقى: %s"
 
 #: ../common/gvfsdaemonprotocol.c:521
 msgid "Invalid file info format"
-msgstr "Ongeldig formaat bestandsinformatie"
+msgstr "ئىناۋەتسىز ھۆججەت ئۇچۇر فورماتى"
 
 #: ../common/gvfsdaemonprotocol.c:539
 msgid "Invalid attribute info list content"
-msgstr "Ongeldige inhoud in eigenschappenlijst"
+msgstr "خاسلىق ئۇچۇر تىزىملىك مەزمۇنى ئىناۋەتسىز"
 
 #: ../common/gvfsdnssdresolver.c:209
 #, c-format
 msgid "Error initializing Avahi: %s"
-msgstr "Fout bij initialiseren van Avahi: %s"
+msgstr "Avahi دەسلەپلەشتۈرۈش خاتالىقى: %s"
 
 #: ../common/gvfsdnssdresolver.c:255
 #, c-format
 msgid "Error creating Avahi resolver: %s"
-msgstr "Fout bij maken van Avahi-resolver: %s"
+msgstr "Avahi يەشكۈچ قۇرۇش خاتالىقى: %s"
 
 #. Translators:
 #. * - the first %s refers to the service type
@@ -176,7 +171,8 @@ msgstr "Fout bij maken van Avahi-resolver: %s"
 #: ../common/gvfsdnssdresolver.c:1100
 #, c-format
 msgid "Error resolving \"%s\" service \"%s\" on domain \"%s\""
-msgstr "Fout bij resolven van ‘%s’-service ‘%s’ in domein ‘%s’"
+msgstr ""
+"\"%3$s\"  دائىرىدە \"%1$s\" مۇلازىمىتىنى يېشىشتە \"%2$s\" خاتالىق كۆرۈلدى"
 
 #. Translators:
 #. * - the first %s refers to the service type
@@ -190,8 +186,8 @@ msgid ""
 "Error resolving \"%s\" service \"%s\" on domain \"%s\". One or more TXT "
 "records are missing. Keys required: \"%s\"."
 msgstr ""
-"Fout bij resolven van ‘%s’-service ‘%s’ in domein ‘%s’. Een of meerdere TXT-"
-"records ontbreken. Benodigde keys: ‘%s’."
+"\"%3$s\"  دائىرىدە \"%1$s\" مۇلازىمىتىنى يېشىشتە \"%2$s\" خاتالىق كۆرۈلدى. "
+"بىر ياكى بىر قانچە TXT خاتىرە يوقالدى. زۆرۈر شىفىرلىق ئاچقۇچ: \"%4$s\""
 
 #. Translators:
 #. * - the first %s refers to the service type
@@ -201,167 +197,168 @@ msgstr ""
 #: ../common/gvfsdnssdresolver.c:1143
 #, c-format
 msgid "Timed out resolving \"%s\" service \"%s\" on domain \"%s\""
-msgstr "Timeout bij resolven van ‘%s’-service ‘%s’ in domein ‘%s’"
+msgstr ""
+"\"%3$s\"  دائىرىدە \"%1$s\" مۇلازىمىتىنى يېشىشتە \"%2$s\" ۋاقىت ھالقىدى"
 
 #: ../common/gvfsdnssdutils.c:233 ../common/gvfsdnssdutils.c:263
 #: ../common/gvfsdnssdutils.c:280
 #, c-format
 msgid "Malformed dns-sd encoded_triple '%s'"
-msgstr "Ongeldige ‘dns-sd encoded_triple’: ‘%s’"
+msgstr "dns-sd encoded_triple '%s' فورمات خاتالىقى"
 
 #: ../common/gvfsicon.c:250
 #, c-format
 msgid "Can't handle version %d of GVfsIcon encoding"
-msgstr "Kan versie %d van GVfsIcon-codering niet verwerken"
+msgstr "GVfsIcon كودلاش نەشرى %d نى بىر تەرەپ قىلالمىدى"
 
 #: ../common/gvfsicon.c:260
 msgid "Malformed input data for GVfsIcon"
-msgstr "Ongeldige invoergegevens voor GVfsIcon"
+msgstr "GVfsIcon غا كىرگۈزگەن سانلىق مەلۇمات فورماتى خاتا"
 
 #: ../daemon/daemon-main.c:76 ../daemon/daemon-main.c:230
 #, c-format
 msgid "Error connecting to D-Bus: %s"
-msgstr "Fout bij verbinden met D-Bus: %s"
+msgstr "D-Bus قا ئۇلىنىش خاتالىقى: %s"
 
 #. translators: This is the default daemon's application name,
 #. * the %s is the type of the backend, like "ftp"
 #: ../daemon/daemon-main.c:91
 #, c-format
 msgid "%s Filesystem Service"
-msgstr "Bestandssysteemvoorziening voor %s"
+msgstr "%s ھۆججەت سىستېما مۇلازىمىتى"
 
 #: ../daemon/daemon-main.c:110 ../programs/gvfs-copy.c:90
 #: ../programs/gvfs-move.c:78
 #, c-format
 msgid "Error: %s"
-msgstr "Fout: %s"
+msgstr "خاتالىق: %s"
 
 #: ../daemon/daemon-main.c:155
 #, c-format
 msgid "Usage: %s --spawner dbus-id object_path"
-msgstr "Gebruik: %s --spawner dbus-id object_path"
+msgstr "ئىشلىتىلىشى: %s --spawner dbus-id ئوبيېكت يولى"
 
 #: ../daemon/daemon-main.c:179 ../daemon/daemon-main.c:197
 #, c-format
 msgid "Usage: %s key=value key=value ..."
-msgstr "Gebruik: %s key=value key=value ..."
+msgstr "ئىشلىتىلىشى: %s key=value key=value ..."
 
 #: ../daemon/daemon-main.c:195
 #, c-format
 msgid "No mount type specified"
-msgstr "Geen koppeltype opgegeven"
+msgstr "يۈكلەش تىپى بەلگىلەنمىگەن"
 
 #: ../daemon/daemon-main.c:265
 #, c-format
 msgid "mountpoint for %s already running"
-msgstr "koppelpunt voor %s reeds actief"
+msgstr "%s نىڭ يۈكلەش نۇقتىسى ئىجرا قىلىنىۋاتىدۇ"
 
 #: ../daemon/daemon-main.c:276
 msgid "error starting mount daemon"
-msgstr "fout bij starten van koppelvoorziening"
+msgstr "مۇھاپىزەت جەريان يۈكلەشنى قوزغىتىش خاتالىقى"
 
 #: ../daemon/gvfsbackend.c:933 ../monitor/gdu/ggdumount.c:921
 msgid "Unmount Anyway"
-msgstr "Toch ontkoppelen"
+msgstr "يۈك چۈشۈرىۋەر"
 
 #: ../daemon/gvfsbackend.c:934 ../daemon/gvfsbackendafc.c:281
 #: ../monitor/gdu/ggdudrive.c:1022 ../monitor/gdu/ggdumount.c:922
 msgid "Cancel"
-msgstr "Annuleren"
+msgstr "ۋاز كەچ"
 
 #: ../daemon/gvfsbackend.c:936 ../monitor/gdu/ggdumount.c:923
 msgid ""
 "Volume is busy\n"
 "One or more applications are keeping the volume busy."
 msgstr ""
-"Volumen is bezig\n"
-"Een of meerdere toepassingen houden dit volumen bezig"
+"ئەن ئالدىراش\n"
+"بىر ياكى بىر قانچە قوللىنىشچان پروگرامما ئەننى ئىگىلەگلىك."
 
 #: ../daemon/gvfsbackendafc.c:159
 msgid "Internal Apple File Control error"
-msgstr "Interne Apple File Control-fout"
+msgstr "ئالما ئىچكى ھۆججەت باشقۇرۇش ئۇچۇرى خاتالىقى"
 
 #: ../daemon/gvfsbackendafc.c:163 ../daemon/gvfsbackendftp.c:669
 msgid "File does not exist"
-msgstr "Bestand bestaat niet"
+msgstr "ھۆججەت مەۋجۇت ئەمەس"
 
 #: ../daemon/gvfsbackendafc.c:166
 msgid "The directory is not empty"
-msgstr "Map is niet leeg"
+msgstr "مۇمدەرىجە بوش ئەمەس"
 
 #: ../daemon/gvfsbackendafc.c:170
 msgid "The device did not respond"
-msgstr "Het apparaat antwoordde niet"
+msgstr "ئۈسكۈنىدە ئىنكاس يوق"
 
 #: ../daemon/gvfsbackendafc.c:174
 msgid "The connection was interrupted"
-msgstr "De verbinding werd onderbroken"
+msgstr "ئۇلىنىش ئۈزۈلدى"
 
 #: ../daemon/gvfsbackendafc.c:178
 msgid "Invalid Apple File Control data received"
-msgstr "Ongeldige Apple File Control-gegevens ontvangen"
+msgstr "ئىناۋەتسىز ئالما ھۆججەت باشقۇرۇش ئۇچۇرى تاپشۇرۇۋالدى"
 
 #: ../daemon/gvfsbackendafc.c:182
 #, c-format
 msgid "Unhandled Apple File Control error (%d)"
-msgstr "Onafgehandelde Apple File Control-fout (%d)"
+msgstr "تۇتقۇسىز ئالما ھۆججەت باشقۇرۇش ئۇچۇرى خاتالىقى (%d)"
 
 #: ../daemon/gvfsbackendafc.c:199
 msgid "Lockdown Error: Invalid Argument"
-msgstr "Lockdown-fout: ongeldige parameter"
+msgstr "قۇلۇپلاش خاتالىقى: ئىناۋەتسىز ئۆزگەرگۈچى مىقدار"
 
 #: ../daemon/gvfsbackendafc.c:203 ../daemon/gvfsbackendsftp.c:309
 #: ../daemon/gvfsbackendsftp.c:1836 ../daemon/gvfsftptask.c:400
 msgid "Permission denied"
-msgstr "Toegang geweigerd"
+msgstr "ھوقوقىڭىز يەتمىدى"
 
 #: ../daemon/gvfsbackendafc.c:206
 #, c-format
 msgid "Unhandled Lockdown error (%d)"
-msgstr "Onafgehandelde lockdown-fout (%d)"
+msgstr "تۇتقۇسىز قۇلۇپلانغان خاتالىق (%d)"
 
 #: ../daemon/gvfsbackendafc.c:223
 msgid "libimobiledevice Error: Invalid Argument"
-msgstr "libimobiledevice-fout: ongeldige parameter"
+msgstr "libimobiledevice خاتالىقى: ئىناۋەتسىز ئۆزگەرگۈچى مىقدار"
 
 #: ../daemon/gvfsbackendafc.c:227
 msgid ""
 "libimobiledevice Error: No device found. Make sure usbmuxd is set up "
 "correctly."
 msgstr ""
-"libimobiledevice-fout: geen apparaat gevonden. Controleer dat usbmuxd "
-"correct functioneert."
+"libimobiledevice خاتالىقى: ئۈسكۈنە تېپىلمىدى. usbmuxd راستىنلا توغرا "
+"سەپلەنگەنمۇ."
 
 #: ../daemon/gvfsbackendafc.c:230
 #, c-format
 msgid "Unhandled libimobiledevice error (%d)"
-msgstr "Onafgehandelde libimobiledevice-fout (%d)"
+msgstr "تۇتقۇسىز libimobiledevice خاتالىقى (%d)"
 
 #: ../daemon/gvfsbackendafc.c:281
 msgid "Try again"
-msgstr "Opnieuw proberen"
+msgstr "قايتا سىنا"
 
 #: ../daemon/gvfsbackendafc.c:299 ../daemon/gvfsbackendarchive.c:536
 #: ../daemon/gvfsbackendarchive.c:565 ../daemon/gvfsbackenddav.c:1631
 #: ../daemon/gvfsbackendhttp.c:315 ../daemon/gvfsbackendobexftp.c:861
 #: ../daemon/gvfsbackendobexftp.c:877 ../daemon/gvfsbackendobexftp.c:896
-#: ../daemon/gvfsbackendsmb.c:669
+#: ../daemon/gvfsbackendsmb.c:648
 msgid "Invalid mount spec"
-msgstr "Ongeldige aankoppelspecificatie"
+msgstr "ئىناۋەتسىز يۈكلەش چۈشەندۈرۈشى"
 
 #: ../daemon/gvfsbackendafc.c:305
 msgid "Invalid AFC location: must be in the form of afc://uuid:port-number"
-msgstr "Ongeldige AFC-locatie: de juiste vorm is afc://uuid:poortnummer"
+msgstr "AFC ئورنى ئىناۋەتسىز: ئىپادە afc://uuid:port-number بولۇشى لازىم"
 
 #: ../daemon/gvfsbackendafc.c:320
 #, c-format
 msgid "Service %d on Apple Mobile Device"
-msgstr "Service %d op Apple Mobile Device"
+msgstr "ئالما كۆچمە ئۈسكۈنىدىكى %d مۇلازىمەت"
 
 #: ../daemon/gvfsbackendafc.c:326
 #, c-format
 msgid "Apple Mobile Device"
-msgstr "Apple Mobile Device"
+msgstr "ئالما كۆچمە ئۈسكۈنىسى"
 
 #: ../daemon/gvfsbackendafc.c:375
 #, c-format
@@ -377,40 +374,40 @@ msgid ""
 "Device '%s' is password protected. Enter the password on the device and "
 "click 'Try again'."
 msgstr ""
-"Het apparaat ‘%s’ is met een wachtwoord beveiligd. Geeft het wachtwoord op "
-"het apparaat en klik op ‘Opnieuw proberen’."
+"'%s' ئۈسكۈنە ئىم بىلەن قوغدالغان. ئۈسكۈنىنىڭ ئىمنى كىرگۈزۈپ، «قايتا سىنا»نى "
+"چېكىڭ."
 
 #: ../daemon/gvfsbackendafc.c:585 ../daemon/gvfsbackendarchive.c:632
 #: ../daemon/gvfsbackendcomputer.c:645 ../daemon/gvfsbackendgphoto2.c:1886
-#: ../daemon/gvfsbackendobexftp.c:1071 ../daemon/gvfsbackendsmb.c:723
+#: ../daemon/gvfsbackendobexftp.c:1071 ../daemon/gvfsbackendsmb.c:702
 #: ../daemon/gvfsbackendtrash.c:232
 msgid "Can't open directory"
-msgstr "Kan map niet openen"
+msgstr "مۇندەرىجە ئاچالمىدى"
 
 #: ../daemon/gvfsbackendafc.c:593 ../daemon/gvfsbackendarchive.c:624
 #: ../daemon/gvfsbackendarchive.c:668 ../daemon/gvfsbackendarchive.c:720
 #: ../daemon/gvfsbackendarchive.c:749 ../daemon/gvfsbackendcdda.c:986
 #: ../daemon/gvfsbackendcomputer.c:627 ../daemon/gvfsbackenddnssd.c:392
 #: ../daemon/gvfsbackendftp.c:1000 ../daemon/gvfsbackendnetwork.c:646
-#: ../daemon/gvfsbackendsmbbrowse.c:1109 ../daemon/gvfsbackendsmbbrowse.c:1176
-#: ../daemon/gvfsbackendsmbbrowse.c:1348 ../daemon/gvfsbackendsmbbrowse.c:1418
+#: ../daemon/gvfsbackendsmbbrowse.c:1085 ../daemon/gvfsbackendsmbbrowse.c:1152
+#: ../daemon/gvfsbackendsmbbrowse.c:1324 ../daemon/gvfsbackendsmbbrowse.c:1394
 #, c-format
 msgid "File doesn't exist"
-msgstr "Bestand bestaat niet"
+msgstr "ھۆججەت مەۋجۇد ئەمەس"
 
 #: ../daemon/gvfsbackendafc.c:701 ../daemon/gvfsbackendafc.c:1506
 msgid "Backups are not yet supported."
-msgstr "Backups worden (nog) niet ondersteund"
+msgstr "زاپاسلاشنى تېخى قوللىمايدۇ."
 
 #: ../daemon/gvfsbackendafc.c:839
 msgid "Invalid seek type"
-msgstr "Ongeldig seek-type"
+msgstr "نامەلۇم ئىزدەش تىپى"
 
 #: ../daemon/gvfsbackendafc.c:1425 ../daemon/gvfsbackendsftp.c:1834
-#: ../daemon/gvfsbackendsftp.c:4639 ../daemon/gvfsbackendsmb.c:1723
+#: ../daemon/gvfsbackendsftp.c:4639 ../daemon/gvfsbackendsmb.c:1702
 #: ../daemon/gvfsftptask.c:392
 msgid "Operation unsupported"
-msgstr "Bewerking niet ondersteund"
+msgstr "بۇ مەشغۇلاتنى قوللىمايدۇ"
 
 #. FIXME: this should really be "/ in %s", but can't change
 #. due to string freeze.
@@ -419,28 +416,28 @@ msgstr "Bewerking niet ondersteund"
 #: ../daemon/gvfsftpdircache.c:428
 #, c-format
 msgid "/ on %s"
-msgstr "/ op %s"
+msgstr "/ %s دىكى"
 
 #: ../daemon/gvfsbackendarchive.c:525 ../daemon/gvfsbackendftp.c:600
 #: ../daemon/gvfsbackendsftp.c:1747
 msgid "No hostname specified"
-msgstr "Geen hostnaam opgegeven"
+msgstr "باش ئاپپارات بەلگىلەنمىگەن"
 
 #: ../daemon/gvfsbackendarchive.c:758 ../daemon/gvfsbackendburn.c:680
 #: ../daemon/gvfsbackendcomputer.c:714 ../daemon/gvfsbackenddnssd.c:439
 #: ../daemon/gvfsbackendftp.c:294 ../daemon/gvfsbackendnetwork.c:693
 #: ../daemon/gvfsbackendsftp.c:3885 ../daemon/gvfsftpdircache.c:154
 msgid "The file is not a directory"
-msgstr "Het bestand is geen map"
+msgstr "بۇ ھۆججەت مۇندەرىجە ئەمەس"
 
 #. Translators: This is the name of the backend
 #: ../daemon/gvfsbackendburn.c:346
 msgid "Burn"
-msgstr "Branden"
+msgstr "ئوي"
 
 #: ../daemon/gvfsbackendburn.c:376
 msgid "Unable to create temporary directory"
-msgstr "Kon tijdelijke map niet aanmaken"
+msgstr "ۋاقىتلىق مۇندەرىجە قۇرالمىدى"
 
 #: ../daemon/gvfsbackendburn.c:405 ../daemon/gvfsbackendburn.c:416
 #: ../daemon/gvfsbackendburn.c:451 ../daemon/gvfsbackendburn.c:672
@@ -453,29 +450,29 @@ msgstr "Kon tijdelijke map niet aanmaken"
 #: ../daemon/gvfsbackendsftp.c:2984 ../daemon/gvfsbackendtrash.c:216
 #, c-format
 msgid "No such file or directory"
-msgstr "Bestand of map bestaat niet"
+msgstr "بۇنداق ھۆججەت ياكى مۇندەرىجە يوق"
 
 #: ../daemon/gvfsbackendburn.c:425 ../daemon/gvfsbackenddav.c:2223
 #: ../daemon/gvfsbackendsftp.c:1830
 msgid "Directory not empty"
-msgstr "Map is niet leeg"
+msgstr "مۇندەرىجە بوش ئەمەس"
 
 #: ../daemon/gvfsbackendburn.c:459 ../daemon/gvfsbackendburn.c:904
 #: ../daemon/gvfsbackendobexftp.c:1810
 msgid "Can't copy file over directory"
-msgstr "Kan bestand niet over map heen kopiëren"
+msgstr "ھۆججەتنى مۇندەرىجىگە كۆچۈرەلمىدى"
 
 #. Translators: this is the display name of the backend
 #: ../daemon/gvfsbackendburn.c:651
 msgid "CD/DVD Creator"
-msgstr "Cd/dvd branden"
+msgstr "CD/DVD ياسىغۇچ"
 
 #: ../daemon/gvfsbackendburn.c:753 ../daemon/gvfsbackendburn.c:789
 #: ../daemon/gvfsbackendburn.c:924 ../daemon/gvfsbackendburn.c:986
 #: ../daemon/gvfsbackendburn.c:990 ../daemon/gvfsbackendburn.c:1000
 #: ../daemon/gvfsbackendgphoto2.c:3000
 msgid "File exists"
-msgstr "Bestand bestaat al"
+msgstr "ھۆججەت مەۋجۇد"
 
 #: ../daemon/gvfsbackendburn.c:828 ../daemon/gvfsjobcloseread.c:112
 #: ../daemon/gvfsjobclosewrite.c:120 ../daemon/gvfsjobcopy.c:169
@@ -499,242 +496,238 @@ msgstr "Bestand bestaat al"
 #: ../monitor/gdu/ggdumount.c:1173 ../monitor/gdu/ggdumount.c:1257
 #: ../monitor/gdu/ggduvolume.c:1595
 msgid "Operation not supported by backend"
-msgstr "Bewerking niet door backend ondersteund"
+msgstr "ئارقا ئۇچى قوللىمايدىغان مەشغۇلات"
 
 #: ../daemon/gvfsbackendburn.c:853
 msgid "No such file or directory in target path"
-msgstr "Bestand of map niet in doelmap gevonden"
+msgstr "نىشان يولدا بۇنداق ھۆججەت ياكى مۇندەرىجە يوق"
 
 #: ../daemon/gvfsbackendburn.c:876 ../daemon/gvfsbackendftp.c:1386
 #: ../daemon/gvfsbackendobexftp.c:1779
 msgid "Can't copy directory over directory"
-msgstr "Kan map niet over map heen kopiëren"
+msgstr "مۇندەرىجىنى مۇندەرىجىگە كۆچۈرەلمىدى"
 
 #: ../daemon/gvfsbackendburn.c:885 ../daemon/gvfsbackendobexftp.c:1787
 #: ../daemon/gvfsbackendobexftp.c:1818 ../daemon/gvfsbackendsftp.c:1832
 #: ../daemon/gvfsbackendsftp.c:4447
 msgid "Target file exists"
-msgstr "Doelbestand bestaat al"
+msgstr "نىشان ھۆججەت مەۋجۇد"
 
 #: ../daemon/gvfsbackendburn.c:892 ../daemon/gvfsbackendftp.c:1409
 #: ../daemon/gvfsbackendobexftp.c:1794
 msgid "Can't recursively copy directory"
-msgstr "Kan map niet recursief kopiëren"
+msgstr "مۇندەرىجىنى قايتلانما كۆچۈرەلمەيدۇ"
 
 #: ../daemon/gvfsbackendburn.c:950 ../daemon/gvfsbackendcomputer.c:794
 #: ../daemon/gvfsbackendgphoto2.c:2580 ../daemon/gvfsbackendgphoto2.c:2789
 #: ../daemon/gvfsbackendgphoto2.c:2886 ../daemon/gvfsbackendgphoto2.c:2979
 msgid "Not supported"
-msgstr "Niet ondersteund"
+msgstr "قوللىمايدۇ"
 
 #: ../daemon/gvfsbackendcdda.c:332 ../daemon/gvfsbackendgphoto2.c:1510
 msgid "Cannot create gudev client"
-msgstr "Kon gudev-client niet aanmaken"
+msgstr "gudev خېرىدارىنى قۇرالمايدۇ"
 
 #: ../daemon/gvfsbackendcdda.c:352 ../daemon/gvfsbackendgphoto2.c:1528
 msgid "Cannot connect to the system bus"
-msgstr "Kon niet met ‘system bus’ verbinden"
+msgstr "سىستېما باش لىنىيىسىگە ئۇلىنالمايدۇ"
 
 #: ../daemon/gvfsbackendcdda.c:363 ../daemon/gvfsbackendgphoto2.c:1540
 msgid "Cannot create libhal context"
-msgstr "Kon libhal-context niet aanmaken"
+msgstr "libhal كونتېكست قۇرالمىدى"
 
 #: ../daemon/gvfsbackendcdda.c:377 ../daemon/gvfsbackendgphoto2.c:1553
 msgid "Cannot initialize libhal"
-msgstr "Kon libhal niet initialiseren"
+msgstr "libhal دەسلەپلەشتۈرەلمىدى"
 
 #: ../daemon/gvfsbackendcdda.c:393 ../daemon/gvfsbackendcdda.c:477
 msgid "No drive specified"
-msgstr "Geen station opgegeven"
+msgstr "قوزغاتقۇچ بەلگىلەنمىگەن"
 
 #: ../daemon/gvfsbackendcdda.c:417
 #, c-format
 msgid "Cannot find drive %s"
-msgstr "Can station %s niet vinden"
+msgstr "%s قوزغاتقۇچنى تاپالمىدى"
 
 #: ../daemon/gvfsbackendcdda.c:430
 #, c-format
 msgid "Drive %s does not contain audio files"
-msgstr "Station %s bevat geen audiobestanden"
+msgstr "%s قوزغاتقۇچتا ئۈن ھۆججىتى يوق"
 
 #. Translator: %s is the device the disc is inserted into
 #: ../daemon/gvfsbackendcdda.c:439
 #, c-format
 msgid "cdda mount on %s"
-msgstr "cdda-koppeling op %s"
+msgstr "%s غا يۈكلەنگەن cdda"
 
 #: ../daemon/gvfsbackendcdda.c:440 ../daemon/gvfsbackendcdda.c:960
 #: ../monitor/gdu/ggduvolume.c:337 ../monitor/hal/ghalmount.c:325
 #: ../monitor/hal/ghalvolume.c:225 ../monitor/hal/ghalvolume.c:246
 #, c-format
 msgid "Audio Disc"
-msgstr "Audio-cd"
+msgstr "ئۈن دىسكا"
 
 #: ../daemon/gvfsbackendcdda.c:503
 #, c-format
 msgid "File system is busy: %d open file"
 msgid_plural "File system is busy: %d open files"
-msgstr[0] "Bestandssysteem is bezig: %d open bestand"
-msgstr[1] "Bestandssysteem is bezig: %d open bestanden"
+msgstr[0] "ھۆججەت سىستېمىسى ئالدىراش: %d ھۆججەت ئېچىلدى"
 
 #: ../daemon/gvfsbackendcdda.c:695
 #, c-format
 msgid "No such file %s on drive %s"
-msgstr "Geen bestand %s op station %s"
+msgstr "%2$s قوزغاتقۇچتا %1$s ھۆججەت يوق"
 
 #. Translators: paranoia is the name of the cd audio reading library
 #: ../daemon/gvfsbackendcdda.c:804
 #, c-format
 msgid "Error from 'paranoia' on drive %s"
-msgstr "Fout van ‘paranoia’ op station %s"
+msgstr "%s قوزغاتقۇچتا 'paranoia' دىن كەلگەن خاتالىق بار"
 
 #: ../daemon/gvfsbackendcdda.c:867
 #, c-format
 msgid "Error seeking in stream on drive %s"
-msgstr "Fout bij zoeken in stream op station %s"
+msgstr "%s قوزغاتقۇچتا ئاقما ئىزدىگەندە خاتالىق كۆرۈلدى"
 
 #: ../daemon/gvfsbackendcdda.c:979 ../daemon/gvfsbackendgphoto2.c:1894
 #, c-format
 msgid "No such file"
-msgstr "Bestand bestaat niet"
+msgstr "بۇنداق ھۆججەت يوق"
 
 #: ../daemon/gvfsbackendcdda.c:993
 #, c-format
 msgid "The file does not exist or isn't an audio track"
-msgstr "Het bestand bestaat niet of is geen muziekbestand"
+msgstr "ھۆججەت مەۋجۇد ئەمەس ياكى ئۈن يولىدا ئەمەس"
 
 #: ../daemon/gvfsbackendcdda.c:1099
 msgid "Audio CD Filesystem Service"
-msgstr "Bestandssysteemvoorziening voor audio-cd's"
+msgstr "ئۈن CD ھۆججەت سىستېما مۇلازىمىتى"
 
 #: ../daemon/gvfsbackendcomputer.c:192 ../daemon/gvfsbackendcomputer.c:756
 msgid "Computer"
-msgstr "Computer"
+msgstr "كومپيۇتېر"
 
 #: ../daemon/gvfsbackendcomputer.c:521
 msgid "File System"
-msgstr "Bestandssysteem"
+msgstr "ھۆججەت سىستېمىسى"
 
 #: ../daemon/gvfsbackendcomputer.c:649
 msgid "Can't open mountable file"
-msgstr "Kan aankoppelbaar bestand niet openen"
+msgstr "يۈكلەشچان ھۆججەتنى ئاچالمىدى"
 
 #: ../daemon/gvfsbackendcomputer.c:840 ../daemon/gvfsbackendsftp.c:1165
 #, c-format
 msgid "Internal error: %s"
-msgstr "Interne fout: %s"
+msgstr "ئىچكى خاتالىق: %s"
 
 #: ../daemon/gvfsbackendcomputer.c:872 ../daemon/gvfsbackendcomputer.c:991
 msgid "Can't mount file"
-msgstr "Kan bestand niet aankoppelen"
+msgstr "ھۆججەتنى يۈكلىيەلمىدى"
 
-# Vrij vertaald (Wouter Bolsterlee)
 #: ../daemon/gvfsbackendcomputer.c:884
 msgid "No media in the drive"
-msgstr "Geen media in schijf of lade"
+msgstr "قوزغاتقۇچتا ۋاسىتە يوق"
 
 #: ../daemon/gvfsbackendcomputer.c:941 ../daemon/gvfsbackendcomputer.c:1036
 #: ../daemon/gvfsbackendcomputer.c:1142 ../daemon/gvfsbackendcomputer.c:1232
 #: ../daemon/gvfsbackendcomputer.c:1305 ../daemon/gvfsbackendcomputer.c:1374
 msgid "Not a mountable file"
-msgstr "Geen aankoppelbaar bestand"
+msgstr "يۈكلەشچان ھۆججەت ئەمەس"
 
 #: ../daemon/gvfsbackendcomputer.c:1055
 msgid "Can't unmount file"
-msgstr "Kan bestand niet ontkoppelen"
+msgstr "ھۆججەتنى يۈك چۈشۈرەلمىدى"
 
 #: ../daemon/gvfsbackendcomputer.c:1185
 msgid "Can't eject file"
-msgstr "Kan bestand niet uitwerpen"
+msgstr "ھۆججەتنى قاڭقىتالمىدى"
 
 #: ../daemon/gvfsbackendcomputer.c:1252 ../daemon/gvfsbackendcomputer.c:1259
 msgid "Can't start file"
-msgstr "Kan bestand niet starten"
+msgstr "ھۆججەتنى باشلىيالمىدى"
 
 #: ../daemon/gvfsbackendcomputer.c:1325 ../daemon/gvfsbackendcomputer.c:1332
 msgid "Can't stop file"
-msgstr "Kan bestand niet stoppen"
+msgstr "ھۆججەتنى توختىتالمىدى"
 
 #: ../daemon/gvfsbackendcomputer.c:1389 ../daemon/gvfsbackendcomputer.c:1396
 msgid "Can't poll file"
-msgstr "Kan bestand niet polsen"
+msgstr "ھۆججەتنى تەكشۈرەلمىدى"
 
 #: ../daemon/gvfsbackenddav.c:561 ../daemon/gvfsbackenddav.c:1698
 #: ../daemon/gvfsbackendhttp.c:261
 #, c-format
 msgid "HTTP Error: %s"
-msgstr "HTTP-fout: %s"
+msgstr "HTTP خاتالىقى: %s"
 
 #: ../daemon/gvfsbackenddav.c:578
 msgid "Could not parse response"
-msgstr "Kan antwoord niet verwerken"
+msgstr "ئىنكاسنى يېشەلمىدى"
 
 #: ../daemon/gvfsbackenddav.c:587
 msgid "Empty response"
-msgstr "Leeg antwoord"
+msgstr "بوش ئىنكاس"
 
 #: ../daemon/gvfsbackenddav.c:595
 msgid "Unexpected reply from server"
-msgstr "Onverwacht antwoord van server"
+msgstr "مۇلازىمىتىر ئويلاشمىغان ئىنكاس قايتۇردى"
 
 #: ../daemon/gvfsbackenddav.c:1214 ../daemon/gvfsbackenddav.c:1838
 msgid "Response invalid"
-msgstr "Ongeldig antwoord"
+msgstr "ئىنكاس ئىناۋەتسىز"
 
-# Vrij vertaald (Wouter Bolsterlee)
 #: ../daemon/gvfsbackenddav.c:1357
 msgid "WebDAV share"
-msgstr "WebDAV-map"
+msgstr "WebDAV ھەمبەھىر"
 
 #: ../daemon/gvfsbackenddav.c:1359
 #, c-format
 msgid "Enter password for %s"
-msgstr "Voer wachtwoord voor %s in"
+msgstr "%s نىڭ ئىمنى كىرگۈزۈڭ"
 
 #: ../daemon/gvfsbackenddav.c:1362
 msgid "Please enter proxy password"
-msgstr "Voer uw proxy-wachtwoord in"
+msgstr "ۋاكالەتچى ئىمنى كىرگۈزۈڭ"
 
 #: ../daemon/gvfsbackenddav.c:1702 ../daemon/gvfsbackenddav.c:1706
 msgid "Not a WebDAV enabled share"
-msgstr "Geen WebDAV-schijf"
+msgstr "WebDAV ھەمبەھىرنى قوزغاتمىغان"
 
 #: ../daemon/gvfsbackenddav.c:1734
 #, c-format
 msgid "WebDAV on %s"
-msgstr "WebDAV op %s"
+msgstr "%s دىكى WebDAV ھەمبەھىر"
 
 #: ../daemon/gvfsbackenddav.c:1794 ../daemon/gvfsbackenddav.c:1867
 msgid "Could not create request"
-msgstr "Kon aanvraag niet aanmaken"
+msgstr "ئىلتىماس قۇرالمىدى"
 
 #: ../daemon/gvfsbackenddav.c:1930 ../daemon/gvfsbackenddav.c:2183
 #: ../daemon/gvfsbackenddav.c:2294 ../daemon/gvfsbackendftp.c:685
 #: ../daemon/gvfsbackendftp.c:866 ../daemon/gvfsbackendftp.c:1216
 #: ../daemon/gvfsbackendftp.c:1394 ../daemon/gvfsbackendsftp.c:4291
-#: ../daemon/gvfsbackendsmb.c:2059
+#: ../daemon/gvfsbackendsmb.c:2038
 msgid "Target file already exists"
-msgstr "Doelbestand bestaat al"
+msgstr "نىشان ھۆججەت مەۋجۇد"
 
-# Vrij vertaald (Wouter Bolsterlee)
 #: ../daemon/gvfsbackenddav.c:2003 ../daemon/gvfsbackendsftp.c:3425
-#: ../daemon/gvfsbackendsmb.c:1153
+#: ../daemon/gvfsbackendsmb.c:1132
 msgid "The file was externally modified"
-msgstr "Het bestand is tussentijds gewijzigd"
+msgstr "ھۆججەتنى باشقا پروگرامما ئۆزگەرتكەن"
 
-#: ../daemon/gvfsbackenddav.c:2034 ../daemon/gvfsbackendsmb.c:1189
-#: ../daemon/gvfsbackendsmb.c:2076
+#: ../daemon/gvfsbackenddav.c:2034 ../daemon/gvfsbackendsmb.c:1168
+#: ../daemon/gvfsbackendsmb.c:2055
 msgid "Backup file creation failed"
-msgstr "Aanmaken reservekopie"
+msgstr "زاپاس ھۆججەت قۇرالمىدى"
 
 #. "separate": a link to dns-sd://local/
 #: ../daemon/gvfsbackenddnssd.c:486 ../daemon/gvfsbackendnetwork.c:393
 msgid "Local Network"
-msgstr "Lokaal netwerk"
+msgstr "يەرلىك تور"
 
 #: ../daemon/gvfsbackenddnssd.c:730 ../daemon/gvfsbackendnetwork.c:797
 msgid "Can't monitor file or directory."
-msgstr "Kan bestand of map niet monitoren."
+msgstr "ھۆججەت ياكى مۇندەرىجىنى كۆزىتەلمىدى."
 
 #. TODO: Names, etc
 #: ../daemon/gvfsbackenddnssd.c:748
@@ -744,76 +737,76 @@ msgstr "Dns-SD"
 #: ../daemon/gvfsbackenddnssd.c:749 ../daemon/gvfsbackendnetwork.c:732
 #: ../daemon/gvfsbackendnetwork.c:882 ../daemon/gvfsbackendnetwork.c:883
 msgid "Network"
-msgstr "Netwerk"
+msgstr "تور"
 
 #. Translators: the first %s is the username, the second the host name
 #: ../daemon/gvfsbackendftp.c:423
 #, c-format
 msgid "Enter password for ftp as %s on %s"
-msgstr "Voer wachtwoord voor ftp voor %s op %s in"
+msgstr "%2$s دىكى %1$s نىڭ ftp ئىمنى كىرگۈزۈڭ"
 
 #. translators: %s here is the hostname
 #: ../daemon/gvfsbackendftp.c:426
 #, c-format
 msgid "Enter password for ftp on %s"
-msgstr "Voer wachtwoord voor ftp op %s in"
+msgstr "%s دىكى ftp ئىمنى كىرگۈزۈڭ"
 
 #: ../daemon/gvfsbackendftp.c:453 ../daemon/gvfsbackendsftp.c:987
-#: ../daemon/gvfsbackendsmb.c:627 ../daemon/gvfsbackendsmbbrowse.c:1010
+#: ../daemon/gvfsbackendsmb.c:606 ../daemon/gvfsbackendsmbbrowse.c:986
 msgid "Password dialog cancelled"
-msgstr "Wachtwoordvenster geannuleerd"
+msgstr "ئىم سۆزلەشكۈ ۋاز كېچىلدى"
 
 #: ../daemon/gvfsbackendftp.c:563
 #, c-format
 msgid "ftp on %s"
-msgstr "ftp op %s"
+msgstr "%s دىكى ftp"
 
 #. Translators: the first %s is the username, the second the host name
 #: ../daemon/gvfsbackendftp.c:567
 #, c-format
 msgid "ftp as %s on %s"
-msgstr "ftp voor %s op %s"
+msgstr "%2$s دىكى %1$s نىڭ ftp"
 
 #: ../daemon/gvfsbackendftp.c:660
 msgid "Insufficient permissions"
-msgstr "Onvoldoende toegangsrechten"
+msgstr "ھوقۇق يەتمىدى"
 
 #: ../daemon/gvfsbackendftp.c:706 ../daemon/gvfsbackendsftp.c:2335
 #: ../daemon/gvfsbackendsftp.c:3071 ../daemon/gvfsbackendsftp.c:3412
 #: ../daemon/gvfsbackendsftp.c:4282
 msgid "File is directory"
-msgstr "Bestand is een map"
+msgstr "ھۆججەت مۇندەرىجە"
 
 #: ../daemon/gvfsbackendftp.c:914 ../daemon/gvfsbackendftp.c:1179
 #: ../daemon/gvfsbackendsftp.c:3278
 msgid "backups not supported yet"
-msgstr "backups (nog) niet ondersteund"
+msgstr "تېخى زاپاسلاشنى قوللىمايدۇ"
 
 #: ../daemon/gvfsbackendgphoto2.c:506
 #, c-format
 msgid "%s: %d: Directory or file exists"
-msgstr "%s: %d: Bestand of map bestaat al"
+msgstr "%s: %d: مۇندەرىجە ياكى ھۆججەت مەۋجۇد"
 
 #: ../daemon/gvfsbackendgphoto2.c:513
 #, c-format
 msgid "%s: %d: No such file or directory"
-msgstr "%s: %d: Bestand of map bestaat niet"
+msgstr "%s: %d: بۇنداق ھۆججەت ياكى مۇندەرىجە يوق"
 
 #: ../daemon/gvfsbackendgphoto2.c:519
 #, c-format
 msgid "%s: %d: Invalid filename"
-msgstr "%s: %d: Ongeldige bestandsnaam"
+msgstr "%s: %d: ئىناۋەتسىز ھۆججەت ئاتى"
 
 #: ../daemon/gvfsbackendgphoto2.c:525
 #, c-format
 msgid "%s: %d: Not Supported"
-msgstr "%s: %d: Niet ondersteund"
+msgstr "%s: %d: قوللىمايدۇ"
 
 #. Translator: %s represents the device, e.g. usb:001,042
 #: ../daemon/gvfsbackendgphoto2.c:720 ../daemon/gvfsbackendgphoto2.c:726
 #, c-format
 msgid "Digital Camera (%s)"
-msgstr "Digitale camera (%s)"
+msgstr "رەقەملىك فوتو ئاپپارات (%s)"
 
 #. Translator: %s is the vendor name, e.g. Panasonic
 #. Translators: %s is the device vendor
@@ -821,7 +814,7 @@ msgstr "Digitale camera (%s)"
 #: ../monitor/gphoto2/ggphoto2volume.c:299
 #, c-format
 msgid "%s Camera"
-msgstr "%s-camera"
+msgstr "%s فوتو ئاپپارات"
 
 #. Translator: %s is the vendor name, e.g. Panasonic
 #. Translators: %s is the device vendor
@@ -829,187 +822,187 @@ msgstr "%s-camera"
 #: ../monitor/gphoto2/ggphoto2volume.c:294
 #, c-format
 msgid "%s Audio Player"
-msgstr "%s-muziekspeler"
+msgstr "%s ئۈن قويغۇچ"
 
 #: ../daemon/gvfsbackendgphoto2.c:961 ../monitor/gphoto2/ggphoto2volume.c:203
 #: ../monitor/gphoto2/ggphoto2volume.c:308
 msgid "Camera"
-msgstr "Camera"
+msgstr "فوتو ئاپپارات"
 
 #: ../daemon/gvfsbackendgphoto2.c:963 ../monitor/gphoto2/ggphoto2volume.c:306
 msgid "Audio Player"
-msgstr "Muziekspeler"
+msgstr "ئۈن قويغۇچ"
 
 #: ../daemon/gvfsbackendgphoto2.c:1569
 msgid "No device specified"
-msgstr "Geen apparaat opgegeven"
+msgstr "ئۈسكۈنە بەلگىلەنمىگەن"
 
 #: ../daemon/gvfsbackendgphoto2.c:1590
 msgid "Cannot create gphoto2 context"
-msgstr "Kon gphoto2-context niet aanmaken"
+msgstr "gphoto2 context قۇرالمىدى"
 
 #: ../daemon/gvfsbackendgphoto2.c:1600
 msgid "Error creating camera"
-msgstr "Kon camera niet aanmaken"
+msgstr "فوتو ئاپپارات قۇرۇشتا خاتالىق كۆرۈلدى"
 
 #: ../daemon/gvfsbackendgphoto2.c:1613 ../daemon/gvfsbackendgphoto2.c:1623
 msgid "Error loading device information"
-msgstr "Fout bij opvragen van apparaatinformatie"
+msgstr "ئۈسكۈنە ئۇچۇرىنى يۈكلەشتە خاتالىق كۆرۈلدى"
 
 #: ../daemon/gvfsbackendgphoto2.c:1635
 msgid "Error looking up device information"
-msgstr "Fout bij opvragen van apparaatinformatie"
+msgstr "ئۈسكۈنە ئۇچۇرىنى ئىزدىگەندە خاتالىق كۆرۈلدى"
 
 #: ../daemon/gvfsbackendgphoto2.c:1645
 msgid "Error getting device information"
-msgstr "Fout bij verkrijgen van apparaatinformatie"
+msgstr "ئۈسكۈنە ئۇچۇرىغا ئېرىشىشتە خاتالىق كۆرۈلدى"
 
 #: ../daemon/gvfsbackendgphoto2.c:1658
 msgid "Error setting up camera communications port"
-msgstr "Instellen communicatiepoort voor camera mislukt"
+msgstr "فوتو ئاپپارات ئالاقە ئېغىزىنى تەڭشەشتە خاتالىق كۆرۈلدى"
 
 #: ../daemon/gvfsbackendgphoto2.c:1669
 msgid "Error initializing camera"
-msgstr "Fout bij initialiseren camera"
+msgstr "فوتو ئاپپاراتنى دەسلەپلەشتۈرگەندە خاتالىق كۆرۈلدى"
 
 #. Translator: %s represents the device, e.g. usb:001,042
 #: ../daemon/gvfsbackendgphoto2.c:1683
 #, c-format
 msgid "gphoto2 mount on %s"
-msgstr "gphoto2-koppeling op %s"
+msgstr "%s غا يۈكلەنگەن gphoto2"
 
 #: ../daemon/gvfsbackendgphoto2.c:1765
 msgid "No camera specified"
-msgstr "Geen camera opgegeven"
+msgstr "فوتو ئاپپارات بەلگىلەنمىگەن"
 
 #: ../daemon/gvfsbackendgphoto2.c:1806 ../daemon/gvfsbackendgphoto2.c:1832
 #, c-format
 msgid "Filesystem is busy"
-msgstr "Bestandssysteem is bezig"
+msgstr "ھۆججەت سىستېمىسى ئالدىراش"
 
 #: ../daemon/gvfsbackendgphoto2.c:1902
 msgid "Error creating file object"
-msgstr "Fout bij aanmaken bestandobject"
+msgstr "ھۆججەت نەڭ قۇرۇشتا خاتالىق كۆرۈلدى"
 
 #: ../daemon/gvfsbackendgphoto2.c:1917
 msgid "Error getting file"
-msgstr "Fout bij ophalen bestand"
+msgstr "ھۆججەتكە ئېرىشىۋاتقاندا خاتالىق كۆرۈلدى"
 
 #: ../daemon/gvfsbackendgphoto2.c:1927
 msgid "Error getting data from file"
-msgstr "Fout bij verkrijgen data van bestand"
+msgstr "ھۆججەتتىن سانلىق مەلۇماتقا ئېرىشىۋاتقاندا خاتالىق كۆرۈلدى"
 
 #: ../daemon/gvfsbackendgphoto2.c:1985
 #, c-format
 msgid "Malformed icon identifier '%s'"
-msgstr "Ongeldige pictogram-identifier ‘%s’"
+msgstr "سىنبەلگە تونۇتۇش بەلگىسى '%s' نىڭ فورماتى خاتا"
 
 #: ../daemon/gvfsbackendgphoto2.c:2061 ../daemon/gvfsbackendgphoto2.c:3250
 #, c-format
 msgid "Error seeking in stream on camera %s"
-msgstr "Fout bij zoeken in stream op camera %s"
+msgstr "%s فوتو ئاپپاراتتىكى ئاقمانى ئىزدىگەندە خاتالىق كۆرۈلدى"
 
 #: ../daemon/gvfsbackendgphoto2.c:2201 ../daemon/gvfsbackendsftp.c:2954
-#: ../daemon/gvfsbackendsmbbrowse.c:1414
+#: ../daemon/gvfsbackendsmbbrowse.c:1390
 msgid "Not a directory"
-msgstr "Geen map"
+msgstr "مۇندەرىجە ئەمەس"
 
 #: ../daemon/gvfsbackendgphoto2.c:2234
 msgid "Failed to get folder list"
-msgstr "Opvragen van mappenlijst mislukt"
+msgstr "مۇندەرىجە تىزىملىكىگە ئېرىشەلمىدى"
 
 #: ../daemon/gvfsbackendgphoto2.c:2300
 msgid "Failed to get file list"
-msgstr "Opvragen van bestandenlijst mislukt"
+msgstr "ھۆججەت تىزىملىكىگە ئېرىشەلمىدى"
 
 #: ../daemon/gvfsbackendgphoto2.c:2592
 msgid "Error creating directory"
-msgstr "Fout bij aanmaken van map"
+msgstr "مۇندەرىجە قۇرغاندا خاتالىق كۆرۈلدى"
 
 #: ../daemon/gvfsbackendgphoto2.c:2801
 msgid "Name already exists"
-msgstr "Naam bestaat al"
+msgstr "ئاتى مەۋجۇد"
 
 #: ../daemon/gvfsbackendgphoto2.c:2812 ../daemon/gvfsbackendgphoto2.c:3441
 msgid "New name too long"
-msgstr "Nieuwe naam te lang"
+msgstr "يېڭى ئات بەك ئۇزۇن"
 
 #: ../daemon/gvfsbackendgphoto2.c:2822 ../daemon/gvfsbackendgphoto2.c:3452
 msgid "Error renaming dir"
-msgstr "Fout bij hernoemen van map"
+msgstr "مۇندەرىجە ئاتنى ئۆزگەرتكەندە خاتالىق كۆرۈلدى"
 
 #: ../daemon/gvfsbackendgphoto2.c:2835 ../daemon/gvfsbackendgphoto2.c:3465
 msgid "Error renaming file"
-msgstr "Fout bij hernoemen van bestand"
+msgstr "ھۆججەت ئاتىنى ئۆزگەرتكەندە خاتالىق كۆرۈلدى"
 
 #: ../daemon/gvfsbackendgphoto2.c:2899
 #, c-format
 msgid "Directory '%s' is not empty"
-msgstr "Map ‘%s’ is niet leeg"
+msgstr " '%s'  مۇندەرىجە بوش ئەمەس"
 
 #: ../daemon/gvfsbackendgphoto2.c:2910
 msgid "Error deleting directory"
-msgstr "Fout bij verwijderen van map"
+msgstr "مۇندەرىجە ئۆچۈرگەندە خاتالىق كۆرۈلدى"
 
 #: ../daemon/gvfsbackendgphoto2.c:2936
 msgid "Error deleting file"
-msgstr "Fout bij verwijderen van bestand"
+msgstr "ھۆججەت ئۆچۈرگەندە خاتالىق كۆرۈلدى"
 
 #: ../daemon/gvfsbackendgphoto2.c:2989
 msgid "Can't write to directory"
-msgstr "Kan niet in map schrijven"
+msgstr "مۇندەرىجىگە يازالمىدى"
 
 #: ../daemon/gvfsbackendgphoto2.c:3036
 msgid "Cannot allocate new file to append to"
-msgstr "Kan geen nieuw bestand om naar te schrijven aanmaken"
+msgstr "قوشىدىغان ھۆججەتكە يېڭى ھۆججەت تەقسىملىيەلمىدى"
 
 #: ../daemon/gvfsbackendgphoto2.c:3051
 msgid "Cannot read file to append to"
-msgstr "Kan bestand om naar te schrijven niet lezen"
+msgstr "قوشىدىغان ھۆججەتنى ئوقۇيالمىدى"
 
 #: ../daemon/gvfsbackendgphoto2.c:3062
 msgid "Cannot get data of file to append to"
-msgstr "Kan data in bestand om naar te schrijven niet opvragen"
+msgstr "قوشىدىغان ھۆججەتنىڭ سانلىق مەلۇماتىغا ئېرىشەلمىدى"
 
 #: ../daemon/gvfsbackendgphoto2.c:3349
 msgid "Error writing file"
-msgstr "Fout bij schrijven van bestand"
+msgstr "ھۆججەتكە يازغاندا خاتالىق كۆرۈلدى"
 
 #: ../daemon/gvfsbackendgphoto2.c:3397
 msgid "Not supported (not same directory)"
-msgstr "Niet ondersteund (niet dezelfde map)"
+msgstr "قوللىمايدۇ (ئوخشاش مۇندەرىجە ئەمەس)"
 
 #: ../daemon/gvfsbackendgphoto2.c:3409
 msgid "Not supported (src is dir, dst is dir)"
-msgstr "Niet ondersteund (bron is map, doel is map)"
+msgstr "قوللىمايدۇ(مەنبە مۇندەرىجە، نىشانمۇ مۇندەرىجە)"
 
 #: ../daemon/gvfsbackendgphoto2.c:3417
 msgid "Not supported (src is dir, dst is existing file)"
-msgstr "Niet ondersteund (bron is map, doel is bestaand bestand)"
+msgstr "قوللىمايدۇ(مەنبە مۇندەرىجە، نىشان مەۋجۇد ھۆججەت)"
 
 #: ../daemon/gvfsbackendgphoto2.c:3429
 msgid "Not supported (src is file, dst is dir)"
-msgstr "Niet ondersteund (bron is bestand, doel is map)"
+msgstr "قوللىمايدۇ(مەنبە ھۆججەت، نىشان مۇندەرىجە)"
 
 #: ../daemon/gvfsbackendhttp.c:257
 #, c-format
 msgid "HTTP Client Error: %s"
-msgstr "HTTP-clientfout: %s"
+msgstr "HTTP خېرىدار خاتالىقى: %s"
 
 #: ../daemon/gvfsbackendlocaltest.c:855
 msgid "Directory notification not supported"
-msgstr "Mapwijzigingsmeldingen niet ondersteund"
+msgstr "مۇندەرىجە ئۇقتۇرۇشىنى قوللىمايدۇ"
 
 #. smb:/// root link
-#: ../daemon/gvfsbackendnetwork.c:269 ../daemon/gvfsbackendsmbbrowse.c:909
+#: ../daemon/gvfsbackendnetwork.c:269 ../daemon/gvfsbackendsmbbrowse.c:885
 msgid "Windows Network"
-msgstr "Windows-netwerk"
+msgstr "Windows تورى"
 
 #. Translators: this is the friendly name of the 'network://' backend that
 #. * shows computers in your local network.
 #: ../daemon/gvfsbackendnetwork.c:931
 msgid "Network Location Monitor"
-msgstr "Monitor voor netwerklokaties"
+msgstr "تور ئورنى كۆزەتكۈچ"
 
 #. Set the mountspec according to original uri, no matter whether user changes
 #. credentials during mount loop. Nautilus and other gio clients depend
@@ -1017,98 +1010,97 @@ msgstr "Monitor voor netwerklokaties"
 #. lead to G_IO_ERROR_NOT_MOUNTED errors
 #.
 #. Translators: This is "<sharename> on <servername>" and is used as name for an SMB share
-#: ../daemon/gvfsbackendobexftp.c:681 ../daemon/gvfsbackendsmb.c:566
-#: ../daemon/gvfsbackendsmb.c:1438
+#: ../daemon/gvfsbackendobexftp.c:681 ../daemon/gvfsbackendsmb.c:545
+#: ../daemon/gvfsbackendsmb.c:1417
 #, c-format
 msgid "%s on %s"
-msgstr "%s op %s"
+msgstr "‫%2$s دىكى %1$s"
 
-# Vrij vertaald (Wouter Bolsterlee)
 #: ../daemon/gvfsbackendobexftp.c:890
 msgid "USB support missing. Please contact your software vendor"
-msgstr "USB-ondersteuning ontbreekt. Neem contact op met uw beheerder."
+msgstr "USB قوللىمايدۇ. يۇمشاق دېتال تەمىنلىگۈچىڭىز بىلەن ئالاقىلىشىڭ"
 
 #: ../daemon/gvfsbackendobexftp.c:1010
 msgid "Connection to the device lost"
-msgstr "Verbinding met apparaat verloren"
+msgstr "ئۈسكۈنە ئۇلىنىشى ئۈزۈلدى"
 
 #: ../daemon/gvfsbackendobexftp.c:1507
 msgid "Device requires a software update"
-msgstr "Het apparaat heeft een software-update nodig"
+msgstr "ئۈسكۈنە بىر يۇمشاق دېتالنى يېڭىلىشى زۆرۈر"
 
-#: ../daemon/gvfsbackendobexftp.c:1855 ../daemon/gvfsbackendsmb.c:1950
+#: ../daemon/gvfsbackendobexftp.c:1855 ../daemon/gvfsbackendsmb.c:1929
 #, c-format
 msgid "Error deleting file: %s"
-msgstr "Fout bij verwijderen van bestand: %s"
+msgstr "ھۆججەت ئۆچۈرگەندە خاتالىق كۆرۈلدى: %s"
 
 #: ../daemon/gvfsbackendsftp.c:301 ../daemon/gvfsbackendsftp.c:657
 msgid "ssh program unexpectedly exited"
-msgstr "SSH-programma werd onverwacht afgesloten"
+msgstr "ssh تاسادىپىي چېكىندى"
 
 #: ../daemon/gvfsbackendsftp.c:316
 msgid "Hostname not known"
-msgstr "Hostnaam onbekend"
+msgstr "ئاساسىي ئاپپارات ئاتى نامەلۇم"
 
 #: ../daemon/gvfsbackendsftp.c:323
 msgid "No route to host"
-msgstr "Geen route naar host"
+msgstr "ئاساسىي ئاپپاراتقا يول باشلىيالمىدى"
 
 #: ../daemon/gvfsbackendsftp.c:330
 msgid "Connection refused by server"
-msgstr "Verbinding geweigerd door server"
+msgstr "ئۇلىنىش مۇلازىمىتىر تەرىپىدىن رەت قىلىندى"
 
 #: ../daemon/gvfsbackendsftp.c:337
 msgid "Host key verification failed"
-msgstr "Controle van hostsleutel mislukt"
+msgstr "ئاساسىي ئاپپارات شىفىرلىق ئاچقۇچ دەلىللەش مەغلۇپ بولدى"
 
 #: ../daemon/gvfsbackendsftp.c:501
 msgid "Unable to spawn ssh program"
-msgstr "Kon SSH-programma niet starten"
+msgstr "ssh پروگراممىنى ئىجرا قىلالمىدى"
 
 #: ../daemon/gvfsbackendsftp.c:517
 #, c-format
 msgid "Unable to spawn ssh program: %s"
-msgstr "Kon SSH-programma niet starten: %s"
+msgstr "ssh پروگراممىنى ئىجرا قىلالمىدى: %s"
 
 #: ../daemon/gvfsbackendsftp.c:619 ../daemon/gvfsbackendsftp.c:880
 msgid "Timed out when logging in"
-msgstr "Wachttijd voor aanmelden overschreden"
+msgstr "تىزىمغا كىرگەندە ۋاقىت ھالقىدى"
 
 #. Translators: the first %s is the username, the second the host name
 #: ../daemon/gvfsbackendsftp.c:960
 #, c-format
 msgid "Enter passphrase for key for ssh as %s on %s"
-msgstr "Voer wachtwoordzin in voor SSH-sleutel van %s op %s"
+msgstr "%2$s دىكى %1$s نىڭ ssh ئاچقۇچىنىڭ ئىم جۈملىسىنى كىرگۈزۈڭ"
 
 #. Translators: the first %s is the username, the second the host name
 #: ../daemon/gvfsbackendsftp.c:963
 #, c-format
 msgid "Enter password for ssh as %s on %s"
-msgstr "Voer SSH-wachtwoord in van %s op %s"
+msgstr "%2$s دىكى %1$s نىڭ ssh ئىم جۈملىسىنى كىرگۈزۈڭ"
 
 #. Translators: %s is the hostname
 #: ../daemon/gvfsbackendsftp.c:967
 #, c-format
 msgid "Enter passphrase for key for ssh on %s"
-msgstr "Voer wachtwoordzin in voor SSH-sleutel van het account op %s"
+msgstr "%s دىكى ssh ئاچقۇچىنىڭ ئىم جۈملىسىنى كىرگۈزۈڭ"
 
 #. Translators: %s is the hostname
 #: ../daemon/gvfsbackendsftp.c:970
 #, c-format
 msgid "Enter password for ssh on %s"
-msgstr "Voer SSH-wachtwoord in voor het account op %s"
+msgstr "%s دىكى ssh نىڭ ئىمنى كىرگۈزۈڭ"
 
 #: ../daemon/gvfsbackendsftp.c:1050
 msgid "Can't send password"
-msgstr "Kon wachtwoord niet zenden"
+msgstr "ئىم يوللىيالمىدى"
 
 #: ../daemon/gvfsbackendsftp.c:1058
 msgid "Log In Anyway"
-msgstr "Toch aanmelden"
+msgstr "تىزىمغا كىرىۋەر"
 
 #: ../daemon/gvfsbackendsftp.c:1058
 msgid "Cancel Login"
-msgstr "Aanmelden annuleren"
+msgstr "تىزىمغا كىرىشتىن ۋاز كەچ"
 
 #: ../daemon/gvfsbackendsftp.c:1067
 #, c-format
@@ -1119,40 +1111,40 @@ msgid ""
 "The identity sent by the remote computer is %s. If you want to be absolutely "
 "sure it is safe to continue, contact the system administrator."
 msgstr ""
-"De identiteit van de computer op afstand (%s) is onbekend.\n"
-"Dit gebeurt wanneer u zich voor de eerste keer bij een computer aanmeldt.\n"
+"يىراقتىكى كومپيۇتېر (%s) كىملىكى نامەلۇم.\n"
+"بۇ سىز تۇنجى قېتىم مەلۇم كومپيۇتېرغا تىزىمغا كىرگەندە يۈز بەرگەن.\n"
 "\n"
-"De identiteit die door de computer op afstand is verzonden is %s. Indien u "
-"absoluut zeker wilt weten of het veilig is om door te gaan, neem dan contact "
-"op met de systeembeheerder."
+"يىراقتىكى كومپيۇتېر يوللىغان كىملىك %s.  ئەگەر سىز ئۇنىڭ مۇتلەق "
+"بىخەتەرلىكىنى جەزملەپ مەشغۇلاتنى داۋاملاشتۇرسىڭىز، سىستېما باشقۇرغۇچى بىلەن "
+"ئالاقىلىشىڭ."
 
 #: ../daemon/gvfsbackendsftp.c:1087
 msgid "Login dialog cancelled"
-msgstr "Aanmeldvenster geannuleerd"
+msgstr "تىزىمغا كىرىش سۆزلەشكۈ ۋاز كېچىلدى"
 
 #: ../daemon/gvfsbackendsftp.c:1107
 msgid "Can't send host identity confirmation"
-msgstr "Kan informatie over host-identiteit niet zenden"
+msgstr "ئاساسىي ئاپپارات كىملىك جەزملەشنى يوللىيالمىدى"
 
 #: ../daemon/gvfsbackendsftp.c:1645 ../daemon/gvfsbackendsftp.c:1668
 msgid "Protocol error"
-msgstr "Protocolfout"
+msgstr "كېلىشىم خاتالىقى"
 
 #. Translators: This is the name of an sftp share, like "sftp for <user>on <hostname>"
 #: ../daemon/gvfsbackendsftp.c:1693
 #, c-format
 msgid "sftp for %s on %s"
-msgstr "sftp voor %s op %s"
+msgstr "%2$s دىكى %1$s نىڭ sftp"
 
 #. Translators: This is the name of an sftp share, like "sftp on <hostname>"
 #: ../daemon/gvfsbackendsftp.c:1696
 #, c-format
 msgid "sftp on %s"
-msgstr "sftp op %s"
+msgstr "%s دىكى sftp"
 
 #: ../daemon/gvfsbackendsftp.c:1737
 msgid "Unable to find supported ssh command"
-msgstr "Kon geen ondersteund SSH-programma vinden"
+msgstr "قوللايدىغان ssh بۇيرۇقىنى تاپالمىدى"
 
 #: ../daemon/gvfsbackendsftp.c:2011 ../daemon/gvfsbackendsftp.c:2400
 #: ../daemon/gvfsbackendsftp.c:2479 ../daemon/gvfsbackendsftp.c:2490
@@ -1172,220 +1164,220 @@ msgstr "Kon geen ondersteund SSH-programma vinden"
 #: ../daemon/gvfsbackendsftp.c:4512 ../daemon/gvfsbackendsftp.c:4527
 #: ../daemon/gvfsbackendsftp.c:4542 ../daemon/gvfsbackendsftp.c:4620
 msgid "Invalid reply received"
-msgstr "Ongeldig antwoord ontvangen"
+msgstr "ئىناۋەتسىز ئىنكاس تاپشۇرۇۋالدى"
 
-#: ../daemon/gvfsbackendsftp.c:2259 ../daemon/gvfsbackendsmb.c:1445
+#: ../daemon/gvfsbackendsftp.c:2259 ../daemon/gvfsbackendsmb.c:1424
 #: ../daemon/gvfsdaemonutils.c:211
 msgid " (invalid encoding)"
-msgstr " (ongeldige codering)"
+msgstr " (ئىناۋەتسىز كودلاش)"
 
 #: ../daemon/gvfsbackendsftp.c:2344
 msgid "Failure"
-msgstr "Mislukt"
+msgstr "مەغلۇپ بولدى"
 
 #: ../daemon/gvfsbackendsftp.c:2452
 #, c-format
 msgid "Invalid icon_id '%s' in OpenIconForRead"
-msgstr "Ongeldig icon_id ‘%s’ in OpenIconForRead"
+msgstr "OpenIconForRead دىكى ئىناۋەتسىز icon_id '%s'"
 
 #: ../daemon/gvfsbackendsftp.c:2748
 #, c-format
 msgid "Error creating backup file: %s"
-msgstr "Fout bij maken reservekopie: %s"
+msgstr "زاپاس ھۆججەت قۇرغاندا خاتالىق كۆرۈلدى: %s"
 
 #: ../daemon/gvfsbackendsftp.c:3354
 msgid "Unable to create temporary file"
-msgstr "Kon tijdelijk bestand niet maken"
+msgstr "ۋاقىتلىق ھۆججەت قۇرالمىدى"
 
-#: ../daemon/gvfsbackendsftp.c:4277 ../daemon/gvfsbackendsmb.c:2048
+#: ../daemon/gvfsbackendsftp.c:4277 ../daemon/gvfsbackendsmb.c:2027
 msgid "Can't move directory over directory"
-msgstr "Kan map niet over andere map heen verplaatsen"
+msgstr "مۇندەرىجىنى مۇندەرىجىگە يۆتكىيەلمەيدۇ"
 
 #. translators: First %s is a share name, second is a server name
-#: ../daemon/gvfsbackendsmb.c:250
+#: ../daemon/gvfsbackendsmb.c:229
 #, c-format
 msgid "Password required for share %s on %s"
-msgstr "Wachtwoord benodigd voor gedeelde map %s op %s"
+msgstr "%2$s دىكى %1$s ھەمبەھىرگە ئىم زۆرۈر"
 
-#: ../daemon/gvfsbackendsmb.c:506 ../daemon/gvfsbackendsmb.c:552
+#: ../daemon/gvfsbackendsmb.c:485 ../daemon/gvfsbackendsmb.c:531
 #: ../daemon/gvfsdaemonutils.c:92
 #, c-format
 msgid "Internal Error (%s)"
-msgstr "Interne fout (%s)"
+msgstr "ئىچكى خاتالىق (%s)"
 
 #. translators: We tried to mount a windows (samba) share, but failed
-#: ../daemon/gvfsbackendsmb.c:632
+#: ../daemon/gvfsbackendsmb.c:611
 msgid "Failed to mount Windows share"
-msgstr "Kon gedeelde Windows-map niet aankoppelen"
+msgstr "Windows ھەمبەھىر يۈكلىيەلمىدى"
 
-#: ../daemon/gvfsbackendsmb.c:793 ../daemon/gvfsbackendsmb.c:1289
+#: ../daemon/gvfsbackendsmb.c:772 ../daemon/gvfsbackendsmb.c:1268
 msgid "Unsupported seek type"
-msgstr "Niet ondersteund zoektype"
+msgstr "بۇ ئىزدەش تىپىنى قوللىمايدۇ"
 
-#: ../daemon/gvfsbackendsmb.c:1381
+#: ../daemon/gvfsbackendsmb.c:1360
 #, c-format
 msgid "Backup file creation failed: %s"
-msgstr "Kon reservekopiebestand niet maken: %s"
+msgstr "زاپاس ھۆججەت قۇرالمىدى: %s"
 
-#: ../daemon/gvfsbackendsmb.c:2024
+#: ../daemon/gvfsbackendsmb.c:2003
 #, c-format
 msgid "Error moving file: %s"
-msgstr "Fout bij verplaatsen van bestand: %s"
+msgstr "ھۆججەت يۆتكەش خاتالىقى: %s"
 
-#: ../daemon/gvfsbackendsmb.c:2096
+#: ../daemon/gvfsbackendsmb.c:2075
 #, c-format
 msgid "Error removing target file: %s"
-msgstr "Fout bij verwijderen doelbestand: %s"
+msgstr "نىشان ھۆججەت يۆتكەۋاتقاندا خاتالىق كۆرۈلدى: %s"
 
-#: ../daemon/gvfsbackendsmb.c:2120
+#: ../daemon/gvfsbackendsmb.c:2099
 msgid "Can't recursively move directory"
-msgstr "Kan map niet recursief verplaatsen"
+msgstr "مۇندەرىجىنى قايتلانما يۆتكىيەلمەيدۇ"
 
-#: ../daemon/gvfsbackendsmb.c:2164
+#: ../daemon/gvfsbackendsmb.c:2165
 msgid "Windows Shares Filesystem Service"
-msgstr "Bestandssysteemvoorziening voor gedeelde Windows-mappen"
+msgstr "Windows ھەمبەھىر ھۆججەت سىستېما مۇلازىمىتى"
 
 #. translators: %s is a server name
-#: ../daemon/gvfsbackendsmbbrowse.c:389
+#: ../daemon/gvfsbackendsmbbrowse.c:365
 #, c-format
 msgid "Password required for %s"
-msgstr "Wachtwoord benodigd voor %s"
+msgstr "%s ئىم زۆرۈر"
 
 #. translators: Name for the location that lists the smb shares
 #. availible on a server (%s is the name of the server)
-#: ../daemon/gvfsbackendsmbbrowse.c:917
+#: ../daemon/gvfsbackendsmbbrowse.c:893
 #, c-format
 msgid "Windows shares on %s"
-msgstr "Gedeelde Windows-mappen op %s"
+msgstr "%s دىكى Windows ھەمبەھىر"
 
 #. translators: We tried to mount a windows (samba) share, but failed
-#: ../daemon/gvfsbackendsmbbrowse.c:1016
+#: ../daemon/gvfsbackendsmbbrowse.c:992
 msgid "Failed to retrieve share list from server"
-msgstr "Kon lijst van gedeelde mappen niet van server opvragen"
+msgstr "مۇلازىمىتىردىن ھەمبەھىر تىزىملىكىگە ئېرىشەلمىدى"
 
-#: ../daemon/gvfsbackendsmbbrowse.c:1104 ../daemon/gvfsbackendsmbbrowse.c:1150
+#: ../daemon/gvfsbackendsmbbrowse.c:1080 ../daemon/gvfsbackendsmbbrowse.c:1126
 msgid "The file is not a mountable"
-msgstr "Het bestand is niet aankoppelbaar"
+msgstr "بۇ ھۆججەت يۈكلەشچان ئەمەس"
 
-#: ../daemon/gvfsbackendsmbbrowse.c:1172
+#: ../daemon/gvfsbackendsmbbrowse.c:1148
 msgid "Not a regular file"
-msgstr "Geen normaal bestand"
+msgstr "ئادەتتىكى ھۆججەت ئەمەس"
 
-#: ../daemon/gvfsbackendsmbbrowse.c:1504
+#: ../daemon/gvfsbackendsmbbrowse.c:1503
 msgid "Windows Network Filesystem Service"
-msgstr "Bestandssysteemvoorziening voor Windows-netwerken"
+msgstr "Windows تور ھۆججەت سىستېما مۇلازىمىتى"
 
 #: ../daemon/gvfsbackendtrash.c:370 ../daemon/gvfsbackendtrash.c:426
 msgid "The trash folder may not be deleted"
-msgstr "De prullenbak kan niet verwijderd worden"
+msgstr "ئەخلەتخانا قىسقۇچنى ئۆچۈرگىلى بولمايدۇ"
 
 #: ../daemon/gvfsbackendtrash.c:387 ../daemon/gvfsbackendtrash.c:440
 msgid "Items in the trash may not be modified"
-msgstr "Items in de prullenbak kunnen niet gewijzigd worden"
+msgstr "ئەخلەتخانادىكى تۈرنى ئۆزگەرتكىلى بولمايدۇ"
 
 #. Translators: this is the display name of the backend
 #. translators: This is the name of the backend
 #: ../daemon/gvfsbackendtrash.c:742 ../daemon/gvfsbackendtrash.c:850
 msgid "Trash"
-msgstr "Prullenbak"
+msgstr "ئەخلەتخانا"
 
 #: ../daemon/gvfsdaemon.c:1056
 msgid "Invalid backend type"
-msgstr "Ongeldig backend-type"
+msgstr "نامەلۇم ئارقا ئۇچ تىپى"
 
 #: ../daemon/gvfsdaemonutils.c:104
 #, c-format
 msgid "Error sending fd: %s"
-msgstr "Fout bij zenden naar ‘file descriptor’: %s"
+msgstr "ھۆججەت بەلگىسى يوللاش خاتالىقى: %s"
 
 #: ../daemon/gvfsftpconnection.c:180
 msgid "Unexpected end of stream"
-msgstr "Gegevensstroom onverwacht beëindigd"
+msgstr "سانلىق مەلۇمات ئېقىمى تاسادىپىي ئاخىرلاشتى"
 
 #: ../daemon/gvfsftpconnection.c:196 ../daemon/gvfsftpconnection.c:209
 #: ../daemon/gvfsftptask.c:412 ../daemon/gvfsftptask.c:840
 msgid "Invalid reply"
-msgstr "Ongeldig antwoord"
+msgstr "ئىناۋەتسىز ئىنكاس"
 
 #: ../daemon/gvfsftpconnection.c:392
 msgid ""
 "Failed to create active FTP connection. Maybe your router does not support "
 "this?"
 msgstr ""
-"Kan geen actieve FTP-verbinding maken. Misschien ondersteunt de router dit "
-"niet."
+"ئاكتىپ FTP ئۇلىنىش قۇرالمىدى. بەلكىم يول تاللىغۇچىڭىز قوللىماسلىقى مۇمكىن؟"
 
 #: ../daemon/gvfsftpconnection.c:399
 msgid "Failed to create active FTP connection."
-msgstr "Opzetten actieve FTP-verbinding mislukt."
+msgstr "ئاكتىپ FTP ئۇلىنىش قۇرالمىدى."
 
 #: ../daemon/gvfsftpfile.c:170
 msgid "Filename contains invalid characters."
-msgstr "Bestandsnaam bevat ongeldige tekens."
+msgstr "ھۆججەت ئاتىدا ئىناۋەتسىز ھەرپ بار."
 
 #: ../daemon/gvfsftptask.c:262
 msgid "The FTP server is busy. Try again later"
-msgstr "De FTP-server is bezig. Probeer het later opnieuw."
+msgstr "FTP مۇلازىمىتىر ئالدىراش. سەل تۇرۇپ قايتا سىناڭ"
 
 #: ../daemon/gvfsftptask.c:356
 msgid "Accounts are unsupported"
-msgstr "Accounts worden niet ondersteund"
+msgstr "ھېساباتنى قوللىمايدۇ"
 
 #: ../daemon/gvfsftptask.c:360
 msgid "Host closed connection"
-msgstr "De host heeft de verbinding verbroken"
+msgstr "ئاساسىي ئاپپارات ئۇلىنىشنى تاقىدى"
 
 #: ../daemon/gvfsftptask.c:364
 msgid "Cannot open data connection. Maybe your firewall prevents this?"
-msgstr "Kan dataverbinding niet openen. Wellicht blokkeert uw firewall dit."
+msgstr ""
+"سانلىق مەلۇمات ئۇلىنىشىنى ئاچالمىدى. مۇداپىئە تېمىڭىز يول قويمامدۇ قانداق؟"
 
 #: ../daemon/gvfsftptask.c:368
 msgid "Data connection closed"
-msgstr "Dataverbinding gesloten"
+msgstr "سانلىق مەلۇمات ئۇلىنىشى يېپىلدى"
 
 #: ../daemon/gvfsftptask.c:375 ../daemon/gvfsftptask.c:379
 msgid "Operation failed"
-msgstr "Bewerking is mislukt"
+msgstr "مەشغۇلات مەغلۇپ بولدى"
 
 #: ../daemon/gvfsftptask.c:384
 msgid "No space left on server"
-msgstr "Geen vrije ruimte meer op server"
+msgstr "مۇلازىمىتىردا بوشلۇق قالمىدى"
 
 #: ../daemon/gvfsftptask.c:396
 msgid "Unsupported network protocol"
-msgstr "Niet ondersteund netwerkprotocol"
+msgstr "قوللىمايدىغان تور كېلىشىمى"
 
 #: ../daemon/gvfsftptask.c:404
 msgid "Page type unknown"
-msgstr "Paginatype onbekend"
+msgstr "بەت تىپى نامەلۇم"
 
 #: ../daemon/gvfsftptask.c:408
 msgid "Invalid filename"
-msgstr "Ongeldige bestandsnaam"
+msgstr "ئىناۋەتسىز ھۆججەت ئاتى"
 
 #: ../daemon/gvfsjobmakesymlink.c:126
 msgid "Symlinks not supported by backend"
-msgstr "Symbolische verwijzingen niet door backend ondersteund"
+msgstr "ئارقا ئۇچ بەلگە ئۇلىنىشىنى قوللىمايدۇ"
 
 #: ../daemon/gvfsjobsetattribute.c:120
 msgid "Invalid dbus message"
-msgstr "Ongeldig D-Bus-bericht"
+msgstr "ئىناۋەتسىز dbus ئۇچۇرى"
 
 #: ../daemon/main.c:45 ../metadata/meta-daemon.c:694
 msgid "Replace old daemon."
-msgstr "Oude voorziending vervangen."
+msgstr "كونا مۇھاپىزەت جەريانى ئالماشتۇر."
 
 #: ../daemon/main.c:46
 msgid "Don't start fuse."
-msgstr "Fuse niet starten."
+msgstr "fuse قوزغاتما."
 
 #: ../daemon/main.c:58
 msgid "GVFS Daemon"
-msgstr "GVFS-voorziening"
+msgstr "GVFS مۇھاپىزەت جەريانى"
 
 #: ../daemon/main.c:61
 msgid "Main daemon for GVFS"
-msgstr "Hoofdvoorziening voor GVFS"
+msgstr "GVFS ئاساسىي مۇھاپىزەت جەريانى"
 
 #. Translators: the first %s is the application name,
 #. the second %s is the error message
@@ -1403,85 +1395,85 @@ msgstr "%s: %s"
 #: ../programs/gvfs-set-attribute.c:128 ../programs/gvfs-tree.c:251
 #, c-format
 msgid "Try \"%s --help\" for more information."
-msgstr "Probeer ‘%s --help’ voor meer informatie."
+msgstr "تېخىمۇ كۆپ ئۇچۇرغا \"%s --help\" نى سىناڭ."
 
 #: ../daemon/mount.c:459
 msgid "Invalid arguments from spawned child"
-msgstr "Ongeldige parameters van opgestart dochterproces"
+msgstr "چاقىرغان تارماق جەرياندىكى پارامېتىر ئىناۋەتسىز"
 
 #: ../daemon/mount.c:779
 #, c-format
 msgid "Automount failed: %s"
-msgstr "Auto-aankoppelen mislukt: %s"
+msgstr "ئۆزلۈكىدىن يۈكلىيەلمىدى: \"%s --help\""
 
 #: ../daemon/mount.c:824 ../daemon/mount.c:898
 msgid "The specified location is not mounted"
-msgstr "De opgegeven locatie is niet aangekoppeld"
+msgstr "بەلگىلەنگەن ئورۇن يۈكلەنمىگەن"
 
 #: ../daemon/mount.c:829
 msgid "The specified location is not supported"
-msgstr "De opgegeven locatie wordt niet ondersteund"
+msgstr "بەلگىلەنگەن ئورۇننى قوللىمايدۇ"
 
 #: ../daemon/mount.c:1036
 msgid "Location is already mounted"
-msgstr "Locatie is reeds aangekoppeld"
+msgstr "ئورۇن يۈكلەنگەن"
 
 #: ../daemon/mount.c:1044
 msgid "Location is not mountable"
-msgstr "Locatie is niet aankoppelbaar"
+msgstr "ئورۇننى يۈكلىگىلى بولمايدۇ"
 
 #: ../metadata/meta-daemon.c:130 ../metadata/meta-daemon.c:336
 #: ../metadata/meta-daemon.c:390 ../metadata/meta-daemon.c:419
 #: ../metadata/meta-daemon.c:449
 #, c-format
 msgid "Can't find metadata file %s"
-msgstr "Can metadatabestand %s niet vinden"
+msgstr "مېتا سانلىق مەلۇمات ھۆججىتى %s نى تاپالمىدى "
 
 #: ../metadata/meta-daemon.c:160 ../metadata/meta-daemon.c:179
 msgid "Unable to set metadata key"
-msgstr "Kon metadata-sleutel niet opslaan"
+msgstr "مېتا سانلىق مەلۇمات ئاچقۇچ قىممىتىنى تەڭشىيەلمىدى"
 
 #: ../metadata/meta-daemon.c:197 ../metadata/meta-daemon.c:399
 msgid "Unable to unset metadata key"
-msgstr "Kon metadata-sleutel niet verwijderen"
+msgstr "مېتا سانلىق مەلۇمات ئاچقۇچ قىممىتىنى ئەسلىگە قايتۇرالمىدى"
 
 #: ../metadata/meta-daemon.c:428
 msgid "Unable to remove metadata keys"
-msgstr "Kon metadata-sleutels niet verwijderen"
+msgstr "مېتا سانلىق مەلۇمات ئاچقۇچ قىممىتىنى چىقىرىۋېتەلمىدى"
 
 #: ../metadata/meta-daemon.c:459
 msgid "Unable to move metadata keys"
-msgstr "Kon metadata-sleutels niet verplaatsen"
+msgstr "مېتا سانلىق مەلۇمات ئاچقۇچ قىممىتىنى يۆتكىيەلمىدى"
 
 #: ../metadata/meta-daemon.c:704
 msgid "GVFS Metadata Daemon"
-msgstr "GVFS-metadata-voorziening"
+msgstr "GVFS مېتا سانلىق مەلۇمات مۇھاپىزەت جەريانى"
 
 #: ../metadata/meta-daemon.c:707
 msgid "Metadata daemon for GVFS"
-msgstr "Metadata-voorziening voor GVFS"
+msgstr "GVFS نىڭ مېتا سانلىق مەلۇمات مۇھاپىزەت جەريانى"
 
 #: ../monitor/gdu/gdu-volume-monitor-daemon.c:40
 msgid "GVfs GDU Volume Monitor"
-msgstr "GVfs-GDU-volumenmonitor"
+msgstr "GVfs GDU ئەن كۆزەتكۈچ"
 
 #: ../monitor/gdu/ggdudrive.c:168 ../monitor/hal/ghaldrive.c:179
 msgid "Floppy Drive"
-msgstr "Diskettestation"
+msgstr "يۇمشاق دىسكا قوزغاتقۇچ"
 
 #: ../monitor/gdu/ggdudrive.c:258
 #, c-format
 msgid "Unnamed Drive (%s)"
-msgstr "Naamloze schrijf (%s)"
+msgstr "ئاتسىز قوزغاتقۇچ (%s)"
 
 #: ../monitor/gdu/ggdudrive.c:260
 msgid "Unnamed Drive"
-msgstr "Naamloze schijf"
+msgstr "ئاتسىز قوزغاتقۇچ"
 
 #: ../monitor/gdu/ggdudrive.c:561 ../monitor/hal/ghaldrive.c:662
 #, c-format
 msgid "Failed to eject media; one or more volumes on the media are busy."
-msgstr "Kon media niet uitwerpen; een of meerdere volumina zijn bezig."
+msgstr "ۋاسىتىنى قاڭقىتالمىدى؛ ۋاسىتىدىكى بىر ياكى بىر قانچە ئەن ئالدىراش."
 
 #: ../monitor/gdu/ggdudrive.c:1015
 msgid ""
@@ -1489,30 +1481,31 @@ msgid ""
 "Starting a drive in degraded mode means that the drive is no longer tolerant "
 "to failures. Data on the drive may be irrevocably lost if a component fails."
 msgstr ""
-"Schijf in ‘degraded mode’ starten?\n"
-"Dit houdt in dat de schijf niet langer fouttolerantie ondersteunt. Als een "
-"onderdeel het begeeft kunnen gegevens definitief verloren gaan."
+"قوزغاتقۇچنى دەرىجە تۆۋەنلىتىپ قوزغىتامدۇ؟\n"
+"قوزغاتقۇچنى دەرىجە تۆۋەنلىتىپ قوزغاتقاندا قوزغاتقۇچ كاشىلىغا ساقلاپ "
+"تۇرمايدىغانلىقىنى بىلدۈرىدۇ. ئەگەر بىر زاپچاستا خاتالىق بولسا قوزغاتقۇچتىكى "
+"سانلىق مەلۇماتلار پۈتۈنلەي يوقىلىدۇ."
 
 #: ../monitor/gdu/ggdudrive.c:1021
 msgid "Start Anyway"
-msgstr "Toch starten"
+msgstr "قوزغىتىۋەر"
 
 #: ../monitor/gdu/ggdumount.c:856
 msgid "One or more programs are preventing the unmount operation."
-msgstr "Ontkoppelen wordt door één of meer toepassingen verhinderd"
+msgstr "بىر ياكى بىر قانچە پروگرامما يۈك چۈشۈرۈش مەشغۇلاتىنى توسۇۋاتىدۇ."
 
 #: ../monitor/gdu/ggdumount.c:984
 msgid "Cannot get LUKS cleartext slave"
-msgstr "Kon LUKS-cleartext-slave niet verkrijgen"
+msgstr "LUKS ئېنىق تېكست بېقىندىسىغا ئېرىشەلمىدى"
 
 #: ../monitor/gdu/ggdumount.c:1006
 #, c-format
 msgid "Cannot get LUKS cleartext slave from path `%s'"
-msgstr "Kon LUKS-cleartext-slave niet verkrijgen van pad ‘%s’"
+msgstr "`%s' يولدىن LUKS ئېنىق تېكست بېقىندىسىغا ئېرىشەلمىدى"
 
 #: ../monitor/gdu/ggduvolume.c:325
 msgid "Floppy Disk"
-msgstr "Diskette"
+msgstr "يۇمشاق دىسكا"
 
 #: ../monitor/gdu/ggduvolume.c:1075
 #, c-format
@@ -1520,8 +1513,8 @@ msgid ""
 "Enter a password to unlock the volume\n"
 "The device \"%s\" contains encrypted data on partition %d."
 msgstr ""
-"Geef een wachtwoord om het volumen te ontgrendelen\n"
-"Het apparaat ‘%s’ bevat vercijferde gegevens op partitie %d."
+"ئىم كىرگۈزۈلسە ئەن قۇلۇپى ئېچىلىدۇ. \"%s\" ئۈسكۈنە %d رايوندا شىفىرلانغان "
+"سانلىق مەلۇماتنى ئۆز ئىچىگە ئالغان."
 
 #: ../monitor/gdu/ggduvolume.c:1082
 #, c-format
@@ -1529,8 +1522,8 @@ msgid ""
 "Enter a password to unlock the volume\n"
 "The device \"%s\" contains encrypted data."
 msgstr ""
-"Geef een wachtwoord om het volumen te ontgrendelen\n"
-"Het apparaat ‘%s’ bevat vercijferde gegevens."
+"ئىم كىرگۈزۈلسە ئەن قۇلۇپى ئېچىلىدۇ. \"%s\" ئۈسكۈنە شىفىرلانغان سانلىق "
+"مەلۇماتنى ئۆز ئىچىگە ئالغان."
 
 #: ../monitor/gdu/ggduvolume.c:1089
 #, c-format
@@ -1538,210 +1531,210 @@ msgid ""
 "Enter a password to unlock the volume\n"
 "The device %s contains encrypted data."
 msgstr ""
-"Geef een wachtwoord om het volumen te ontgrendelen\n"
-"Het apparaat %s bevat vercijferde gegevens."
+"ئىم كىرگۈزۈلسە ئەن قۇلۇپى ئېچىلىدۇ. %s ئۈسكۈنە شىفىرلانغان سانلىق مەلۇماتنى "
+"ئۆز ئىچىگە ئالغان."
 
 #: ../monitor/gphoto2/hal-utils.c:40 ../monitor/hal/hal-utils.c:40
 msgid "CD-ROM Disc"
-msgstr "Cd-rom-schijf"
+msgstr "CD-ROM دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:40 ../monitor/hal/hal-utils.c:40
 msgid "Blank CD-ROM Disc"
-msgstr "Lege cd-rom-schijf"
+msgstr "بوش CD_ROM دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:41 ../monitor/hal/hal-utils.c:41
 msgid "CD-R Disc"
-msgstr "Cd-r-schijf"
+msgstr "CD-R دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:41 ../monitor/hal/hal-utils.c:41
 msgid "Blank CD-R Disc"
-msgstr "Lege cd-r-schijf"
+msgstr "بوش CD-R دىسكا "
 
 #: ../monitor/gphoto2/hal-utils.c:42 ../monitor/hal/hal-utils.c:42
 msgid "CD-RW Disc"
-msgstr "Cd-rw-schijf"
+msgstr "CD-RW دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:42 ../monitor/hal/hal-utils.c:42
 msgid "Blank CD-RW Disc"
-msgstr "Lege cd-rw-schijf"
+msgstr "بوش CD-RW دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:43 ../monitor/gphoto2/hal-utils.c:45
 #: ../monitor/hal/hal-utils.c:43 ../monitor/hal/hal-utils.c:45
 msgid "DVD-ROM Disc"
-msgstr "Dvd-rom-schijf"
+msgstr "DVD-ROM دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:43 ../monitor/gphoto2/hal-utils.c:45
 #: ../monitor/hal/hal-utils.c:43 ../monitor/hal/hal-utils.c:45
 msgid "Blank DVD-ROM Disc"
-msgstr "Lege dvd-rom-schijf"
+msgstr "بوش DVD-ROM دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:44 ../monitor/hal/hal-utils.c:44
 msgid "DVD-RAM Disc"
-msgstr "Dvd-ram-schijf"
+msgstr "DVD-RAM دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:44 ../monitor/hal/hal-utils.c:44
 msgid "Blank DVD-RAM Disc"
-msgstr "Lege dvd-ram-schijf"
+msgstr "بوش DVD-RAM دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:46 ../monitor/hal/hal-utils.c:46
 msgid "DVD-RW Disc"
-msgstr "Dvd-rw-schijf"
+msgstr "DVD-RW دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:46 ../monitor/hal/hal-utils.c:46
 msgid "Blank DVD-RW Disc"
-msgstr "Lege dvd-rw-schijf"
+msgstr "بوش DVD-RW دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:47 ../monitor/hal/hal-utils.c:47
 msgid "DVD+R Disc"
-msgstr "Dvd-r-schijf"
+msgstr "DVD+R دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:47 ../monitor/hal/hal-utils.c:47
 msgid "Blank DVD+R Disc"
-msgstr "Lege dvd-r-schijf"
+msgstr "بوش DVD+R دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:48 ../monitor/hal/hal-utils.c:48
 msgid "DVD+RW Disc"
-msgstr "Dvd+rw-schijf"
+msgstr "DVD+RW دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:48 ../monitor/hal/hal-utils.c:48
 msgid "Blank DVD+RW Disc"
-msgstr "Lege dvd+rw-schijf"
+msgstr "بوش DVD+RW دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:49 ../monitor/hal/hal-utils.c:49
 msgid "DVD+R DL Disc"
-msgstr "Dvd+r DL-schijf"
+msgstr "DVD+R DL دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:49 ../monitor/hal/hal-utils.c:49
 msgid "Blank DVD+R DL Disc"
-msgstr "Lege dvd+r dl-schijf"
+msgstr "بوش DVD+R DL دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:50 ../monitor/hal/hal-utils.c:50
 msgid "Blu-Ray Disc"
-msgstr "Blu-ray-schijf"
+msgstr "كۆكنۇر دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:50 ../monitor/hal/hal-utils.c:50
 msgid "Blank Blu-Ray Disc"
-msgstr "Lege Blu-ray-schijf"
+msgstr "بوش كۆكنۇر دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:51 ../monitor/hal/hal-utils.c:51
 msgid "Blu-Ray R Disc"
-msgstr "Blu-ray-r-schijf"
+msgstr "كۆكنۇر R دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:51 ../monitor/hal/hal-utils.c:51
 msgid "Blank Blu-Ray R Disc"
-msgstr "Lege Blu-ray-r-schijf"
+msgstr "بوش كۆكنۇر R دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:52 ../monitor/hal/hal-utils.c:52
 msgid "Blu-Ray RW Disc"
-msgstr "Blu-ray-rw-schijf"
+msgstr "كۆكنۇر RW دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:52 ../monitor/hal/hal-utils.c:52
 msgid "Blank Blu-Ray RW Disc"
-msgstr "Lege Blu-ray-rw-schijf"
+msgstr "بوش كۆكنۇر RW دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:53 ../monitor/hal/hal-utils.c:53
 msgid "HD DVD Disc"
-msgstr "Hd-dvd-schijf"
+msgstr "HD DVD دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:53 ../monitor/hal/hal-utils.c:53
 msgid "Blank HD DVD Disc"
-msgstr "Lege hd-dvd-schijf"
+msgstr "بوش HD DVD دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:54 ../monitor/hal/hal-utils.c:54
 msgid "HD DVD-R Disc"
-msgstr "Hd-dvd-r-schijf"
+msgstr "HD DVD-R دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:54 ../monitor/hal/hal-utils.c:54
 msgid "Blank HD DVD-R Disc"
-msgstr "Lege hd-dvd-r-schijf"
+msgstr "بوش HD DVD-R دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:55 ../monitor/hal/hal-utils.c:55
 msgid "HD DVD-RW Disc"
-msgstr "Hd-dvd-rw-schijf"
+msgstr "HD DVD-RW دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:55 ../monitor/hal/hal-utils.c:55
 msgid "Blank HD DVD-RW Disc"
-msgstr "Lege hd-dvd-rw-schijf"
+msgstr "بوش HD DVD-RW دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:56 ../monitor/hal/hal-utils.c:56
 msgid "MO Disc"
-msgstr "MO-schijf"
+msgstr "MO دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:56 ../monitor/hal/hal-utils.c:56
 msgid "Blank MO Disc"
-msgstr "Lege MO-schijf"
+msgstr "بوش MO دىسكا "
 
 #: ../monitor/gphoto2/hal-utils.c:57 ../monitor/hal/hal-utils.c:57
 msgid "Disc"
-msgstr "Schijf"
+msgstr "دىسكا"
 
 #: ../monitor/gphoto2/hal-utils.c:57 ../monitor/hal/hal-utils.c:57
 msgid "Blank Disc"
-msgstr "Lege schijf"
+msgstr "بوش دىسكا"
 
 #: ../monitor/hal/ghaldrive.c:127
 msgid "CD-ROM"
-msgstr "Cd-rom"
+msgstr "CD-ROM"
 
 #: ../monitor/hal/ghaldrive.c:129
 msgid "CD-R"
-msgstr "Cd-r"
+msgstr "CD-R"
 
 #: ../monitor/hal/ghaldrive.c:131
 msgid "CD-RW"
-msgstr "Cd-rw"
+msgstr "CD-RW"
 
 #: ../monitor/hal/ghaldrive.c:135
 msgid "DVD-ROM"
-msgstr "Dvd-rom"
+msgstr "DVD-ROM"
 
 #: ../monitor/hal/ghaldrive.c:137
 msgid "DVD+R"
-msgstr "Dvd+r"
+msgstr "DVD+R"
 
 #: ../monitor/hal/ghaldrive.c:139
 msgid "DVD+RW"
-msgstr "Dvd+rw"
+msgstr "DVD+RW"
 
 #: ../monitor/hal/ghaldrive.c:141
 msgid "DVD-R"
-msgstr "Dvd-r"
+msgstr "DVD-R"
 
 #: ../monitor/hal/ghaldrive.c:143
 msgid "DVD-RW"
-msgstr "Dvd-rw"
+msgstr "DVD-RW"
 
 #: ../monitor/hal/ghaldrive.c:145
 msgid "DVD-RAM"
-msgstr "Dvd-ram"
+msgstr "DVD-RAM"
 
 #: ../monitor/hal/ghaldrive.c:148
 msgid "DVD±R"
-msgstr "Dvd±r"
+msgstr "DVD±R"
 
 #: ../monitor/hal/ghaldrive.c:151
 msgid "DVD±RW"
-msgstr "Dvd±rw"
+msgstr "DVD±RW"
 
 #: ../monitor/hal/ghaldrive.c:153
 msgid "HDDVD"
-msgstr "Hd-dvd"
+msgstr "HDDVD"
 
 #: ../monitor/hal/ghaldrive.c:155
 msgid "HDDVD-r"
-msgstr "Hd-dvd-r"
+msgstr "HDDVD-r"
 
 #: ../monitor/hal/ghaldrive.c:157
 msgid "HDDVD-RW"
-msgstr "Hd-dvd-rw"
+msgstr "HDDVD-RW"
 
 #: ../monitor/hal/ghaldrive.c:159
 msgid "Blu-ray"
-msgstr "Blu-ray"
+msgstr "كۆكنۇر"
 
 #: ../monitor/hal/ghaldrive.c:161
 msgid "Blu-ray-R"
-msgstr "Blu-ray-R"
+msgstr "كۆكنۇر R"
 
 #: ../monitor/hal/ghaldrive.c:163
 msgid "Blu-ray-RE"
@@ -1752,70 +1745,70 @@ msgstr "Blu-ray-RE"
 #: ../monitor/hal/ghaldrive.c:169
 #, c-format
 msgid "%s/%s Drive"
-msgstr "%s/%s-station"
+msgstr "%s/%s قوزغاتقۇچ"
 
 #. translators: This wis something like "CD-ROM Drive" or "CD-RW Drive
 #. depending on the properties of the drive
 #: ../monitor/hal/ghaldrive.c:175
 #, c-format
 msgid "%s Drive"
-msgstr "%s-station"
+msgstr "%s قوزغاتقۇچ"
 
 #: ../monitor/hal/ghaldrive.c:185
 msgid "Software RAID Drive"
-msgstr "Software RAID-schijf"
+msgstr "يۇمشاق دېتال RAID قوزغاتقۇچ"
 
 #: ../monitor/hal/ghaldrive.c:187
 msgid "USB Drive"
-msgstr "USB-schijf"
+msgstr "USB قوزغاتقۇچ"
 
 #: ../monitor/hal/ghaldrive.c:189
 msgid "ATA Drive"
-msgstr "ATA-schijf"
+msgstr "ATA قوزغاتقۇچ"
 
 #: ../monitor/hal/ghaldrive.c:191
 msgid "SCSI Drive"
-msgstr "SCSI-schijf"
+msgstr "SCSI قوزغاتقۇچ"
 
 #: ../monitor/hal/ghaldrive.c:193
 msgid "FireWire Drive"
-msgstr "FireWire-schijf"
+msgstr "FireWire قوزغاتقۇچ"
 
 #: ../monitor/hal/ghaldrive.c:197
 msgid "Tape Drive"
-msgstr "Tape-station"
+msgstr "ماگېنتلىق لېنتا قوزغاتقۇچ"
 
 #: ../monitor/hal/ghaldrive.c:199
 msgid "CompactFlash Drive"
-msgstr "CompactFlash-station"
+msgstr "CompactFlash قوزغاتقۇچ"
 
 #: ../monitor/hal/ghaldrive.c:201
 msgid "MemoryStick Drive"
-msgstr "MemoryStick-station"
+msgstr "MemoryStick قوزغاتقۇچ"
 
 #: ../monitor/hal/ghaldrive.c:203
 msgid "SmartMedia Drive"
-msgstr "SmartMedia-station"
+msgstr "SmartMedia قوزغاتقۇچ"
 
 #: ../monitor/hal/ghaldrive.c:205
 msgid "SD/MMC Drive"
-msgstr "SD/MMC-station"
+msgstr "SD/MMC قوزغاتقۇچ"
 
 #: ../monitor/hal/ghaldrive.c:207
 msgid "Zip Drive"
-msgstr "Zip-station"
+msgstr "Zip قوزغاتقۇچ"
 
 #: ../monitor/hal/ghaldrive.c:209
 msgid "Jaz Drive"
-msgstr "Jaz-station"
+msgstr "Jaz قوزغاتقۇچ"
 
 #: ../monitor/hal/ghaldrive.c:211
 msgid "Thumb Drive"
-msgstr "Thumb-station"
+msgstr "Thumb قوزغاتقۇچ"
 
 #: ../monitor/hal/ghaldrive.c:214
 msgid "Mass Storage Drive"
-msgstr "Opslagstation"
+msgstr "زور سېغىملىق ساقلىغۇچ  قوزغاتقۇچ"
 
 #: ../monitor/hal/ghalmount.c:159 ../monitor/hal/ghalvolume.c:163
 #, c-format
@@ -1834,57 +1827,56 @@ msgstr "%.1f GB"
 
 #: ../monitor/hal/ghalmount.c:323 ../monitor/hal/ghalvolume.c:244
 msgid "Mixed Audio/Data Disc"
-msgstr "Schijf met audio en data"
+msgstr "ئۈن/سانلىق مەلۇمات ئارىلاش دىسكا"
 
 #. Translators: %s is the size of the mount (e.g. 512 MB)
 #. Translators: %s is the size of the volume (e.g. 512 MB)
 #: ../monitor/hal/ghalmount.c:336 ../monitor/hal/ghalvolume.c:255
 #, c-format
 msgid "%s Media"
-msgstr "Media van %s"
+msgstr "%s ۋاسىتە"
 
 #. Translators: %s is the size of the volume (e.g. 512 MB)
 #: ../monitor/hal/ghalvolume.c:232
 #, c-format
 msgid "%s Encrypted Data"
-msgstr "%s versleutelde gegevens"
+msgstr "%s شىفىرلانغان سانلىق مەلۇمات"
 
 #: ../programs/gvfs-cat.c:37
 msgid "locations"
-msgstr "locaties"
+msgstr "ئورنى"
 
 #. Translators: the first %s is the program name, the second one
 #. is the URI of the file, the third is the error message.
 #: ../programs/gvfs-cat.c:57
 #, c-format
 msgid "%s: %s: error opening file: %s\n"
-msgstr "%s: %s: fout bij openen van bestand: %s\n"
+msgstr "%s: %s: ھۆججەت ئېچىش خاتالىقى: %s\n"
 
 #. Translators: the first %s is the program name, the
 #. second one is the URI of the file.
 #: ../programs/gvfs-cat.c:80
 #, c-format
 msgid "%s: %s, error writing to stdout"
-msgstr "%s: %s, schrijffout op ‘stdout’"
+msgstr "%s: %s ،stdout قا يېزىۋاتقاندا خاتالىق كۆرۈلدى"
 
 #. Translators: the first %s is the program name, the second one
 #. is the URI of the file, the third is the error message.
 #: ../programs/gvfs-cat.c:92
 #, c-format
 msgid "%s: %s: error reading: %s\n"
-msgstr "%s: %s: leesfout: %s\n"
+msgstr "%s: %s: ئوقۇش خاتالىقى: %s\n"
 
-# Er moet een spatie in het origineel bij (Wouter Bolsterlee)
 #. Translators: the first %s is the program name, the second one
 #. is the URI of the file, the third is the error message.
 #: ../programs/gvfs-cat.c:110
 #, c-format
 msgid "%s: %s:error closing: %s\n"
-msgstr "%s: %s: fout bij sluiten: %s\n"
+msgstr "%s: %s:يېپىش خاتالىقى: %s\n"
 
 #: ../programs/gvfs-cat.c:136
 msgid "LOCATION... - concatenate LOCATIONS to standard output."
-msgstr "LOCATIE… — LOCATIES achter elkaar weergeven op standaarduitvoer"
+msgstr "ئورنى… - ئورنى ئۆلچەملىك چىقىرىشقا ئۇلىنىدۇ"
 
 #. Translators: this message will appear after the usage string
 #. and before the list of options.
@@ -1895,18 +1887,18 @@ msgid ""
 "files: for example you can use something like smb://server/resource/file.txt "
 "as location to concatenate."
 msgstr ""
-"Bestanden op bepaalde locaties achter elkaar weergeven en op de "
-"standaarduitvoer tonen. Dit werkt net als het ‘cat’-programma, maar gebruikt "
-"gvfs-locaties in plaats van lokale bestanden. U kunt bijvoorbeeld iets als "
-"‘smb://server/map/naar/bestand.txt’ gebruiken als locatie."
+"ئۇلاش ئورنىدىكى ھۆججەتتىن ئۆلچەملىك چىقىرىش ئارقىلىق مەزمۇنى بېسىلىدۇ. "
+"ئەنئەنىۋى cat پروگراممىسىغا ئوخشىشىپ كېتىدۇ، ئەمما يەرلىك ھۆججەتنى ئىشلەتمەي "
+"gvfs ئورنىنى ئىشلىتىدۇ. مەسىلەن: smb://server/resource/file.txt نى ئىشلىتىپ "
+"ئورۇن ئۇلىنىشى قىلىدۇ."
 
 #: ../programs/gvfs-cat.c:148
 msgid ""
 "Note: just pipe through cat if you need its formatting option like -n, -T or "
 "other."
 msgstr ""
-"Let op: gebruik een ‘pipe’ als u opmaakopties zoals ‘-n’ of ‘-T’ wilt "
-"gebruiken."
+"دىققەت: cat نىڭ -n، -T غا ئوخشاش فورماتلاش ئىقتىدارىنى ئىشلىتىشتە تۇرۇبا "
+"ئارقىلىق cat ئىشلىتىپ سۈزۈلىدۇ."
 
 #: ../programs/gvfs-cat.c:161 ../programs/gvfs-copy.c:121
 #: ../programs/gvfs-info.c:369 ../programs/gvfs-ls.c:390
@@ -1915,315 +1907,313 @@ msgstr ""
 #: ../programs/gvfs-set-attribute.c:126 ../programs/gvfs-tree.c:249
 #, c-format
 msgid "Error parsing commandline options: %s\n"
-msgstr "Fout bij verwerken opdrachtregelopties: %s\n"
+msgstr "بۇيرۇق قۇرى تاللانمىنى يېشىشتە خاتالىق كۆرۈلدى: %s\n"
 
-# Vrij vertaald (Wouter Bolsterlee)
 #. Translators: the %s is the program name. This error message
 #. means the user is calling gvfs-cat without any argument.
 #: ../programs/gvfs-cat.c:174 ../programs/gvfs-open.c:151
 #, c-format
 msgid "%s: missing locations"
-msgstr "%s: locatie ontbreekt"
+msgstr "%s : ئورنى يوقالغان"
 
 #: ../programs/gvfs-copy.c:44 ../programs/gvfs-move.c:42
 msgid "no target directory"
-msgstr "geen doelmap"
+msgstr "نىشان مۇندەرىجە يوق"
 
 #: ../programs/gvfs-copy.c:45 ../programs/gvfs-move.c:43
 msgid "show progress"
-msgstr "voortgang tonen"
+msgstr "ئىلگىرىلەشنى كۆرسەت"
 
 #: ../programs/gvfs-copy.c:46 ../programs/gvfs-move.c:44
 msgid "prompt before overwrite"
-msgstr "overschrijven bevestigen"
+msgstr "ﻗﺎﭘﻼﺷﺘﯩﻦ ئىلگىرى ﺳﻮﺭﺍ"
 
 #: ../programs/gvfs-copy.c:47
 msgid "preserve all attributes"
-msgstr "alle attributen behouden"
+msgstr "ھەممە خاسلىقنى ساقلاپ قال"
 
 #: ../programs/gvfs-copy.c:48 ../programs/gvfs-move.c:45
 msgid "backup existing destination files"
-msgstr "backup maken van bestaande doelbestanden"
+msgstr "مەۋجۇد نىشان ھۆججەتنى زاپاسلا"
 
 #: ../programs/gvfs-copy.c:49
 msgid "never follow symbolic links"
-msgstr "nooit symbolische verwijzingen volgen"
+msgstr "بەلگە ئۇرلىنىشىغا ئەگەشمە"
 
 #: ../programs/gvfs-copy.c:78 ../programs/gvfs-move.c:67
 #, c-format
 msgid "progress"
-msgstr "voortgang"
+msgstr "سۈرئەت"
 
 #: ../programs/gvfs-copy.c:115
 msgid "SOURCE... DEST - copy file(s) from SOURCE to DEST"
-msgstr "BRON… DOEL — bestand(en) kopiëren van BRON naar DOEL"
+msgstr "مەنبە… نىشان  -ھۆججەتنى مەنبەدىن نىشانغا كۆچۈرىدۇ"
 
 #: ../programs/gvfs-copy.c:132 ../programs/gvfs-move.c:120
 msgid "Missing operand\n"
-msgstr "Ontbrekende operand\n"
+msgstr "مەشغۇلات سانى يوقالغان\n"
 
 #: ../programs/gvfs-copy.c:140 ../programs/gvfs-move.c:128
 msgid "Too many arguments\n"
-msgstr "Te veel parameters\n"
+msgstr "پارامېتىرلار بەك كۆپ\n"
 
 #: ../programs/gvfs-copy.c:149 ../programs/gvfs-move.c:137
 #, c-format
 msgid "Target %s is not a directory\n"
-msgstr "Doel %s is geen map\n"
+msgstr "%s نىشان مۇندەرىجە ئەمەس\n"
 
 #: ../programs/gvfs-copy.c:193
 #, c-format
 msgid "overwrite %s?"
-msgstr "%s overschrijven?"
+msgstr "%s قاپلىۋېتەمسىز؟"
 
 #: ../programs/gvfs-copy.c:207
 #, c-format
 msgid "Error copying file %s: %s\n"
-msgstr "Fout bij kopiëren van bestand %s: %s\n"
+msgstr "%s ھۆججەت كۆچۈرۈش خاتالىقى: %s\n"
 
 #: ../programs/gvfs-info.c:37
 msgid "List writable attributes"
-msgstr "Schrijfbare attributen tonen"
+msgstr "يېزىشچان خاسلىق تىزىملىكى"
 
 #: ../programs/gvfs-info.c:38
 msgid "Get filesystem info"
-msgstr "Bestandssysteeminformatie opvragen"
+msgstr "ھۆججەت سىستېما ئۇچۇرىغا ئېرىش "
 
 #: ../programs/gvfs-info.c:39 ../programs/gvfs-ls.c:39
 msgid "The attributes to get"
-msgstr "De op te vragen attributen"
+msgstr "ئېرىشكەن خاسلىق"
 
 #: ../programs/gvfs-info.c:40 ../programs/gvfs-ls.c:43
 #: ../programs/gvfs-set-attribute.c:37
 msgid "Don't follow symlinks"
-msgstr "Geen symbolische verwijzingen volgen"
+msgstr "بەلگە ئۇلىنىشىغا ئەگەشمە"
 
 #: ../programs/gvfs-info.c:50
 msgid "invalid type"
-msgstr "ongeldig type"
+msgstr "ئىناۋەتسىز تىپ"
 
 #: ../programs/gvfs-info.c:53
 msgid "unknown"
-msgstr "onbekend"
+msgstr "نامەلۇم"
 
 #: ../programs/gvfs-info.c:56
 msgid "regular"
-msgstr "normaal"
+msgstr "ئادەتتىكى"
 
 #: ../programs/gvfs-info.c:59
 msgid "directory"
-msgstr "map"
+msgstr "مۇندەرىجە"
 
 #: ../programs/gvfs-info.c:62
 msgid "symlink"
-msgstr "symbolische verwijzing"
+msgstr "بەلگە ئۇلىنىشى"
 
 #: ../programs/gvfs-info.c:65
 msgid "special"
-msgstr "speciaal"
+msgstr "ئالاھىدە"
 
 #: ../programs/gvfs-info.c:68
 msgid "shortcut"
-msgstr "verwijzing"
+msgstr "قىسقا يول"
 
 #: ../programs/gvfs-info.c:71
 msgid "mountable"
-msgstr "aankoppelbaar"
+msgstr "يۈكلەشچان"
 
 #: ../programs/gvfs-info.c:109
 #, c-format
 msgid "attributes:\n"
-msgstr "attributen:\n"
+msgstr "خاسلىقى:\n"
 
 #: ../programs/gvfs-info.c:155
 #, c-format
 msgid "display name: %s\n"
-msgstr "weergavenaam: %s\n"
+msgstr "كۆرسىتىش ئاتى: %s\n"
 
 #: ../programs/gvfs-info.c:159
 #, c-format
 msgid "edit name: %s\n"
-msgstr "bewerkbare naam: %s\n"
+msgstr "تەھرىر ئاتى: %s\n"
 
 #: ../programs/gvfs-info.c:165
 #, c-format
 msgid "name: %s\n"
-msgstr "naam: %s\n"
+msgstr "ئاتى: %s\n"
 
 #: ../programs/gvfs-info.c:172
 #, c-format
 msgid "type: %s\n"
-msgstr "type: %s\n"
+msgstr "تىپى: %s\n"
 
 #: ../programs/gvfs-info.c:178
 #, c-format
 msgid "size: "
-msgstr "grootte: "
+msgstr "چوڭلۇقى: "
 
 #: ../programs/gvfs-info.c:183
 #, c-format
 msgid "hidden\n"
-msgstr "verborgen\n"
+msgstr "يوشۇرۇن\n"
 
 #: ../programs/gvfs-info.c:266
 msgid "Copy with file"
-msgstr "Behouden bij kopiëren van bestand"
+msgstr "ھۆججەت بىلەن كۆچۈر"
 
 #: ../programs/gvfs-info.c:270
 msgid "Keep with file when moved"
-msgstr "Behouden bij verplaatsen van bestand"
+msgstr "يۆتكىگەندە ھۆججەت بىلەن بىرگە ساقلاپ قال"
 
 #: ../programs/gvfs-info.c:307
 #, c-format
 msgid "Error getting writable attributes: %s\n"
-msgstr "Fout bij opvragen schrijfbare attributen: %s\n"
+msgstr "يېزىشچان خاسلىققا ئېرىشىش خاتالىقى: %s\n"
 
 #: ../programs/gvfs-info.c:312
 #, c-format
 msgid "Settable attributes:\n"
-msgstr "Instelbare attributen:\n"
+msgstr "تەڭشەشچان خاسلىق:\n"
 
 #: ../programs/gvfs-info.c:335
 #, c-format
 msgid "Writable attribute namespaces:\n"
-msgstr "Schrijfbare attribuut-namespaces:\n"
+msgstr "يېزىشچان خاسلىق ئات بوشلۇقى:\n"
 
 #: ../programs/gvfs-info.c:362
 msgid "- show info for <location>"
-msgstr "- info tonen voor <locatie>"
+msgstr "- ‹ئورۇن› ئۇچۇرىنى كۆرسەت"
 
 #: ../programs/gvfs-ls.c:40 ../programs/gvfs-tree.c:36
 msgid "Show hidden files"
-msgstr "Verborgen bestanden tonen"
+msgstr "يوشۇرۇن ھۆججەتلەرنى كۆرسەت"
 
 #: ../programs/gvfs-ls.c:41
 msgid "Use a long listing format"
-msgstr "Uitgebreid lijstformaat gebruiken"
+msgstr "ئۇزۇن تىزىملىك فورماتى ئىشلەت"
 
 #: ../programs/gvfs-ls.c:42
 msgid "Show completions"
-msgstr "Aanvullingen tonen"
+msgstr "تاماملاشنى كۆرسەت"
 
 #: ../programs/gvfs-ls.c:164 ../programs/gvfs-ls.c:171
 #: ../programs/gvfs-rename.c:69
 #, c-format
 msgid "Error: %s\n"
-msgstr "Fout: %s\n"
+msgstr "خاتالىق: %s\n"
 
 #: ../programs/gvfs-ls.c:383
 msgid "- list files at <location>"
-msgstr "- bestandslijst van <locatie> tonen"
+msgstr "- ‹ئورۇن› دىكى ھۆججەتلەر تىزىملىكى"
 
 #: ../programs/gvfs-mkdir.c:33
 msgid "create parent directories"
-msgstr "oudermappen aanmaken"
+msgstr "ئاتا مۇندەرىجە قۇر"
 
 #: ../programs/gvfs-mkdir.c:51
 msgid "- create directories"
-msgstr "- mappen aanmaken"
+msgstr "- مۇندەرىجە قۇر"
 
 #: ../programs/gvfs-mkdir.c:79 ../programs/gvfs-mkdir.c:88
 #, c-format
 msgid "Error creating directory: %s\n"
-msgstr "Fout bij aanmaken van map: %s\n"
+msgstr "مۇندەرىجە قۇرۇش خاتالىقى: %s\n"
 
 #: ../programs/gvfs-monitor-dir.c:38 ../programs/gvfs-monitor-file.c:38
 msgid "Don't send single MOVED events."
-msgstr "Geen afzonderlijke MOVED-gebeurtenissen sturen."
+msgstr "يالغۇز يۆتكەلگەن ھادىسىنى يوللىما."
 
 #: ../programs/gvfs-mount.c:54
 msgid "Mount as mountable"
-msgstr "Als koppeling aankoppelen"
+msgstr "يۈكلەشچاننى يۈكلە"
 
 #: ../programs/gvfs-mount.c:55
 msgid "Mount volume with device file"
-msgstr "Volume met apparaatbestand aankoppelen"
+msgstr "ئەننى ئۈسكۈنە ھۆججەتلىرى بىلەن قوشۇپ يۈكلە"
 
 #: ../programs/gvfs-mount.c:56
 msgid "Unmount"
-msgstr "Ontkoppelen"
+msgstr "يۈك چۈشۈر"
 
 #: ../programs/gvfs-mount.c:57
 msgid "Unmount all mounts with the given scheme"
-msgstr "Alle koppelingen met het opgegeven schema ontkoppelen"
+msgstr "ھەممە يۈكلەشنى بېرىلگەن لايىھە بىلەن قوشۇپ يۈك چۈشۈر"
 
 #: ../programs/gvfs-mount.c:58
 msgid "List"
-msgstr "Lijst"
+msgstr "تىزىملىك"
 
 #: ../programs/gvfs-mount.c:59
 msgid "Show extra information for List and Monitor"
-msgstr "Extra informatie tonen voor Lijst en Monitor"
+msgstr "تىزىملىك ۋە كۆزەتكۈچنىڭ قوشۇمچە ئۇچۇرلىرىنى كۆرسەت"
 
 #: ../programs/gvfs-mount.c:60
 msgid "Monitor events"
-msgstr "Gebeurtenissen monitoren"
+msgstr "كۆزەتكۈچ ھادىسە"
 
 #: ../programs/gvfs-mount.c:163 ../programs/gvfs-mount.c:184
 #, c-format
 msgid "Error mounting location: %s\n"
-msgstr "Fout bij aankoppelen locatie: %s\n"
+msgstr "ئورۇن يۈكلەش خاتالىقى: %s\n"
 
 #: ../programs/gvfs-mount.c:241
 #, c-format
 msgid "Error unmounting mount: %s\n"
-msgstr "Fout bij ontkoppelen: %s\n"
+msgstr "يۈك چۈشۈرۈش خاتالىقى: %s\n"
 
 #: ../programs/gvfs-mount.c:262
 #, c-format
 msgid "Error finding enclosing mount: %s\n"
-msgstr "Kon omvattend koppelpunt niet vinden: %s\n"
+msgstr "يېپىق يۈكلەش ئىزدەش خاتالىقى: %s\n"
 
 #: ../programs/gvfs-mount.c:682
 #, c-format
 msgid "Error mounting %s: %s\n"
-msgstr "Fout bij aankoppelen van %s: %s\n"
+msgstr "%s يۈكلەش خاتالىقى: %s\n"
 
 #: ../programs/gvfs-mount.c:696
 #, c-format
 msgid "Mounted %s at %s\n"
-msgstr "%s aangekoppeld op %s\n"
+msgstr "%s نى %s يۈكلىدى\n"
 
 #: ../programs/gvfs-mount.c:747
 #, c-format
 msgid "No volume for device file %s\n"
-msgstr "Geen volumen voor apparaatbestand %s\n"
+msgstr "%s ئۈسكۈنە ھۆججىتىگە ئەن يوق\n"
 
-# Vrij vertaald (Wouter Bolsterlee)
 #: ../programs/gvfs-mount.c:938
 msgid "- mount <location>"
-msgstr "- <locatie> aankoppelen"
+msgstr "- يۈكلەش ‹ئورۇن›"
 
 #: ../programs/gvfs-move.c:103
 msgid "SOURCE... DEST - move file(s) from SOURCE to DEST"
-msgstr "BRON… DOEL — bestand(en) van BRON naar DOEL verplaatsen"
+msgstr "مەنبە… نىشان  -ھۆججەتنى مەنبەدىن نىشانغا يۆتكەيدۇ"
 
 #: ../programs/gvfs-move.c:189
 #, c-format
 msgid "Error moving file %s: %s\n"
-msgstr "Fout bij verplaatsen van bestand %s: %s\n"
+msgstr "%s ھۆججەت يۆتكەش خاتالىقى: %s\n"
 
 #: ../programs/gvfs-open.c:37
 msgid "files"
-msgstr "bestanden"
+msgstr "ھۆججەتلەر"
 
 #. Translators: the first %s is the program name, the second one
 #. is the URI of the file, the third is the error message.
 #: ../programs/gvfs-open.c:65
 #, c-format
 msgid "%s: %s: error opening location: %s\n"
-msgstr "%s: %s: fout bij openen locatie: %s\n"
+msgstr "%s: %s: ئورۇن ئېچىش خاتالىقى: %s\n"
 
 #. Translators: the first %s is the program name, the second one
 #. is the URI of the file, the third is the error message.
 #: ../programs/gvfs-open.c:92
 #, c-format
 msgid "%s: %s: error launching application: %s\n"
-msgstr "%s: %s: fout bij opstarten van toepassing: %s\n"
+msgstr "%s: %s: قوللىنىشچان پروگرامما ئىجرا قىلىش خاتالىقى: %s\n"
 
 #: ../programs/gvfs-open.c:122
 msgid "FILES... - open FILES with registered application."
-msgstr "BESTANDEN… — BESTANDEN openen met standaardtoepassing."
+msgstr "FILES... - خەتلىگەن قوللىنىشچان پروگراممىدا FILES نى ئاچ"
 
 #. Translators: this message will appear after the usage string
 #. and before the list of options.
@@ -2232,204 +2222,123 @@ msgid ""
 "Opens the file(s) with the default application registered to handle the type "
 "of the file."
 msgstr ""
-"Een of meerdere bestanden met de standaardtoepassing voor dit bestandstype "
-"openen."
+"خەتلىگەن قوللىنىشچان پروگرامما ئىشلىتىپ بۇ خىل ھۆججەتنى بىر تەرەپ قىلىدىغان "
+"كۆڭۈلدىكى پروگراممىدا ئاچ."
 
 #: ../programs/gvfs-rename.c:50
 msgid "- rename file"
-msgstr "- bestand hernoemen"
+msgstr "- ھۆججەت ئاتىنى ئۆزگەرت"
 
 #: ../programs/gvfs-rename.c:76
 #, c-format
 msgid "Rename successful. New uri: %s\n"
-msgstr "Hernoemen succesvol. Nieuwe uri: %s\n"
+msgstr "ئات مۇۋەپپەقىيەتلىك ئۆزگەرتىلدى. يېڭى uri: %s\n"
 
 #: ../programs/gvfs-rm.c:35 ../programs/gvfs-trash.c:35
 msgid "ignore nonexistent files, never prompt"
-msgstr "niet-bestaande bestanden negeren, nooit vragen"
+msgstr "مەۋجۇد بولمىغان ھۆججەتكە پەرۋا قىلما، ھەرگىز ئەسكەرتمە"
 
 #: ../programs/gvfs-rm.c:53
 msgid "- delete files"
-msgstr "- bestanden verwijderen"
+msgstr "- ھۆججەت ئۆچۈر"
 
 #: ../programs/gvfs-save.c:43
 msgid "Create backup"
-msgstr "Backup maken"
+msgstr "زاپاس قۇر"
 
 #: ../programs/gvfs-save.c:44
 msgid "Only create if not existing"
-msgstr "Alleen maken indien niet-bestaand"
+msgstr "مەۋجۇد بولمىغاندا ئاندىن قۇر"
 
 #: ../programs/gvfs-save.c:45
 msgid "Append to end of file"
-msgstr "Aan einde van bestand toevoegen"
+msgstr "ھۆججەت ئاخىرىغا قوش"
 
 #: ../programs/gvfs-save.c:46
 msgid "When creating a file, restrict access to the current user only"
-msgstr "Toegang beperken tot huidige gebruiken bij aanmaken bestand"
+msgstr "بىر ھۆججەت قۇرغاندا، زىيارەت قىلىشنى نۆۋەتتىكى ئىشلەتكۈچىگىلا چەكلە"
 
 #: ../programs/gvfs-save.c:47
 msgid "Print new etag at end"
-msgstr "Nieuwe etag tonen aan het einde"
+msgstr "ئاخىرىغا يېڭى تۇغ باس"
 
 #: ../programs/gvfs-save.c:48
 msgid "The etag of the file being overwritten"
-msgstr "De etag van het te overschrijven bestand"
+msgstr "ھۆججەت تۇغى قاپلىۋېتىلىدۇ"
 
 #: ../programs/gvfs-save.c:76
 #, c-format
 msgid "Error opening file: %s\n"
-msgstr "Fout bij openen van bestand: %s\n"
+msgstr "ھۆججەت ئېچىش خاتالىقى: %s\n"
 
 #: ../programs/gvfs-save.c:109
 msgid "Error reading stdin"
-msgstr "Fout bij lezen van stdin"
+msgstr "stdin ئوقۇش خاتالىقى"
 
-# Er moet een spatie in het origineel bij (Wouter Bolsterlee)
 #: ../programs/gvfs-save.c:122
 #, c-format
 msgid "Error closing: %s\n"
-msgstr "Fout bij sluiten: %s\n"
+msgstr "يېپىش خاتالىقى: %s\n"
 
 #: ../programs/gvfs-save.c:134
 #, c-format
 msgid "Etag not available\n"
-msgstr "Etag niet beschikbaar\n"
+msgstr "توغنى ئىشلەتكىلى بولمايدۇ\n"
 
 #: ../programs/gvfs-save.c:156
 msgid "DEST - read from standard input and save to DEST"
-msgstr "DOEL — van standaardinvoer lezen en als DOEL opslaan"
+msgstr "DEST - ئادەتتىكى كىرگۈزۈشتىن ئوقۇپ DEST قا ساقلايدۇ"
 
 #: ../programs/gvfs-set-attribute.c:36
 msgid ""
 "attribute type [string, bytestring, boolean, uint32, int32, uint64, int64, "
 "stringv, unset]"
 msgstr ""
-"attribuuttype [string, bytestring, boolean, uint32, int32, uint64, int64, "
+"خاسلىق تىپى [string, bytestring, boolean, uint32, int32, uint64, int64, "
 "stringv, unset]"
 
 #: ../programs/gvfs-set-attribute.c:119
 msgid " <location> <attribute> <values> - set attribute"
-msgstr " <locatie> <attribuut> <waardes> — attribuut instellen"
+msgstr " <ئورۇن> <خاسلىق> <قىممىتى> - خاسلىق تەڭشەك"
 
 #: ../programs/gvfs-set-attribute.c:137
 #, c-format
 msgid "Location not specified\n"
-msgstr "Locatie niet opgegeven\n"
+msgstr "ئورۇن بەلگىلەنمىگەن\n"
 
 #: ../programs/gvfs-set-attribute.c:145
 #, c-format
 msgid "Attribute not specified\n"
-msgstr "Attribuut niet opgegeven\n"
+msgstr "خاسلىق بەلگىلەنمىگەن\n"
 
 #: ../programs/gvfs-set-attribute.c:154
 #, c-format
 msgid "Value not specified\n"
-msgstr "Waarde niet opgegeven\n"
+msgstr "قىممەت بەلگىلەنمىگەن\n"
 
 #: ../programs/gvfs-set-attribute.c:195
 #, c-format
 msgid "Invalid attribute type %s\n"
-msgstr "Ongeldige attribuuttype %s\n"
+msgstr "ئىناۋەتسىز خاسلىق تىپى %s\n"
 
 #: ../programs/gvfs-set-attribute.c:205
 #, c-format
 msgid "Error setting attribute: %s\n"
-msgstr "Fout bij instellen van attribute: %s\n"
+msgstr "خاسلىق تەڭشەش خاتالىقى: %s\n"
 
 #: ../programs/gvfs-trash.c:52
 msgid "- move files to trash"
-msgstr "- bestanden naar prullenbak verplaatsen"
+msgstr "- ھۆججەتلەرنى ئەخلەتخاناغا يۆتكە"
 
 #: ../programs/gvfs-trash.c:69
 #, c-format
 msgid "Error trashing file: %s\n"
-msgstr "Fout bij verplaatsen naar prullenbak: %s\n"
+msgstr "ھۆججەتنى ئەخلەتخاناغا يۆتكەش خاتالىقى: %s\n"
 
 #: ../programs/gvfs-tree.c:37
 msgid "Follow symlinks, mounts and shortcuts like dirs"
-msgstr ""
-"Symbolische verwijzingen, koppelingen en verwijzingen als mappen volgen"
+msgstr "بەلگە ئۇلىنىش، يۈكلەش ۋە قىسقا يولغا ئوخشاش مۇندەرىجىگە ئەگەش"
 
 #: ../programs/gvfs-tree.c:242
 msgid "- list contents of directories in a tree-like format"
-msgstr "- inhoud van mappen in een boomstructuur weergeven"
-
-#~ msgid "Enter password"
-#~ msgstr "Voer wachtwoord in"
-
-#~ msgid "- output files at <location>"
-#~ msgstr "- uitvoerbestanden op <locatie>"
-
-#~ msgid "Invalid return value from get_info"
-#~ msgstr "Ongeldig resultaat van ‘get_info’"
-
-#~ msgid "Invalid return value from query_info"
-#~ msgstr "Ongeldig resultaat van ‘query_info’"
-
-#~ msgid "Invalid return value from call"
-#~ msgstr "Ongeldig resultaat van aanroep"
-
-#~ msgid "Invalid return value from get_filesystem_info"
-#~ msgstr "Ongeldig resultaat van ‘get_filesystem_info’"
-
-#~ msgid "Invalid return value from query_filesystem_info"
-#~ msgstr "Ongeldig resultaat van ‘query_filesystem_info’"
-
-#~ msgid "Invalid return value from monitor_dir"
-#~ msgstr "Ongeldig resultaat van ‘monitor_dir’"
-
-#~ msgid "Invalid return value from monitor_file"
-#~ msgstr "Ongeldig resultaat van ‘monitor_file’"
-
-#~ msgid "Invalid return value from open_icon_for_read"
-#~ msgstr "Ongeldige resultaatwaarde van ‘open_icon_for_read’"
-
-# Vrij vertaald (Wouter Bolsterlee)
-#~ msgid "broken transmission"
-#~ msgstr "verzenden mislukt"
-
-#~ msgid "Could not connect to host"
-#~ msgstr "Kon niet met host verbinden"
-
-#~ msgid "filename too long"
-#~ msgstr "bestandsnaam te lang"
-
-#~ msgid "Invalid destination filename"
-#~ msgstr "Ongeldige doelbestandsnaam"
-
-#~ msgid "The query info operation is not supported"
-#~ msgstr "Bewerking voor opvragen van informatie wordt niet ondersteund"
-
-#~ msgid "Query info not supported on stream"
-#~ msgstr "Opvragen van informatie van stream niet ondersteund"
-
-#~ msgid "Can't delete trash"
-#~ msgstr "Kan prullenbak niet legen"
-
-#~ msgid "dns-sd"
-#~ msgstr "dns-sd"
-
-#~ msgid "%s (in trash)"
-#~ msgstr "%s (in prullenbak)"
-
-#~ msgid "Trash directory notification not supported"
-#~ msgstr "Prullenbakwijzigingsmeldingen niet ondersteund"
-
-#~ msgid "Error listing folders"
-#~ msgstr "Fout bij opvragen van mappen"
-
-#~ msgid "File system is busy: %d open files"
-#~ msgstr "Bestandssysteem is bezig: %d geopende bestanden"
-
-#~ msgid "%.1f kB Media"
-#~ msgstr "Media van %.1f kB"
-
-#~ msgid "%.1f MB Media"
-#~ msgstr "Media van %.1f MB"
-
-#~ msgid "%.1f GB Media"
-#~ msgstr "Media van %.1f GB"
-
-#~ msgid "Invalid reply from server."
-#~ msgstr "Ongeldig antwoord ontvangen van server."
+msgstr "- مۇندەرىجە مەزمۇنىنى دەرەخسىمان ھالەتتە كۆرسىتىدۇ"
