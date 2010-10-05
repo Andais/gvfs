@@ -14,7 +14,7 @@ To mount a [Rackspace Cloud Files](http://www.rackspacecloud.com/cloud_hosting_p
   Examples:
 
     CDN-enable a container:
-        $ gvfs-set-attribute rack://username@host/container cdn::enabled
+        $ gvfs-set-attribute rack://username@host/container cdn::enabled true
 
     View the current CDN configuration:
         $ gvfs-info rack://username@auth.api.rackspacecloud.com/container
